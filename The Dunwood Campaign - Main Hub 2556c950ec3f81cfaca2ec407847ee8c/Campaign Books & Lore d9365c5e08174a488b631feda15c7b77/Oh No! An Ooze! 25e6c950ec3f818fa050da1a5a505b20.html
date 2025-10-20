@@ -1,0 +1,706 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Oh No! An Ooze!</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="25e6c950-ec3f-818f-a050-da1a5a505b20" class="page sans"><header><h1 class="page-title">Oh No! An Ooze!</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>Author</th><td>Master Delver Jaster Hollowquill</td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Category</th><td><span class="selected-value select-value-color-orange">Tactical/Strategic</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>Contents</th><td>Chapter II focuses on environmental detection of ooze presence in underground environments. Covers the paradox of cleanliness, environmental assessment techniques, species-specific recognition patterns for different ooze types, warning sign identification, movement pattern analysis, and specialized detection equipment for professional dungeon delving.</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>Description</th><td>Third edition practical guide for dungeon exploration with emphasis on early ooze detection. Written by an experienced delver with personal experience in major underground complexes like Undermountain.</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>Location Found</th><td>Delvers&#x27; Guild halls, adventuring supply shops, underground exploration training centers</td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>Page Created</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Plot Relevance</th><td><span class="selected-value select-value-color-green">Background Lore</span></td></tr></tbody></table></header><div class="page-body"><p id="6f449928-285d-49bb-a86b-7759e5b4c4ac" class=""><em>By Master Delver Jaster Hollowquill</em></p><p id="ec3d1485-bf4e-4fb8-a9e6-613b911ab6ed" class=""><em>Third Edition - Expanded with Underground Survey Techniques</em></p><h2 id="ec918ace-ce06-40ae-ad31-71dc9899a860" class="">Chapter II: Dissolution and Detection - Reading the Signs of Ooze Activity</h2><p id="81bd2335-7514-4a00-a2c9-eb2eb168698f" class=""><em>&quot;The dungeon&#x27;s floors were spotless. That should have been our first clue.&quot;</em></p><ul id="70c33b94-fb85-4c70-8718-a8cea5bd26c7" class="bulleted-list"><li style="list-style-type:disc">The author&#x27;s personal notes, Undermountain Expedition 1487 DR</li></ul><h3 id="fc07564c-58e4-4931-992d-22ed5e23d648" class="">The Paradox of Cleanliness</h3><p id="b6af6db0-8c78-42a4-a633-000059a250c8" class="">Experienced dungeon delvers learn to be suspicious of cleanliness in places where it shouldn&#x27;t exist. Ancient ruins, abandoned complexes, and natural cave systems accumulate decades or centuries of debris: fallen stones, organic matter, accumulated dust, discarded equipment from previous explorers, and the detritus of whatever creatures have made these spaces home. When such environments appear unusually clean or well-maintained, the most likely explanation is not benevolent custodial service, but the presence of one or more ooze creatures.</p><p id="13f6343e-7572-4526-b4b1-4522586764d4" class="">Oozes function as nature&#x27;s ultimate janitors, dissolving and consuming virtually any organic or metallic material they encounter. A single gelatinous cube can clear an entire corridor system of debris in a matter of weeks, leaving behind surfaces so clean they appear to have been recently constructed. This cleaning process creates the distinctive environmental signatures that alert knowledgeable explorers to potential ooze presence before direct encounters occur.</p><p id="ea9d81b0-912f-426f-ac6c-e1c33ff23c9d" class="">The key to recognizing ooze-cleaned areas lies in understanding what these creatures cannot or will not consume. Stone surfaces remain intact but may show distinctive etching patterns where acidic secretions have dissolved mineral impurities. Precious metals and certain magical materials resist dissolution, often appearing as isolated patches of treasure in otherwise empty chambers. Glass surfaces, being largely immune to most ooze digestive processes, may remain pristine while everything around them has vanished.</p><h3 id="b7a9066f-ced8-4b1a-8f20-46541da27d54" class="">Environmental Assessment Techniques</h3><p id="ef015580-9270-426a-9363-19c762e24c98" class="">Systematic environmental assessment can reveal ooze presence through several observable phenomena:</p><p id="2833ed9b-0977-42e2-a5b6-035f00fb6615" class=""><strong>Surface Analysis</strong>: Ooze-cleaned stone surfaces develop characteristic smoothness that differs from natural weathering or deliberate construction. The dissolution process removes surface irregularities and fills in minor cracks and crevices, creating an almost polished appearance. However, this smoothness is accompanied by microscopic etching patterns that experienced delvers learn to recognize—fine linear scoring where acidic secretions have dissolved along mineral grain boundaries.</p><p id="cec37f97-3b23-4b84-a5ab-c258a83aaa6b" class=""><strong>Debris Distribution</strong>: Normal underground environments show predictable patterns of debris accumulation—corners collect windblown material, low areas trap organic matter, and high-traffic zones show wear patterns. Ooze-cleaned areas violate these patterns, with debris appearing only in locations the creatures cannot reach: high shelves, sealed containers, or areas protected by materials the oozes cannot dissolve.</p><p id="3ad42bd7-c27d-40ea-9754-6406bf48462a" class=""><strong>Atmospheric Indicators</strong>: Many ooze species produce distinctive atmospheric signatures. Gray oozes generate a faint metallic smell from dissolved iron and steel. Black puddings leave a sharp, acidic odor reminiscent of alchemical laboratories. Gelatinous cubes create subtle air circulation patterns as they move through confined spaces, often detectable as unexpected drafts or temperature variations.</p><p id="91cc5d03-2011-4a23-b0c0-6c464712d064" class=""><strong>Structural Integrity Assessment</strong>: Long-term ooze habitation can compromise structural integrity in subtle but dangerous ways. Acidic secretions gradually weaken mortar joints, metal reinforcements, and organic binding agents, creating areas of potential collapse that may not be immediately apparent. Experienced delvers learn to test structural stability in suspiciously clean areas before committing their full weight to floors, stairs, or supporting walls.</p><h3 id="5e25a9a5-444c-43a4-974e-96b965e93a12" class="">Species-Specific Recognition Patterns</h3><p id="4735473d-5e0d-4277-89ca-b3d606a5d29d" class="">Different ooze species create distinctive environmental signatures that allow for preliminary identification before direct visual contact:</p><p id="e41403d9-e66b-4746-80ef-7ea3bcf0eb74" class=""><strong>Gelatinous Cubes</strong>: These creatures leave the most obvious signs, creating perfectly rectangular clean zones that correspond to their movement patterns. Corridors frequented by cubes show distinctive wear patterns where the creature&#x27;s bulk has polished the walls to a uniform height. Items too large for the cube to completely envelope may show partial dissolution patterns—straight-line acid etching where the creature made contact.</p><p id="88ec3d6f-2f42-48f0-a4f5-be3e2b2abb67" class=""><strong>Gray Oozes</strong>: These metal-eating specialists leave characteristic residue patterns around iron and steel objects. Formerly metallic items appear as rust-colored stains or completely vanish, leaving only mineral deposits in their original shapes. Gray ooze territory often features intact wooden or stone structures with mysteriously absent metal components—hinges without doors, empty weapon racks, or stone pedestals that once held metal decorations.</p><p id="ca86ad3c-1794-4831-b651-caedc133c02e" class=""><strong>Black Puddings</strong>: The most destructive of common oozes, black puddings dissolve both organic and metallic materials with equal efficiency. Their territory is characterized by almost complete absence of consumable materials, with only stone, glass, and highly resistant magical items remaining. The surfaces they frequent often show deep etching patterns where their powerful acids have affected even resistant materials.</p><p id="50cf43eb-ba50-42de-bfee-14e4974b7e0e" class=""><strong>Ochre Jellies</strong>: These creatures prefer organic materials, creating environments where metal objects remain intact while all biological matter has vanished. Ochre jelly territory may contain perfectly preserved weapons, armor, and tools, but lack any trace of leather, wood, bone, or fabric that would normally accompany such items.</p><h3 id="59f94f9c-8666-4c76-ae7f-6c15ca8f6e2b" class="">Warning Sign Recognition</h3><p id="db8b3640-5a5f-4c18-ac93-cc4bf161cb06" class="">Several specific indicators provide early warning of ooze presence before direct encounters occur:</p><p id="cf15a21f-d92c-4d84-a24f-11b4466b4d21" class=""><strong>The Missing Equipment Phenomenon</strong>: Careful observation of dungeon environments often reveals the conspicuous absence of items that should logically be present. Guardrooms without weapons, libraries without books, or workshops without tools may indicate selective consumption by species-specific oozes rather than thorough looting by previous explorers.</p><p id="5054fac8-068f-4a86-9311-f6dd9dfcbbec" class=""><strong>Partial Dissolution Patterns</strong>: Items too large or resistant for complete consumption often show characteristic partial dissolution patterns. These include straight-line acid etching where gelatinous cubes made contact, progressive corrosion patterns from gray ooze attacks, or organic components missing from complex items while inorganic parts remain intact.</p><p id="42be50ff-9bfc-493e-8cea-692c4acdf434" class=""><strong>Unnatural Preservation</strong>: Paradoxically, some items in ooze territory may be unusually well-preserved due to the sterile environment created by the creatures&#x27; presence. Organic materials sealed in containers immune to ooze penetration may remain in perfect condition despite their age, creating preservation anomalies that alert experienced delvers to potential ooze activity.</p><p id="299dd7f1-ad09-4b24-9c1d-9cab099736e8" class=""><strong>Temperature and Humidity Variations</strong>: Large oozes affect local environmental conditions through their metabolic processes and water content. Areas with significant ooze populations may show higher humidity levels, temperature variations from the creatures&#x27; body heat, or unusual condensation patterns on resistant surfaces.</p><h3 id="7a8e7461-e954-4e12-b526-c2cb1b1d7da2" class="">Movement Pattern Analysis</h3><p id="4b4b5916-4e0c-4b9e-b6e6-860bba3fa7db" class="">Understanding ooze movement patterns provides crucial intelligence for both avoidance and tactical planning:</p><p id="abaa8076-9d9a-4e3b-bc2d-c8acf187ec1a" class=""><strong>Patrol Route Recognition</strong>: Many ooze species establish regular patrol patterns through their territory, following the same routes repeatedly over extended periods. These patterns become visible as areas of enhanced cleanliness, distinctive wear patterns on surfaces, or the absence of debris that would naturally accumulate without regular disturbance.</p><p id="66dae8cf-49b2-4d46-bc6c-bf3e9f79cbcb" class=""><strong>Feeding Behavior Indicators</strong>: Oozes often establish feeding territories around reliable food sources—areas where organic matter or appropriate metals are regularly replenished. Recognition of these feeding patterns allows delvers to predict where oozes are likely to concentrate and plan accordingly.</p><p id="665a98f3-20be-4214-8a99-c5ac5a50b553" class=""><strong>Territorial Boundary Markers</strong>: While oozes don&#x27;t establish formal territorial boundaries like higher intelligence creatures, their presence creates natural zones of influence. The transition areas between ooze territory and normal dungeon environments often show gradual changes in cleanliness, debris accumulation, and surface condition that mark the effective boundaries of creature activity.</p><h3 id="a5970d13-b4e2-48e2-96fb-1cf6a9ae383d" class="">Detection Equipment and Techniques</h3><p id="6bae9cfb-7432-4182-846b-f248c0973101" class="">Professional dungeon delving requires specialized equipment for safe ooze detection:</p><p id="7a3445fe-b04c-4db1-b3d0-2b41aacf1cef" class=""><strong>Probe Techniques</strong>: Long probes made from ooze-resistant materials allow for safe testing of suspicious areas before committing to movement through potentially dangerous zones. These probes can detect the yielding consistency of concealed oozes, test for acidic secretions, or identify areas where expected structural elements have been dissolved away.</p><p id="e3e5857c-40fc-4d4a-a2a7-826ae8093373" class=""><strong>Chemical Detection Methods</strong>: Simple chemical tests can identify acidic residues or unusual mineral concentrations that indicate recent ooze activity. Litmus solutions, metal sensitivity tests, or alchemical preparations designed to react with specific ooze secretions provide early warning of creature presence.</p><p id="e45c5a6d-cd26-41b0-8e47-bc7ba71e407d" class=""><strong>Environmental Monitoring</strong>: Systematic monitoring of temperature, humidity, and air quality can detect the environmental changes associated with ooze habitation. Professional delving teams often employ these monitoring techniques as standard operating procedure in unknown underground environments.</p><p id="94f95463-bc7f-4032-aadc-f8827a82b428" class=""><strong>Magical Detection Supplements</strong>: Divination magic can supplement conventional detection methods, though oozes&#x27; simple mental patterns make them challenging targets for some spells. Detection spells focusing on life force, magical auras, or environmental conditions often prove more reliable than those targeting intelligence or hostile intent.</p><hr id="651776e3-805c-46e2-918d-0ac651ae7f8f"/><p id="8a41c71c-aaea-44bb-b546-12dcc79e89f3" class=""><em>Continued in Chapter III: Tactical Approaches and Emergency Escape Procedures</em></p><hr id="541f8c70-a3e8-4803-9fba-aa6c1e133462"/><p id="e72acb6c-4375-425f-bca6-e995e09e3282" class=""><strong>Delvers&#x27; Guild Certification Note</strong>: <em>This manual meets Guild standards for underground hazard recognition training. However, theoretical knowledge cannot replace practical experience in developing the intuitive recognition skills necessary for safe ooze detection. Apprentice delvers should always work under experienced supervision when exploring potentially ooze-infested areas.</em></p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
