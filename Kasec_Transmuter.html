@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasec - Red Wizard of Transmutation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #d2b48c;
+            color: #2c2416;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            background-color: #c4a678;
+        }
+        .thayan-header {
+            background: linear-gradient(135deg, #8b0000 0%, #ff6f00 100%);
+            color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .stat-block {
+            background-color: #faf0e6;
+            border: 2px solid #8b0000;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #d2b48c;
+        }
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+        .transmutation-box {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff6f00;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .danger-box {
+            background-color: #ffebee;
+            border-left: 4px solid #d32f2f;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .experiment-box {
+            background-color: #f3e5f5;
+            border-left: 4px solid #7b1fa2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Campaign Hub</a>
+
+    <div class="thayan-header">
+        <h1>Kasec</h1>
+        <p style="font-size: 1.2em;">Red Wizard of Transmutation</p>
+        <p>Master Shapechanger • Reckless Experimenter • Ritual Participant</p>
+    </div>
+
+    <blockquote>
+        Kasec is a study in controlled chaos. His appearance shifts subtly from day to day—eye color, height, build—as if he can't quite settle on a single form. He wears his crimson robes carelessly, often stained with alchemical substances or scorched from experimental failures. Where other Red Wizards move with calculated precision, Kasec has a nervous energy, constantly gesturing, pacing, touching things. His tattooed head bears patterns of transformation—circles becoming squares, animals mid-metamorphosis, shapes that hurt to look at too long. When the dragon binding ritual requires steady patience, Kasec is the one who gets too close, who pushes too hard, who nearly gets his head bitten off because he just had to see if transmutation could weaken the dragon's natural defenses.
+    </blockquote>
+
+    <div class="stat-block">
+        <h3>Character Overview</h3>
+        <div class="stat-row">
+            <strong>Race:</strong>
+            <span>Human (Mulan) - appears variable</span>
+        </div>
+        <div class="stat-row">
+            <strong>Age:</strong>
+            <span>43 years (appears anywhere from 30-55)</span>
+        </div>
+        <div class="stat-row">
+            <strong>Class:</strong>
+            <span>Wizard (School of Transmutation)</span>
+        </div>
+        <div class="stat-row">
+            <strong>Level:</strong>
+            <span>12</span>
+        </div>
+        <div class="stat-row">
+            <strong>Title:</strong>
+            <span>Red Wizard of Thay</span>
+        </div>
+        <div class="stat-row">
+            <strong>Specialization:</strong>
+            <span>Transmutation (Shapeshifting & Matter Alteration)</span>
+        </div>
+        <div class="stat-row">
+            <strong>Position:</strong>
+            <span>Ritual Participant / Senior Researcher</span>
+        </div>
+        <div class="stat-row">
+            <strong>Location:</strong>
+            <span>Stone Forest Research Outpost</span>
+        </div>
+        <div class="stat-row">
+            <strong>Status:</strong>
+            <span>Active, Reckless, Dangerously Curious</span>
+        </div>
+    </div>
+
+    <h2>Physical Description</h2>
+    <div class="info-box">
+        <p><strong>Note:</strong> Kasec's appearance varies due to his constant use of transmutation magic on himself. Below is his "baseline" appearance when not actively altered.</p>
+
+        <ul>
+            <li><strong>Build:</strong> Medium height (5'10") with a wiry, restless build</li>
+            <li><strong>Head:</strong> Shaved and tattooed with transmutation symbols—geometric shapes morphing into each other, animals mid-transformation, mathematical equations of change</li>
+            <li><strong>Eyes:</strong> Naturally hazel, but frequently appear different colors (blue, green, gold) due to minor transmutations</li>
+            <li><strong>Skin:</strong> Typical Mulan bronze, though often shows odd discolorations from experiments</li>
+            <li><strong>Distinguishing Features:</strong> His left hand has slightly elongated fingers (failed experiment he never fixed); often has small scars that appear and disappear as he heals them with magic</li>
+            <li><strong>Attire:</strong> Crimson robes often stained with alchemical substances, burn marks, acid holes. Pockets stuffed with vials, components, and experimental materials</li>
+            <li><strong>Voice:</strong> Quick and energetic, tends to speak faster when excited (which is often)</li>
+            <li><strong>Mannerisms:</strong> Constantly in motion—pacing, gesturing, touching things. Has difficulty standing still</li>
+        </ul>
+    </div>
+
+    <h2>Background & History</h2>
+
+    <div class="transmutation-box">
+        <h3>A Life of Transformation</h3>
+
+        <p>Kasec has never been satisfied with the way things are. As a child, he took apart toys to see how they worked. As a student, he modified spells to see what would happen. As a Red Wizard, he experiments on everything—matter, energy, living creatures, himself.</p>
+
+        <h4>Early Development</h4>
+        <ul>
+            <li><strong>Age 6:</strong> Accidentally transmuted his pet lizard into a turtle (it stayed that way; he kept it as a pet turtle)</li>
+            <li><strong>Age 12:</strong> Enrolled in Red Wizard academy after transmuting lead into gold (briefly—it reverted after an hour)</li>
+            <li><strong>Age 19:</strong> Earned Red Wizard status, though the ceremony was delayed three times due to experimental accidents</li>
+            <li><strong>Age 24:</strong> Assigned to research division; his superiors decided he was too dangerous for field operations</li>
+            <li><strong>Age 30:</strong> Transferred to Stone Forest outpost to study the broken druidic ritual (they hoped isolated research would limit collateral damage from his experiments)</li>
+            <li><strong>Age 36:</strong> First participated in dragon binding ritual; nearly killed when he approached Putrifax too closely on day four</li>
+        </ul>
+
+        <h4>Notable "Incidents"</h4>
+        <ul>
+            <li>Accidentally transformed an entire research lab into glass (it was supposed to be just one table)</li>
+            <li>Created a permanent rabbit-squirrel hybrid that now breeds in the Thayan countryside</li>
+            <li>Briefly turned himself into an elemental (recovery took three weeks)</li>
+            <li>Modified his own metabolism to not require sleep (reverted after experiencing hallucinations)</li>
+            <li>Transmuted a river into wine for "experimental purposes" (caused diplomatic incident)</li>
+        </ul>
+    </div>
+
+    <h2>School of Magic: Transmutation</h2>
+
+    <div class="transmutation-box">
+        <h3>Master of Change & Alteration</h3>
+
+        <p>Kasec approaches transmutation with the enthusiasm of an artist and the recklessness of a gambler. He's genuinely brilliant at altering matter and form, but his tendency to experiment without adequate safety measures has made him both powerful and dangerous—often simultaneously.</p>
+
+        <h4>Transmutation Mastery Features</h4>
+        <ul>
+            <li><strong>Minor Alchemy:</strong> Can temporarily alter material properties (wood to stone, etc.)</li>
+            <li><strong>Transmuter's Stone:</strong> Has created a special focus that enhances transmutation spells</li>
+            <li><strong>Shapechanger:</strong> Can alter his own form extensively; does so habitually</li>
+            <li><strong>Master Transmuter:</strong> Can consume his Transmuter's Stone to produce powerful effects (raise dead, restore youth, etc.)</li>
+        </ul>
+
+        <h4>Signature Spells</h4>
+
+        <p><strong>Self-Modification:</strong></p>
+        <ul>
+            <li><em>Alter Self</em> - Maintains almost constantly; appearance varies daily</li>
+            <li><em>Polymorph</em> - Regularly uses on himself and others</li>
+            <li><em>True Polymorph</em> - His ultimate goal is to master permanent self-transformation</li>
+            <li><em>Haste</em> - His favorite combat buff, feeds into his frenetic energy</li>
+        </ul>
+
+        <p><strong>Matter Alteration:</strong></p>
+        <ul>
+            <li><em>Fabricate</em> - For creating experimental equipment</li>
+            <li><em>Stone to Flesh / Flesh to Stone</em> - Combat and research applications</li>
+            <li><em>Disintegrate</em> - His solution when transmutation fails</li>
+            <li><em>Transmute Rock</em> - Useful at the Stone Forest</li>
+        </ul>
+
+        <p><strong>Enhancement & Alteration:</strong></p>
+        <ul>
+            <li><em>Enlarge/Reduce</em> - Experiments with size manipulation constantly</li>
+            <li><em>Slow</em> - Combat application</li>
+            <li><em>Time Stop</em> - Recently learned; uses for extended experiment time</li>
+        </ul>
+
+        <h4>Research Focus</h4>
+        <p>Currently obsessed with understanding how the ancient druids transmuted Putrifax's prison. Believes transmutation could weaken the dragon's natural magic resistance. Has theories about using transmutation to alter the dragon's fundamental nature—possibly even making it controllable without constant geas renewal.</p>
+
+        <p><em>This is why he got too close during the ritual—he was trying to cast subtle transmutation spells to "soften" the dragon's will. Putrifax noticed and almost killed him.</em></p>
+    </div>
+
+    <h2>The Near-Death Experience</h2>
+
+    <div class="danger-box">
+        <h3>Day Four of the Binding Ritual</h3>
+
+        <blockquote>
+            <em>From Thessarian Vekt's journal:</em>
+            <p>"When Kasec the Transmuter stepped too close on the fourth day, she nearly took his head off—only the previous year's binding held her back, and barely."</p>
+        </blockquote>
+
+        <h4>What Actually Happened</h4>
+        <p>On the fourth day of last year's dragon binding ritual, Kasec had a theory: what if transmutation magic could temporarily weaken Putrifax's magical resistance? He reasoned that the dragon's natural defenses were partly biological—what if he could alter them at a fundamental level?</p>
+
+        <p>While the other wizards were attempting their geas castings, Kasec slowly edged closer to Putrifax, maintaining what he thought were subtle transmutation spells designed to soften the dragon's mental defenses. The dragon, ancient and cunning, immediately recognized what he was doing.</p>
+
+        <p>Putrifax's head snapped toward Kasec with terrifying speed. Only the previous year's geas—barely holding, already weakening—prevented the dragon from biting him in half. Even restrained, the dragon's acid-dripping maw came within inches of Kasec's face. The transmuter scrambled backward, robes smoking from acid spray, his experimental transmutations shattering under the dragon's raw magical presence.</p>
+
+        <h4>Aftermath</h4>
+        <ul>
+            <li>Kasec suffered minor acid burns (healed himself within hours)</li>
+            <li>The other ritual participants were furious—his interference could have disrupted everyone's attempts</li>
+            <li>Nyth "suggested" he exercise more caution (the enchantment in her words made him nauseous for days)</li>
+            <li>Thessarian wrote a formal complaint to their superiors (nothing came of it)</li>
+            <li>Putrifax has hated Kasec specifically ever since; the dragon tracks him with sulfurous eyes whenever he's present</li>
+        </ul>
+
+        <h4>Kasec's Reaction</h4>
+        <p>He was shaken for about two hours, then became fascinated by what the experience revealed about draconic biology. Now maintains extensive notes on Putrifax's physical and magical properties, gathered from that terrifying moment. Plans to try again this year, but "more carefully."</p>
+
+        <p><em>(Narrator: He will not be more careful.)</em></p>
+    </div>
+
+    <h2>Personality & Traits</h2>
+
+    <div class="info-box">
+        <h3>Character Traits</h3>
+        <ul>
+            <li><strong>Recklessly Curious:</strong> Must know how things work, even if testing might kill him</li>
+            <li><strong>Brilliant but Impulsive:</strong> Genuine genius hampered by poor judgment</li>
+            <li><strong>Energetic:</strong> Constant motion, constant activity, struggles to focus on one thing</li>
+            <li><strong>Experimentalist:</strong> Views everything as a potential subject for transmutation experiments</li>
+            <li><strong>Obsessive:</strong> When something catches his interest, pursues it relentlessly</li>
+            <li><strong>Socially Oblivious:</strong> Doesn't notice or care about political maneuvering</li>
+            <li><strong>Oddly Cheerful:</strong> Maintains enthusiasm even after dangerous failures</li>
+            <li><strong>Addicted to Change:</strong> Literally uncomfortable maintaining any single state for long</li>
+        </ul>
+
+        <h3>Quirks & Mannerisms</h3>
+        <ul>
+            <li>Constantly alters minor aspects of his appearance (eye color, hair length, etc.)</li>
+            <li>Gestures wildly when explaining theories</li>
+            <li>Touches everything to examine texture and composition</li>
+            <li>Takes notes on everything, but his journals are chaotic and barely readable</li>
+            <li>Speaks increasingly fast when excited</li>
+            <li>Has a nervous habit of transmuting small objects (coins, pebbles) between different materials</li>
+            <li>Often forgets to eat or sleep when absorbed in experiments</li>
+        </ul>
+
+        <h3>Motivations</h3>
+        <ul>
+            <li><strong>Primary Goal:</strong> Understand the ultimate nature of transformation and change</li>
+            <li><strong>Immediate Focus:</strong> Crack the secret of the druidic imprisonment ritual</li>
+            <li><strong>Dragon Obsession:</strong> Prove transmutation can affect Putrifax's binding</li>
+            <li><strong>Personal Dream:</strong> Achieve perfect self-transmutation—the ability to become anything</li>
+            <li><strong>Academic Drive:</strong> Be recognized as the foremost transmutation expert in Thay</li>
+        </ul>
+    </div>
+
+    <h2>Current Research Projects</h2>
+
+    <div class="experiment-box">
+        <h3>Active Experiments at Stone Forest</h3>
+
+        <h4>The Jade Studies</h4>
+        <p>Kasec is fascinated by the jade archway fragments. Jade shouldn't be able to contain that much magical energy—yet it did for two thousand years. He's conducting extensive experiments:</p>
+        <ul>
+            <li>Transmuting other minerals into jade (partial success—creates jade-like substance but loses binding properties)</li>
+            <li>Attempting to extract and transfer the binding magic from jade fragments to other materials</li>
+            <li>Testing whether transmuted jade could create new prisons for powerful entities</li>
+            <li>Accidentally created a small perpetual motion device using jade resonance (doesn't understand how, can't replicate)</li>
+        </ul>
+
+        <h4>Dragon Biology Project</h4>
+        <p>Secret project studying Putrifax's biological and magical nature:</p>
+        <ul>
+            <li>Collected acid samples from the ground where the dragon's saliva dripped during rituals</li>
+            <li>Attempting to culture dragon scales from the acid (has created something that might technically be alive—it screams when exposed to light)</li>
+            <li>Theorizing about transmuting normal creatures to have dragon-like properties</li>
+            <li>Developing spells to temporarily suppress draconic magic resistance</li>
+        </ul>
+
+        <h4>Self-Modification Experiments</h4>
+        <p>Ongoing attempts to push his own transmutation abilities further:</p>
+        <ul>
+            <li>Extended the duration he can maintain polymorphed forms (current record: 47 hours as a bear)</li>
+            <li>Experimenting with merging multiple creature types in single form</li>
+            <li>Attempting to develop "transmutation reflex"—automatic shapeshifting in response to danger</li>
+            <li>Testing whether he can transmute his own brain to think faster (results... mixed)</li>
+        </ul>
+
+        <h4>The "Incidents" Log</h4>
+        <p>Recent experimental mishaps:</p>
+        <ul>
+            <li>Turned part of the Stone Forest temporarily purple (it faded after a week)</li>
+            <li>Created a sentient pool of mercury (still at large, location unknown)</li>
+            <li>Briefly polymorphed himself into a dragon (couldn't change back for 6 hours; caused panic)</li>
+            <li>Transmuted his own shadow into solid matter (now has two shadows, one of which occasionally moves independently)</li>
+        </ul>
+    </div>
+
+    <h2>Relationships</h2>
+
+    <div class="info-box">
+        <h3>Key Connections</h3>
+
+        <h4>Tharchion Nyth (Colleague)</h4>
+        <p>Nyth finds Kasec simultaneously useful and irritating. His research produces valuable results, but his recklessness creates problems. She's placed subtle enchantments on him to prevent him from doing anything catastrophically stupid—though they don't always work. Kasec is vaguely aware she manipulates him but doesn't care as long as he can continue his experiments.</p>
+
+        <h4>Thessarian Vekt (Colleague)</h4>
+        <p>Thessarian views Kasec as dangerously reckless and lacking in proper academic rigor. Kasec views Thessarian as boring and overly cautious. They work together during rituals but aren't friends. Kasec sometimes "borrows" Thessarian's research notes without asking, which infuriates the conjurer.</p>
+
+        <h4>Putrifax (Nemesis)</h4>
+        <p>The dragon specifically hates Kasec after the Day Four incident. Putrifax views him as arrogant and foolish—even for a human wizard. If the dragon ever breaks free, Kasec is high on its list of people to dissolve with acid.</p>
+
+        <h4>Stone Forest Garrison</h4>
+        <p>The Thayan guards and staff give Kasec a wide berth. They've learned that being near him when he's experimenting is hazardous. Several guards have standing orders to evacuate certain areas when Kasec enters them.</p>
+
+        <h4>Test Subjects</h4>
+        <p>Kasec occasionally "requires" prisoners or creatures for transmutation experiments. He's not deliberately cruel, but views test subjects as tools for advancing knowledge. Has transmuted several dozen creatures into various forms, with mixed survival rates.</p>
+    </div>
+
+    <h2>Combat Abilities</h2>
+
+    <div class="info-box">
+        <h3>In Battle</h3>
+
+        <h4>Combat Style</h4>
+        <p>Chaotic and unpredictable. Kasec doesn't follow standard combat tactics—he experiments mid-battle, trying new spell combinations and transmutation applications.</p>
+
+        <h4>Tactics</h4>
+        <ul>
+            <li><strong>Opening:</strong> Haste on himself, often Polymorph on enemies or allies</li>
+            <li><strong>Offense:</strong> Disintegrate for serious threats, Polymorph to turn enemies into harmless animals</li>
+            <li><strong>Defense:</strong> Constant Alter Self to change appearance and confuse attackers; Stone Skin; Stoneskin</li>
+            <li><strong>Mobility:</strong> Transmutes terrain to create advantages; might turn floor to mud or walls to fog</li>
+            <li><strong>Desperate Measures:</strong> Will polymorph himself into dangerous creatures; might attempt experimental spells with unpredictable effects</li>
+        </ul>
+
+        <h4>Strengths</h4>
+        <ul>
+            <li>Extremely versatile—transmutation provides options for any situation</li>
+            <li>Unpredictable—hard to anticipate his actions</li>
+            <li>Can alter himself to adapt to threats mid-combat</li>
+            <li>Disintegrate is a powerful tool against single targets</li>
+            <li>Polymorph can neutralize powerful enemies instantly</li>
+        </ul>
+
+        <h4>Weaknesses</h4>
+        <ul>
+            <li>Reckless—might try risky experimental spells in combat</li>
+            <li>Poor tactical discipline—follows curiosity over sound strategy</li>
+            <li>Can be distracted by interesting magical phenomena</li>
+            <li>Physical stats are average—relies entirely on magic</li>
+            <li>Might polymorph into forms he can't control well</li>
+        </ul>
+    </div>
+
+    <h2>Plot Hooks & Adventure Ideas</h2>
+
+    <div class="session-note">
+        <h3>Ways to Involve Kasec</h3>
+
+        <h4>Experiment Gone Wrong</h4>
+        <p>One of Kasec's transmutation experiments escapes the Stone Forest—perhaps a creature he polymorphed into something dangerous, or a transmuted object that gained sentience. PCs must deal with it before it causes havoc. Kasec might help... or make things worse by trying to recapture his creation "for science."</p>
+
+        <h4>Desperate Research</h4>
+        <p>Kasec, obsessed with understanding the jade binding, secretly contacts PCs who've shown knowledge of ancient magic. Offers to trade Thayan intelligence for help with his research. Doesn't care about politics—just wants to understand how the druidic ritual worked.</p>
+
+        <h4>The Shapeshifter</h4>
+        <p>PCs encounter someone who seems suspicious. Later they discover it's Kasec in a polymorphed form, conducting "field research." He might be infiltrating somewhere, testing a new transformation, or just seeing if people notice. Could be ally or complication depending on what he's studying.</p>
+
+        <h4>Accidental Sabotage</h4>
+        <p>During the dragon binding ritual, Kasec plans to try his transmutation theory again—and this time he's asked the PCs to help create a distraction. Or perhaps the PCs are trying to disrupt the ritual anyway, and Kasec's reckless experiment accidentally aids them.</p>
+
+        <h4>The Transformation Plague</h4>
+        <p>One of Kasec's experiments has created a transmutation effect that's spreading. People and objects are randomly changing form. PCs must track down the source and stop it. Kasec is mortified (his only emotion resembling shame) and might actually cooperate to fix his mistake.</p>
+
+        <h4>Kidnapped Genius</h4>
+        <p>Someone (perhaps the Harpers, perhaps someone else) has kidnapped Kasec to force him to create transmutation effects for them. PCs might be hired to rescue him, or to ensure the kidnapping succeeds. Either way, dealing with a captive transmutation specialist who still has access to magic is... challenging.</p>
+    </div>
+
+    <h2>Roleplaying Kasec</h2>
+
+    <div class="info-box">
+        <h3>Voice & Mannerisms</h3>
+
+        <h4>Speech Patterns</h4>
+        <ul>
+            <li>Speaks quickly, often speeding up when excited</li>
+            <li>Jumps from topic to topic following tangential associations</li>
+            <li>Uses technical terminology excessively</li>
+            <li>Often doesn't complete sentences before starting new ones</li>
+            <li>Forgets social niceties when absorbed in explanations</li>
+        </ul>
+
+        <h4>Sample Dialogue</h4>
+
+        <blockquote>
+            <strong>Meeting PCs:</strong><br>
+            <em>*barely glances up from notes*</em> "Hmm? Oh, yes, intruders, security breach, very serious. Listen, have you noticed anything unusual about the limestone here? The molecular structure is—wait, your armor, that's interesting metalwork. May I?" <em>*reaches out to touch it without waiting for permission*</em>
+        </blockquote>
+
+        <blockquote>
+            <strong>When asked about experiments:</strong><br>
+            <em>*eyes light up*</em> "Oh! Oh, you want to see? I've been working on transmuting the fundamental properties of—no, wait, that one exploded. But this!" <em>*pulls out vial*</em> "This is technically a liquid and a solid simultaneously, which shouldn't be possible, but if you apply transmutation theory to the phase transition barriers—are you following this? Your eyes glazed over. Anyway, it's fascinating!"
+        </blockquote>
+
+        <blockquote>
+            <strong>About the dragon incident:</strong><br>
+            <em>*waves hand dismissively*</em> "Yes, yes, nearly died, very dramatic. But do you know what I learned? The dragon's magic resistance isn't uniform—it fluctuates based on emotional state! When it's angry, the resistance actually increases by approximately—according to my measurements—fourteen percent! If we could modulate that somehow, perhaps through transmuting the emotional regulatory centers of the—what? Oh, you think I'm insane. Everyone thinks that. They'll see."
+        </blockquote>
+
+        <blockquote>
+            <strong>Making a deal:</strong><br>
+            "You want something from me? Information? Research? I can do that. But I need something in return—I need a sample. Just a small sample. Blood, preferably, but hair works. Scales if you have them. Oh, you don't have scales. Could I try transmuting you to have scales? No? Fine, fine. Just the blood then. For science!"
+        </blockquote>
+    </div>
+
+    <h2>DM Notes</h2>
+
+    <div class="info-box">
+        <h3>Using Kasec in Your Campaign</h3>
+
+        <h4>Role Options</h4>
+        <ul>
+            <li><strong>Comic Relief Villain:</strong> Dangerous but not malicious; chaos incarnate</li>
+            <li><strong>Reluctant Ally:</strong> Might help PCs if their goals align with his research interests</li>
+            <li><strong>Wild Card:</strong> Unpredictable element in any scenario involving the Stone Forest</li>
+            <li><strong>Source of Complications:</strong> His experiments create problems that need solving</li>
+        </ul>
+
+        <h4>Scaling Encounters</h4>
+        <ul>
+            <li><strong>Low Level:</strong> PCs deal with consequences of his experiments (transmuted creatures, unstable effects)</li>
+            <li><strong>Mid Level:</strong> Might encounter him directly; he's not particularly hostile but causes problems</li>
+            <li><strong>High Level:</strong> Can be fought directly, though he might flee to continue experiments elsewhere</li>
+        </ul>
+
+        <h4>Redemption Potential</h4>
+        <p>Kasec is actually the most redeemable Red Wizard in this group. He's not particularly evil—just obsessively curious and lacking in common sense. If offered a way to continue his research without Thayan oversight (and with better safety protocols), he might defect. He genuinely doesn't care about politics or conquest—he just wants to experiment.</p>
+
+        <h4>Secrets & Complications</h4>
+        <ul>
+            <li>Kasec has accidentally created a stable clone of himself (it escaped; whereabouts unknown)</li>
+            <li>One of his experiments created a permanent transmutation field around the Stone Forest—objects sometimes spontaneously change form</li>
+            <li>He's closer to understanding the jade binding than anyone realizes, but his notes are so chaotic no one else can decipher them</li>
+            <li>Has unwittingly transmuted part of his own soul—not sure what the long-term effects will be</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <a href="index.html" class="back-link">← Back to Campaign Hub</a>
+
+</body>
+</html>

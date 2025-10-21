@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnus Irongrip - Level 3 Bard Character Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .character-sheet {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #faf8f3;
+            padding: 30px;
+            border: 3px solid #8b4513;
+            border-radius: 10px;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background-color: #e6dcc8;
+            border: 2px solid #8b4513;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .stat-box .stat-name {
+            font-weight: bold;
+            font-size: 0.8em;
+            color: #654321;
+        }
+        .stat-box .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .stat-box .stat-modifier {
+            font-size: 1em;
+            color: #2c5f77;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #e6dcc8;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            margin: 10px 0;
+        }
+        .skill-item {
+            padding: 5px;
+            background-color: #f5f0e6;
+            border-left: 3px solid #4682b4;
+        }
+        .skill-item.proficient {
+            background-color: #e6f3ff;
+            border-left: 3px solid #2c5f77;
+            font-weight: bold;
+        }
+        .spell-list {
+            background-color: #f0f8ff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #4682b4;
+        }
+        .feature-box {
+            background-color: #fff5e6;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #cd7f32;
+        }
+        .equipment-list {
+            background-color: #f5f0e6;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #654321;
+            border-bottom: 2px solid #8b4513;
+            padding-bottom: 5px;
+        }
+        .proficiency-bonus {
+            display: inline-block;
+            background-color: #2c5f77;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="character-sheet">
+        <h1 style="text-align: center; color: #654321;">Magnus Irongrip</h1>
+        <p style="text-align: center; font-style: italic; color: #2c5f77;">Level 3 Mountain Dwarf Bard (College of Lore)</p>
+
+        <div class="info-row">
+            <span><strong>Race:</strong> Mountain Dwarf</span>
+            <span><strong>Class:</strong> Bard 3</span>
+            <span><strong>Background:</strong> Harper Agent</span>
+        </div>
+
+        <div class="info-row">
+            <span><strong>Age:</strong> 142</span>
+            <span><strong>Alignment:</strong> Lawful Good</span>
+            <span><strong>Proficiency Bonus:</strong> <span class="proficiency-bonus">+2</span></span>
+        </div>
+
+        <h2>Ability Scores</h2>
+        <div class="stat-grid">
+            <div class="stat-box">
+                <div class="stat-name">STR</div>
+                <div class="stat-value">14</div>
+                <div class="stat-modifier">+2</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-name">DEX</div>
+                <div class="stat-value">10</div>
+                <div class="stat-modifier">+0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-name">CON</div>
+                <div class="stat-value">16</div>
+                <div class="stat-modifier">+3</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-name">INT</div>
+                <div class="stat-value">12</div>
+                <div class="stat-modifier">+1</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-name">WIS</div>
+                <div class="stat-value">13</div>
+                <div class="stat-modifier">+1</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-name">CHA</div>
+                <div class="stat-value">16</div>
+                <div class="stat-modifier">+3</div>
+            </div>
+        </div>
+
+        <h2>Combat Stats</h2>
+        <div class="info-row">
+            <span><strong>AC:</strong> 15 (Chain Shirt)</span>
+            <span><strong>Initiative:</strong> +0</span>
+            <span><strong>Speed:</strong> 25 ft.</span>
+        </div>
+        <div class="info-row">
+            <span><strong>Hit Points:</strong> 24 (3d8 + 9)</span>
+            <span><strong>Hit Dice:</strong> 3d8</span>
+        </div>
+
+        <h2>Saving Throws</h2>
+        <div class="skills-grid">
+            <div class="skill-item">STR +2</div>
+            <div class="skill-item proficient">DEX +2 (Proficient)</div>
+            <div class="skill-item">CON +3</div>
+            <div class="skill-item">INT +1</div>
+            <div class="skill-item">WIS +1</div>
+            <div class="skill-item proficient">CHA +5 (Proficient)</div>
+        </div>
+
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Acrobatics +0</div>
+            <div class="skill-item">Animal Handling +1</div>
+            <div class="skill-item">Arcana +1</div>
+            <div class="skill-item">Athletics +2</div>
+            <div class="skill-item proficient">Deception +5 (Proficient)</div>
+            <div class="skill-item proficient">History +3 (Proficient)</div>
+            <div class="skill-item proficient">Insight +3 (Proficient)</div>
+            <div class="skill-item">Intimidation +3</div>
+            <div class="skill-item">Investigation +1</div>
+            <div class="skill-item">Medicine +1</div>
+            <div class="skill-item">Nature +1</div>
+            <div class="skill-item proficient">Perception +3 (Proficient)</div>
+            <div class="skill-item proficient">Performance +5 (Proficient)</div>
+            <div class="skill-item proficient">Persuasion +5 (Proficient)</div>
+            <div class="skill-item">Religion +1</div>
+            <div class="skill-item">Sleight of Hand +0</div>
+            <div class="skill-item proficient">Stealth +2 (Proficient)</div>
+            <div class="skill-item">Survival +1</div>
+        </div>
+
+        <h2>Racial Traits (Mountain Dwarf)</h2>
+        <div class="feature-box">
+            <p><strong>Darkvision:</strong> 60 feet</p>
+            <p><strong>Dwarven Resilience:</strong> Advantage on saving throws against poison, resistance to poison damage</p>
+            <p><strong>Dwarven Combat Training:</strong> Proficiency with battleaxe, handaxe, light hammer, warhammer</p>
+            <p><strong>Tool Proficiency:</strong> Proficiency with one artisan's tool (Smith's Tools)</p>
+            <p><strong>Stonecunning:</strong> +2 to History checks related to stonework</p>
+            <p><strong>Dwarven Armor Training:</strong> Proficiency with light and medium armor</p>
+            <p><strong>Languages:</strong> Common, Dwarvish</p>
+        </div>
+
+        <h2>Class Features (Bard - College of Lore)</h2>
+        <div class="feature-box">
+            <p><strong>Spellcasting:</strong> Charisma-based spellcasting (Spell Save DC 13, Spell Attack +5)</p>
+            <p><strong>Bardic Inspiration (d6):</strong> 3 uses per short/long rest. Bonus action to grant ally a d6 die to add to ability check, attack roll, or saving throw within 10 minutes.</p>
+            <p><strong>Jack of All Trades:</strong> Add half proficiency bonus (+1) to any ability check that doesn't already use proficiency</p>
+            <p><strong>Song of Rest (d6):</strong> Allies who use Hit Dice during short rest recover an extra 1d6 HP</p>
+            <p><strong>Expertise:</strong> Double proficiency bonus for Performance and Persuasion (+4 total, so +7 to these skills)</p>
+            <p><strong>Bonus Proficiencies (Lore):</strong> Proficiency in History, Insight, and Perception</p>
+            <p><strong>Cutting Words:</strong> Reaction to subtract Bardic Inspiration die from enemy's attack roll, ability check, or damage roll (within 60 ft.)</p>
+        </div>
+
+        <h2>Background: Harper Agent</h2>
+        <div class="feature-box">
+            <p><strong>Feature - Harper Network:</strong> Can invoke Harper connections to gain information, safe passage, or shelter from Harper agents and sympathizers</p>
+            <p><strong>Languages:</strong> One additional language (Elvish)</p>
+            <p><strong>Skills:</strong> Already included in skill list (Insight, Stealth)</p>
+            <p><strong>Tool Proficiencies:</strong> Disguise kit, one musical instrument (Lute)</p>
+        </div>
+
+        <h2>Spellcasting</h2>
+        <div class="info-row">
+            <span><strong>Spell Save DC:</strong> 13</span>
+            <span><strong>Spell Attack:</strong> +5</span>
+            <span><strong>Spells Known:</strong> 6</span>
+        </div>
+        <div class="info-row">
+            <span><strong>Cantrips:</strong> 2</span>
+            <span><strong>1st Level Slots:</strong> 4</span>
+            <span><strong>2nd Level Slots:</strong> 2</span>
+        </div>
+
+        <div class="spell-list">
+            <h3>Cantrips (At Will)</h3>
+            <ul>
+                <li><strong>Vicious Mockery:</strong> Target makes WIS save (DC 13) or takes 1d4 psychic damage and disadvantage on next attack roll</li>
+                <li><strong>Prestidigitation:</strong> Minor magical tricks and effects</li>
+            </ul>
+
+            <h3>1st Level Spells (4 slots)</h3>
+            <ul>
+                <li><strong>Cure Wounds:</strong> Heal 1d8 + 3 HP (touch)</li>
+                <li><strong>Detect Magic:</strong> Sense magic within 30 feet for 10 minutes (concentration, ritual)</li>
+                <li><strong>Identify:</strong> Learn properties of magical item (ritual)</li>
+                <li><strong>Disguise Self:</strong> Change appearance for 1 hour</li>
+            </ul>
+
+            <h3>2nd Level Spells (2 slots)</h3>
+            <ul>
+                <li><strong>Suggestion:</strong> Magically suggest course of action (concentration)</li>
+                <li><strong>Lesser Restoration:</strong> End one disease or condition (blindness, deafness, paralysis, poison)</li>
+            </ul>
+        </div>
+
+        <h2>Weapons</h2>
+        <div class="equipment-list">
+            <p><strong>Battleaxe:</strong> +4 to hit, 1d8+2 slashing (versatile 1d10+2)</p>
+            <p><strong>Handaxe:</strong> +4 to hit, 1d6+2 slashing (light, thrown 20/60)</p>
+            <p><strong>Light Crossbow:</strong> +2 to hit, 1d8 piercing (ammunition, range 80/320, loading, two-handed)</p>
+        </div>
+
+        <h2>Equipment & Gear</h2>
+        <div class="equipment-list">
+            <h3>Worn/Carried</h3>
+            <ul>
+                <li>Chain shirt armor</li>
+                <li>Battleaxe (family heirloom from Earthfast)</li>
+                <li>Handaxe</li>
+                <li>Light crossbow with 20 bolts</li>
+                <li>Lute (carved from Earthfast oak, inlaid with silver)</li>
+                <li>Explorer's pack</li>
+                <li>Disguise kit</li>
+            </ul>
+
+            <h3>Earthfast Relics</h3>
+            <ul>
+                <li>Irongrip clan banner (scorched but intact)</li>
+                <li>Father's signet ring (bears Irongrip seal)</li>
+                <li>Book of clan songs and stories</li>
+                <li>Smith's tools from family forge</li>
+                <li>Small stone carved with Earthfast's founding runes</li>
+            </ul>
+
+            <h3>Ship Supplies (Aboard the Silt Runner)</h3>
+            <ul>
+                <li>Captain's quarters with personal effects</li>
+                <li>Navigation tools and charts</li>
+                <li>Trade goods and cargo</li>
+                <li>Hidden Harper communications and supplies</li>
+            </ul>
+
+            <h3>Wealth</h3>
+            <p>150 gold pieces (from trade and Harper stipend)</p>
+        </div>
+
+        <h2>Personality & Traits</h2>
+        <div class="feature-box">
+            <p><strong>Personality Traits:</strong></p>
+            <ul>
+                <li>I judge people by their actions, not their words</li>
+                <li>I express myself through music and song, especially when words fail</li>
+            </ul>
+
+            <p><strong>Ideals:</strong></p>
+            <ul>
+                <li><strong>Memory:</strong> Those who came before deserve to be remembered (Good)</li>
+                <li><strong>Protection:</strong> I will defend those who cannot defend themselves (Good)</li>
+            </ul>
+
+            <p><strong>Bonds:</strong></p>
+            <ul>
+                <li>I am the last of the Irongrip clan - their memory lives through me</li>
+                <li>The Silt Runner and her crew are my new family</li>
+                <li>I am sworn to the Harpers and their cause</li>
+            </ul>
+
+            <p><strong>Flaws:</strong></p>
+            <ul>
+                <li>I carry survivor's guilt from Earthfast's fall</li>
+                <li>My desire for vengeance against Putrifax could cloud my judgment</li>
+            </ul>
+        </div>
+
+        <h2>Notes & Backstory Summary</h2>
+        <div class="feature-box">
+            <p><strong>Origin:</strong> Last survivor of the Irongrip clan of Earthfast, a dwarven city destroyed by the black dragon Putrifax 5 years ago.</p>
+
+            <p><strong>Current Role:</strong> Captain of the merchant ship "The Silt Runner" and active Harper agent monitoring the northern fjord regions.</p>
+
+            <p><strong>Heritage:</strong> Descendant of the dwarf who slew the white dragon of Giantspire Peak 700 years ago with the legendary spear Snowpiercer. His family established mines in Giantspire before losing them to orcs 500 years ago.</p>
+
+            <p><strong>Motivations:</strong> Preserve Earthfast's memory through song and story, protect others from similar tragedies, eventually seek vengeance against Putrifax, and possibly reclaim his family's ancestral mine in Giantspire Peak.</p>
+
+            <p><strong>Connections:</strong> Works closely with Skylark (Harper ranger). Known and trusted in Fjord's End. Has contacts throughout the Harper network and among Earthfast refugees.</p>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px;">
+            <a href="Magnus_Irongrip.html" style="color: #4682b4; font-weight: bold;">← Back to Full Character Profile</a> |
+            <a href="index.html" style="color: #4682b4; font-weight: bold;">Campaign Hub</a>
+        </p>
+    </div>
+</body>
+</html>

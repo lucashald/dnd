@@ -1,0 +1,717 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>📖 Campaign Lore &amp; Content</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2556c950-ec3f-811a-a4a1-c935049f314d" class="page sans"><header><h1 class="page-title">📖 Campaign Lore &amp; Content</h1><p class="page-description"></p></header><div class="page-body"><h1 id="2556c950-ec3f-8129-9545-f527595833aa" class=""><mark class="highlight-default">Campaign Content Archive</mark></h1><h2 id="2556c950-ec3f-816d-833f-f6b4105d5948" class=""><mark class="highlight-default">Read-Aloud Campaign Introduction</mark></h2><p id="2556c950-ec3f-8195-95f9-fd10130a9bfa" class=""><mark class="highlight-default">The morning mist rises from the Easting Reach, carrying the salt tang of distant seas and the promise of adventure. You find yourselves in one of Faerûn&#x27;s most remote and dangerous frontiers—the northeastern reaches where the ancient Rawlinswood meets the towering Giantspire Mountains. </mark></p><p id="2556c950-ec3f-81cc-bfcd-d56a764ef35f" class="">
+</p><p id="2556c950-ec3f-8144-a45a-ee53faf29a4b" class=""><mark class="highlight-default">This is a land shaped by ice and time, where the dramatic Easting Reach fjord cuts like a giant&#x27;s sword through mountain and forest, its dark waters stretching nearly a hundred miles inland from the distant sea. To the south and west spreads the vast Rawlinswood, but here, in its northeastern reaches, the forest has a darker name—the Dunwood. Where once druids walked beneath healthy boughs, now shadows linger too long and the very air carries whispers of ancient wrongdoing.</mark></p><p id="2556c950-ec3f-81c2-926b-c94680e21374" class="">
+</p><p id="2556c950-ec3f-811e-9059-e2324bd56fce" class=""><mark class="highlight-default">Eastward, the Giantspire Mountains thrust toward the sky, their peaks crowned with snow even in summer. Among these heights lie wonders and terrors in equal measure: limestone formations that rise like stone forests, caves that plunge into the earth&#x27;s very bones, and passes controlled by orc clans who have learned to survive where softer folk would perish.</mark></p><p id="2556c950-ec3f-8154-ab33-f23f2c1dca30" class="">
+</p><p id="2556c950-ec3f-81cf-a1aa-ee4b0517ab9f" class=""><mark class="highlight-default">This is a region forgotten by kings and avoided by armies—too remote for conquest, too dangerous for casual travel, too proud for easy rule. The scattered settlements that dot the landscape are islands of flickering light in an ocean of wilderness, and whatever brought you to this remote corner of the world, you sense that your fate—and perhaps the fate of all who dwell in these lands—hangs in the balance.</mark></p><p id="2556c950-ec3f-8186-849e-e54b26f87cf7" class="">
+</p><p id="2556c950-ec3f-81a4-a532-d9516fad8263" class=""><mark class="highlight-default">The frontier awaits. The choice of what happens next is yours.</mark></p><p id="2556c950-ec3f-8110-95a8-eba8640cdca2" class="">
+</p><h2 id="2556c950-ec3f-8150-bc04-f1305ab13eea" class=""><mark class="highlight-default">Key Campaign Documents</mark></h2><h3 id="2556c950-ec3f-815e-9432-d5da0fba3409" class=""><mark class="highlight-default">Putrifax&#x27;s Complete History</mark></h3><ul id="2556c950-ec3f-81c9-8244-ffb00a9d50db" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Ancient Period (800-1000 DR)</strong></mark><mark class="highlight-default">: Terror of the Northern Reaches</mark></li></ul><ul id="2556c950-ec3f-81cb-8b06-e790f73f85d3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>The Druidic Alliance</strong></mark><mark class="highlight-default">: Coalition against the dragon threat  </mark></li></ul><ul id="2556c950-ec3f-81fa-bd82-c64947e13532" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>The First Binding (997 DR)</strong></mark><mark class="highlight-default">: Archdruid Selenthe Moonwhisper&#x27;s sacrifice</mark></li></ul><ul id="2556c950-ec3f-8171-9dab-e8501b49b5a0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>The Long Sleep</strong></mark><mark class="highlight-default">: 500 years of dormancy</mark></li></ul><ul id="2556c950-ec3f-81b5-a7d4-e07d55cfd23f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Thayan Discovery (1456 DR)</strong></mark><mark class="highlight-default">: Rediscovering the legend</mark></li></ul><ul id="2556c950-ec3f-81e9-898d-eadcb9e21461" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>36 Years of Servitude</strong></mark><mark class="highlight-default">: Current situation under Red Wizard control</mark></li></ul><p id="2556c950-ec3f-81fe-96d4-e4eb7710640b" class="">
+</p><h3 id="2556c950-ec3f-8146-b94a-c7a5cb2cdf08" class=""><mark class="highlight-default">Operation Songbreak Details</mark></h3><ul id="2556c950-ec3f-8130-8ed5-d9914f9276d7" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Objective</strong></mark><mark class="highlight-default">: Disrupt annual dragon binding ritual</mark></li></ul><ul id="2556c950-ec3f-8104-9060-cbbcbdb7ec16" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Timeline</strong></mark><mark class="highlight-default">: Winter solstice ceremony (15th of Nightal)</mark></li></ul><ul id="2556c950-ec3f-81b2-a261-d682cd53aa34" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Key Personnel</strong></mark><mark class="highlight-default">: Moonwhisper, Whisperwind, Fledgling (double agent)</mark></li></ul><ul id="2556c950-ec3f-8180-ae48-efc0341826d6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Strategic Approach</strong></mark><mark class="highlight-default">: &quot;Sometimes the enemy of evil is just a different kind of evil&quot;</mark></li></ul><ul id="2556c950-ec3f-811b-8196-d6cef4226cce" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Success Metrics</strong></mark><mark class="highlight-default">: Dragon freedom, Thayan disruption, regional stabilization</mark></li></ul><p id="2556c950-ec3f-81cc-ac62-d15c9049fb98" class="">
+</p><h3 id="2556c950-ec3f-81a4-942c-c7a149bc9596" class=""><mark class="highlight-default">Thornfield&#x27;s Field Guide Excerpts</mark></h3><p id="2556c950-ec3f-8138-9f35-d3c847e70a71" class=""><em><mark class="highlight-default">From the journal of Aldric Thornfield, discovered on his remains</mark></em></p><ul id="2556c950-ec3f-81db-93af-ef5a40c4658a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Flora</strong></mark><mark class="highlight-default">: Ironbark Oak, Shadowleaf Maple, Bone Birch, dangerous plants</mark></li></ul><ul id="2556c950-ec3f-81f9-af2b-ef1ff7b18049" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Fauna</strong></mark><mark class="highlight-default">: Shadow Deer, Dire Wolves, Corrupted Bears, supernatural manifestations  </mark></li></ul><ul id="2556c950-ec3f-81c3-8f83-cff265d41965" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Hazards</strong></mark><mark class="highlight-default">: Demonic corruption, phantom paths, whisper madness, toxic fog</mark></li></ul><ul id="2556c950-ec3f-81c3-9e3a-ebf14ca08647" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Survival Recommendations</strong></mark><mark class="highlight-default">: Travel in groups, stick to game trails, trust instincts</mark></li></ul><p id="2556c950-ec3f-8181-a285-f7d7bf481106" class="">
+</p><h2 id="2556c950-ec3f-8155-b02c-d2b0744d545d" class=""><mark class="highlight-default">Campaign Tracking</mark></h2><h3 id="2556c950-ec3f-816d-8292-d645dd58bc5f" class=""><mark class="highlight-default">Current Status</mark></h3><ul id="2556c950-ec3f-8175-b14d-d7df0e1988cb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Date</strong></mark><mark class="highlight-default">: 1st of Nightal, 1492 DR</mark></li></ul><ul id="2556c950-ec3f-81f4-b43a-ece721d12ee9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Days to Ritual</strong></mark><mark class="highlight-default">: 14 days until winter solstice</mark></li></ul><ul id="2556c950-ec3f-8117-9a15-e4d94318e971" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Party Location</strong></mark><mark class="highlight-default">: Approaching the region</mark></li></ul><ul id="2556c950-ec3f-81a8-b145-e3f1e47053a5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Harper Status</strong></mark><mark class="highlight-default">: Operation Songbreak in preparation phase</mark></li></ul><ul id="2556c950-ec3f-814d-a8c6-c60cb9dac8b9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Thayan Activity</strong></mark><mark class="highlight-default">: Establishing seasonal camps near Stone Forest</mark></li></ul><p id="2556c950-ec3f-81c8-873a-dbb11faa0462" class="">
+</p><h3 id="2556c950-ec3f-8100-bd66-c06e1ceaa492" class=""><mark class="highlight-default">Faction Relationships</mark></h3><ul id="2556c950-ec3f-81c9-a0d7-cf18fc78a9cc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Harpers</strong></mark><mark class="highlight-default">: Primary allies, provide mission and support</mark></li></ul><ul id="2556c950-ec3f-816d-8535-c5398cf84b3b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Local Settlements</strong></mark><mark class="highlight-default">: Independent, suspicious but helpful to proven allies</mark></li></ul><ul id="2556c950-ec3f-81bb-977f-dc149394f112" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Orc Clans</strong></mark><mark class="highlight-default">: Mixed - Grimjaw&#x27;s Hold open to negotiation, Bloodaxe Clans hostile</mark></li></ul><ul id="2556c950-ec3f-817b-b8be-db04aa32a26d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Red Wizards</strong></mark><mark class="highlight-default">: Primary antagonists, well-organized and dangerous</mark></li></ul><p id="2556c950-ec3f-81ce-ac1f-c5a200023090" class="">
+</p><h2 id="2556c950-ec3f-811e-b375-e04250995051" class=""><mark class="highlight-default">Adventure Resources</mark></h2><h3 id="2556c950-ec3f-81bf-81a3-fac112a31d45" class=""><mark class="highlight-default">Session Templates</mark></h3><ul id="2556c950-ec3f-8127-93f8-ce418e048cee" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Travel Encounters</strong></mark><mark class="highlight-default">: Forest threats, weather, supernatural phenomena</mark></li></ul><ul id="2556c950-ec3f-8149-8c6f-f637515d02ec" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Settlement Interactions</strong></mark><mark class="highlight-default">: Local politics, resource gathering, information</mark></li></ul><ul id="2556c950-ec3f-8133-b82a-d3f388e96ced" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Dungeon Exploration</strong></mark><mark class="highlight-default">: Cave systems, ancient ruins, magical sites</mark></li></ul><ul id="2556c950-ec3f-817e-89f9-efa8a740c1a5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Political Intrigue</strong></mark><mark class="highlight-default">: Faction negotiations, double agents, moral choices</mark></li></ul><p id="2556c950-ec3f-816b-a828-f318a87c8752" class="">
+</p><h3 id="2556c950-ec3f-81e7-bda6-dfcdb203cafd" class=""><mark class="highlight-default">Scaling Guidelines</mark></h3><ul id="2556c950-ec3f-81e0-8f85-e48ea2d1b1ce" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>3-4 Players</strong></mark><mark class="highlight-default">: Reduce enemy numbers, focus on strategy</mark></li></ul><ul id="2556c950-ec3f-81c0-97c4-d55f3635e2b5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>5-6 Players</strong></mark><mark class="highlight-default">: Use encounters as written</mark></li></ul><ul id="2556c950-ec3f-81f5-ac39-fc7c225e8641" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Lower Levels</strong></mark><mark class="highlight-default">: Emphasize survival and resource management</mark></li></ul><ul id="2556c950-ec3f-81f8-9b1d-eef56109a206" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Higher Levels</strong></mark><mark class="highlight-default">: Add political complexity and moral dilemmas</mark></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

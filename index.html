@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fjord's End - Campaign Summary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Fjord's End Campaign Summary</h1>
+    <p><em>A comprehensive reference guide for your session</em></p>
+
+    <div class="info-box" style="background-color: #2c3e50; color: #ecf0f1; padding: 20px; margin-bottom: 20px;">
+        <h3 style="margin-top: 0; color: #ecf0f1;">Dice Roller</h3>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
+            <button onclick="rollDice(4)" style="padding: 10px 15px; cursor: pointer; background-color: #3498db; color: white; border: none; border-radius: 5px; font-weight: bold;">d4</button>
+            <button onclick="rollDice(6)" style="padding: 10px 15px; cursor: pointer; background-color: #3498db; color: white; border: none; border-radius: 5px; font-weight: bold;">d6</button>
+            <button onclick="rollDice(8)" style="padding: 10px 15px; cursor: pointer; background-color: #3498db; color: white; border: none; border-radius: 5px; font-weight: bold;">d8</button>
+            <button onclick="rollDice(10)" style="padding: 10px 15px; cursor: pointer; background-color: #3498db; color: white; border: none; border-radius: 5px; font-weight: bold;">d10</button>
+            <button onclick="rollDice(12)" style="padding: 10px 15px; cursor: pointer; background-color: #3498db; color: white; border: none; border-radius: 5px; font-weight: bold;">d12</button>
+            <button onclick="rollDice(20)" style="padding: 10px 15px; cursor: pointer; background-color: #e74c3c; color: white; border: none; border-radius: 5px; font-weight: bold;">d20</button>
+            <button onclick="rollDice(100)" style="padding: 10px 15px; cursor: pointer; background-color: #9b59b6; color: white; border: none; border-radius: 5px; font-weight: bold;">d100</button>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <input type="number" id="numDice" min="1" max="20" value="1" style="width: 60px; padding: 5px; margin-right: 5px;">
+            <span style="margin-right: 10px;">dice</span>
+            <input type="number" id="modifier" placeholder="Modifier" style="width: 80px; padding: 5px;">
+            <span style="margin-left: 5px; font-size: 0.9em; opacity: 0.8;">(+/- modifier)</span>
+        </div>
+        <div id="diceResult" style="font-size: 1.5em; font-weight: bold; min-height: 40px; padding: 10px; background-color: rgba(255,255,255,0.1); border-radius: 5px; margin-top: 10px;"></div>
+    </div>
+
+    <script>
+        function rollDice(sides) {
+            const numDice = parseInt(document.getElementById('numDice').value) || 1;
+            const modifier = parseInt(document.getElementById('modifier').value) || 0;
+
+            let rolls = [];
+            let total = 0;
+
+            for (let i = 0; i < numDice; i++) {
+                const roll = Math.floor(Math.random() * sides) + 1;
+                rolls.push(roll);
+                total += roll;
+            }
+
+            const finalTotal = total + modifier;
+            const modifierText = modifier !== 0 ? ` ${modifier >= 0 ? '+' : ''}${modifier}` : '';
+            const resultText = numDice > 1 ? `[${rolls.join(', ')}] = ${total}${modifierText}` : `${total}${modifierText}`;
+
+            document.getElementById('diceResult').innerHTML = `
+                <div>Rolling ${numDice}d${sides}${modifierText}: <span style="color: #2ecc71;">${finalTotal}</span></div>
+                ${numDice > 1 || modifier !== 0 ? `<div style="font-size: 0.7em; opacity: 0.8; margin-top: 5px;">${resultText}</div>` : ''}
+            `;
+        }
+    </script>
+
+    <div class="info-box">
+        <h3>Quick Reference</h3>
+        <span class="location-stat">Population: ~120</span>
+        <span class="location-stat">Political Control: Independent</span>
+        <span class="location-stat">Region: Fjord Area</span>
+        <span class="location-stat">Threat Level: Safe</span>
+        <span class="location-stat">Type: Settlement</span>
+    </div>
+
+    <h2>Location Overview</h2>
+
+    <h3>The Elvish Name: <span class="elvish">Earcilyanór</span></h3>
+    <p>Pronounced <em>Earcilyanoˊr</em>, meaning "Sea-Gorge-Land" in Elvish.</p>
+
+    <h3>Description</h3>
+    <p>Small village at the head of Easting Reach fjord. Natural harbor with excellent defensive position. Recognized as a potential Harper safe haven.</p>
+
+    <blockquote>
+        The wind cuts sharp across the dark waters of the Eastern Fjord as your ship rounds the final headland. A small village clings to a narrow crescent of green between towering mountain walls and the fjord's deep waters. Towering over the village is the mist shrouded Giantspire Peak.
+    </blockquote>
+
+    <h3>Geography & Setting</h3>
+    <ul>
+        <li><strong>Location:</strong> Head of the Eastern Fjord (Easting Reach)</li>
+        <li><strong>Terrain:</strong> Narrow crescent of green land between towering mountain walls and deep fjord waters</li>
+        <li><strong>Landmark:</strong> The mist-shrouded Giantspire Peak looms over the village <a href="Giantspire_Peak.html" style="color: #4682b4; font-weight: bold;">→ View Giantspire Peak History</a></li>
+        <li><strong>Buildings:</strong> Approximately 30 buildings of weathered timber and stone</li>
+        <li><strong>Harbor:</strong> Natural harbor with deep waters suitable for seafaring vessels</li>
+        <li><strong>Harbor Fees:</strong> 2 silver pieces for visiting vessels</li>
+    </ul>
+
+    <div class="section-divider"></div>
+
+    <h2>Player Characters</h2>
+
+    <div class="npc-card">
+        <h3>Ember - Tabaxi Warlock & Selunite Minister</h3>
+        <p><strong>Race:</strong> Tabaxi</p>
+        <p><strong>Class:</strong> Warlock (Celestial Patron - Hollyphant)</p>
+        <p><strong>Background:</strong> Left on a Selunite church doorstep as a cub, raised by clergy</p>
+        <p><strong>Heritage:</strong> Son of an angel and a Tabaxi mother from a scattered tribe</p>
+        <p><strong>Sister:</strong> Nightrose (serves on Magnus Irongrip's crew)</p>
+        <p><strong>Role:</strong> Selunite minister wielding celestial magic to protect and guide</p>
+        <p><a href="Ember.html" style="color: #9370db; font-weight: bold;">→ View Full Character Profile</a></p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Tyrael Evanara - Star Elf Psionic & Harper Agent</h3>
+        <p><strong>Race:</strong> Star Elf (Mithral Elf)</p>
+        <p><strong>Class:</strong> Psionic (Psychic Warrior / Soulknife)</p>
+        <p><strong>Age:</strong> ~200 years old</p>
+        <p><strong>Origin:</strong> Born on Evermeet, relocated to Silverymoon</p>
+        <p><strong>Affiliation:</strong> The Harpers (secret agent and operative)</p>
+        <p><strong>Powers:</strong> Psychic blade that leaves no mark, learned from Wood Elves of the Moonwood</p>
+        <p><strong>Cover:</strong> Often poses as cook or tavern wench—"No one pays attention to the help"</p>
+        <p><strong>Sister:</strong> <a href="Iawynn_Evanara.html" style="color: #4682b4;">Iawynn Evanara</a> (younger sister, Selunite paladin)</p>
+        <p><strong>War Veteran:</strong> Fought in the War of the Silver Marches</p>
+        <p><a href="Tyrael_Evanara.html" style="color: #4682b4; font-weight: bold;">→ View Full Character Profile</a></p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Iawynn Evanara - Star Elf Paladin of Selûne</h3>
+        <p><strong>Race:</strong> Star Elf (Mithral Elf)</p>
+        <p><strong>Class:</strong> Paladin</p>
+        <p><strong>Sacred Oath:</strong> Selûne, Goddess of the Moon</p>
+        <p><strong>Holy Order:</strong> Order of the Silver Ladies</p>
+        <p><strong>Age:</strong> ~120 years old</p>
+        <p><strong>Origin:</strong> Born on Evermeet, relocated to Silverymoon</p>
+        <p><strong>Sister:</strong> <a href="Tyrael_Evanara.html" style="color: #4682b4;">Tyrael Evanara</a> (elder sister, Harper agent)</p>
+        <p><strong>War Veteran:</strong> Fought openly in the War of the Silver Marches as a beacon of hope</p>
+        <p><strong>Role:</strong> Frontline holy warrior, defender of the innocent, bringer of Selûne's light</p>
+        <p><a href="Iawynn_Evanara.html" style="color: #c0c0ff; font-weight: bold;">→ View Full Character Profile</a></p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>Key NPCs</h2>
+
+    <div class="npc-card">
+        <h3>Skylark - Harper Ranger</h3>
+        <p><strong>Race:</strong> Human</p>
+        <p><strong>Role:</strong> Harper agent, ranger, regional scout</p>
+        <p><strong>Affiliation:</strong> The Harpers</p>
+        <p><strong>Animal Companion:</strong> Adam the Raven</p>
+        <p><strong>Note:</strong> The raven watching arrivals at the pier is Adam, Skylark's companion and scout</p>
+        <p><a href="Skylark.html" style="color: #4682b4; font-weight: bold;">→ View Full Character Profile</a></p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Rook (Rolan Hemsby) - Young Fisherman & Informant</h3>
+        <div style="display:flex; align-items:center; gap:12px; margin:8px 0;">
+            <img src="images/rook.png" alt="Rook" style="width:96px; height:auto; border-radius:6px; box-shadow:0 2px 4px rgba(0,0,0,0.12);">
+            <div>
+                <p><strong>Age:</strong> Early 20s</p>
+                <p><strong>Race:</strong> Gnome</p>
+                <p style="margin:0;"><strong>Where to Find:</strong> Eastern pier in the mornings; the tavern at night</p>
+            </div>
+        </div>
+        <p><a href="rook.html" style="color: #4682b4; font-weight: bold;">→ View Full Character Profile</a></p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Sven Stormcaller - Harbormaster</h3>
+        <p><strong>Role:</strong> Harbormaster</p>
+        <p><strong>Personality:</strong> Carefully measured in speech, observant</p>
+        <p><strong>First Impression:</strong> "Welcome to Fjord's End. Harbor fees are two silver for visiting vessels. What brings you to our little corner of nowhere?"</p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Magnus Irongrip - Ship Captain & Harper Agent</h3>
+        <div style="text-align: center; margin: 15px 0;">
+            <img src="images/magnus.png" alt="Magnus Irongrip" style="max-width: 300px; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        </div>
+        <p><strong>Race:</strong> Dwarf (Mountain Dwarf)</p>
+        <p><strong>Class:</strong> Bard (College of Lore)</p>
+        <p><strong>Role:</strong> Captain of the Silt Runner; Harper agent</p>
+        <p><strong>Origin:</strong> Earthfast (destroyed by the dragon Putrifax 5 years ago)</p>
+        <p><strong>Personality:</strong> Firm handshake, assesses character, mentions connection to "Skylark"</p>
+        <p><strong>Key Quote:</strong> "Any friend of Skylark's has friends here."</p>
+        <p><strong>Behavior:</strong> Sings when seeing Giantspire Peak—his ancestor slew the white dragon there 700 years ago with Snowpiercer</p>
+        <p><strong>Background:</strong> Last survivor of the Irongrip clan, carries the weight of Earthfast's fall and his family's heroic legacy</p>
+        <p><strong>Affiliation:</strong> The Harpers</p>
+        <p><a href="Magnus_Irongrip.html" style="color: #4682b4; font-weight: bold;">→ View Full Character Profile</a></p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Captain Brenna Saltwind</h3>
+        <p><strong>Race:</strong> Human</p>
+        <p><strong>Role:</strong> Boat Captain and Harbormaster</p>
+        <p><strong>Affiliation:</strong> Independent</p>
+        <p><strong>Location:</strong> Fjord's End harbor</p>
+        <p><strong>Status:</strong> Neutral disposition, Alive</p>
+        <p><strong>Equipment:</strong> Her boats have fish-finding equipment</p>
+        <p><strong>In Crisis:</strong> Advocates for partial evacuation by boat</p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Ingvar Runestone - Innkeeper</h3>
+        <p><strong>Race:</strong> Dwarf</p>
+        <p><strong>Role:</strong> Owner and keeper of the Glacier's Rest Inn (the only inn in town)</p>
+        <p><strong>Family:</strong> Father of Ingrid</p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Ingrid Runestone - Inn Worker</h3>
+        <p><strong>Role:</strong> Works at the Glacier's Rest Inn</p>
+        <p><strong>Family:</strong> Daughter of Ingvar Runestone</p>
+        <p><strong>Service:</strong> Offers "best room in the house" - a corner chamber overlooking the harbor</p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Tormund Stormwatch - Scout</h3>
+        <p><strong>Role:</strong> Local scout and guide</p>
+        <p><strong>Knowledge:</strong> Reports strange lights on the high peaks, provides maps and route information</p>
+        <p><strong>In Crisis:</strong> Prepares to scout creature approaches, volunteers to guide mountain expeditions, monitors mountain approach routes</p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Kira Brightwater - Local Mage/Healer</h3>
+        <p><strong>Role:</strong> Local magical expert</p>
+        <p><strong>Resources:</strong> Has some minor magical items and healing supplies</p>
+        <p><strong>In Crisis:</strong> Starts moving supplies to secure locations, supports investigating root causes, advocates for researching other local legends and threats</p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Kumari - Bookseller & Lorekeeper</h3>
+        <p><strong>Race:</strong> Half-Elf</p>
+        <p><strong>Age:</strong> 87 (appears mid-40s)</p>
+        <p><strong>Role:</strong> Proprietor of The Northern Shelf bookshop, scribe, researcher</p>
+        <p><strong>Companion:</strong> Codex, a large ginger cat</p>
+        <p><strong>Specialty:</strong> Regional history, ancient lore, translation services, has extensive knowledge of Giantspire Peak and other mysteries</p>
+        <p><a href="Kumari.html" style="color: #8b4513; font-weight: bold;">→ View Full Character Profile</a></p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Solveig Andersson - Baker</h3>
+        <p><strong>Race:</strong> Human</p>
+        <p><strong>Role:</strong> Runs a small bakery in the village</p>
+        <p><strong>Personality:</strong> Kind-hearted older woman, warm and welcoming, always ready to share a story or a slice of pie</p>
+        <p><strong>Specialty:</strong> Delicious pies and breads that bring joy to everyone who visits</p>
+        <p><strong>Family:</strong> Mother of Tormon, a skilled hunter</p>
+        <p><strong>Current Situation:</strong> Worried about her son Tormon (also called Thomas), who has been missing for a couple of days</p>
+        <p><a href="Solveig_Andersson.html" style="color: #d2691e; font-weight: bold;">→ View Full Character Profile</a></p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>Atmosphere & Ambiance</h2>
+
+    <h3>Normal Conditions</h3>
+    <ul>
+        <li>Ravens perch on the pier, watching arrivals</li>
+        <li>Villagers pause their work to observe newcomers</li>
+        <li>Wind cuts sharply across dark waters</li>
+        <li>Weathered timber and stone buildings give a frontier feel</li>
+    </ul>
+
+    <h3>Arrival Scene</h3>
+    <blockquote>
+        Several villagers have paused their work to observe the newcomers.
+    </blockquote>
+
+    <div class="section-divider"></div>
+
+    <h2>The Titan's Thirst - Session Outline</h2>
+    <p><em>A creature from the cursed glacial pool threatens the valley</em></p>
+
+    <div class="session-note">
+        <strong>Session Details:</strong> Level 5-7 | Duration: 4-6 hours | Theme: Ancient curses, environmental horror, community defense
+    </div>
+
+    <h3>Session Overview</h3>
+    <p>A massive creature, transformed by drinking from the legendary Cursed Pool of Jotunn's Tears, descends from the high peaks to threaten Fjord's End. The PCs must decide whether to defend the village, investigate the source of the curse, or attempt to cure the afflicted beast.</p>
+
+    <h3>Warning Signs</h3>
+    <ul>
+        <li><strong>Missing Wildlife:</strong> No birds, ravens have vanished</li>
+        <li><strong>Nervous Animals:</strong> Village dogs whine and refuse to leave owners' sides</li>
+        <li><strong>Geological Signs:</strong> Minor tremors, loose stones falling from cliffs</li>
+        <li><strong>Strange Phenomena:</strong> Strange lights on high peaks three nights prior</li>
+        <li><strong>Marine Anomalies:</strong> Something massive detected moving in deep fjord waters</li>
+    </ul>
+
+    <h3>The Threat: Titan Bear</h3>
+    <blockquote>
+        A sound unlike anything you've ever heard echoes through the fjord—a roar that seems to shake the very foundations of the mountains. It's not the cry of any natural beast, but something deeper, more primal, touched with an anguish that makes your bones ache.
+    </blockquote>
+
+    <div class="info-box">
+        <h4>Creature Description</h4>
+        <p>What was once a brown bear now stands thirty feet tall at the shoulder, its fur matted with ice and its eyes glowing with an unnatural blue light. Ancient ice clings to its massive claws, and with each breath, clouds of freezing mist pour from its muzzle.</p>
+
+        <h4>Titan Bear</h4>
+        <p><em>Huge beast, Unaligned</em></p>
+        <p><strong>Armor Class</strong> 13 (Natural Armor)</p>
+
+        <div style="background-color: #fff8dc; border: 2px solid #8b4513; padding: 15px; margin: 10px 0; border-radius: 5px;">
+            <p style="margin: 5px 0;"><strong>Hit Points:</strong>
+                <button onclick="adjustHP(-10)" style="padding: 5px 10px; margin: 0 2px; cursor: pointer;">▼▼</button>
+                <button onclick="adjustHP(-1)" style="padding: 5px 10px; margin: 0 2px; cursor: pointer;">▼</button>
+                <span id="currentHP" style="font-size: 1.2em; font-weight: bold; margin: 0 10px;">136</span>
+                <button onclick="adjustHP(1)" style="padding: 5px 10px; margin: 0 2px; cursor: pointer;">▲</button>
+                <button onclick="adjustHP(10)" style="padding: 5px 10px; margin: 0 2px; cursor: pointer;">▲▲</button>
+                / 136 (13d12+52)
+                <button onclick="resetHP()" style="padding: 5px 10px; margin-left: 10px; cursor: pointer; background-color: #90EE90;">Reset</button>
+            </p>
+
+            <p style="margin: 10px 0;"><strong>Initiative:</strong>
+                <input type="number" id="initiative" style="width: 60px; padding: 5px; margin-left: 5px;" placeholder="0">
+            </p>
+
+            <p style="margin: 10px 0;"><strong>Status/Conditions:</strong>
+                <input type="text" id="status" style="width: 300px; padding: 5px; margin-left: 5px;" placeholder="Enter conditions, effects, etc.">
+            </p>
+
+            <p style="margin: 10px 0;"><strong>Notes:</strong>
+                <textarea id="notes" rows="3" style="width: 95%; padding: 5px; margin-top: 5px;" placeholder="Round-by-round notes, tactical observations, etc."></textarea>
+            </p>
+        </div>
+
+        <script>
+            let currentHP = 136;
+            const maxHP = 136;
+
+            function adjustHP(amount) {
+                currentHP += amount;
+                if (currentHP > maxHP) currentHP = maxHP;
+                if (currentHP < 0) currentHP = 0;
+
+                document.getElementById('currentHP').textContent = currentHP;
+
+                // Change color based on HP percentage
+                const hpPercent = (currentHP / maxHP) * 100;
+                const hpDisplay = document.getElementById('currentHP');
+                if (hpPercent > 50) {
+                    hpDisplay.style.color = '#228B22'; // Green
+                } else if (hpPercent > 25) {
+                    hpDisplay.style.color = '#FF8C00'; // Orange
+                } else {
+                    hpDisplay.style.color = '#DC143C'; // Red
+                }
+            }
+
+            function resetHP() {
+                currentHP = maxHP;
+                document.getElementById('currentHP').textContent = currentHP;
+                document.getElementById('currentHP').style.color = '#228B22';
+                document.getElementById('initiative').value = '';
+                document.getElementById('status').value = '';
+                document.getElementById('notes').value = '';
+            }
+        </script>
+
+        <p><strong>Speed</strong> 50 ft.</p>
+
+        <table style="width: 100%; margin: 10px 0; text-align: center;">
+            <tr>
+                <th>STR</th>
+                <th>DEX</th>
+                <th>CON</th>
+                <th>INT</th>
+                <th>WIS</th>
+                <th>CHA</th>
+            </tr>
+            <tr>
+                <td>25 (+7)</td>
+                <td>10 (+0)</td>
+                <td>19 (+4)</td>
+                <td>2 (-4)</td>
+                <td>12 (+1)</td>
+                <td>9 (-1)</td>
+            </tr>
+        </table>
+
+        <p><strong>Skills</strong> Perception +4</p>
+        <p><strong>Senses</strong> passive Perception 14</p>
+        <p><strong>Challenge</strong> 8 (3,900 XP)</p>
+
+        <h4>Actions</h4>
+        <p><strong>Multiattack.</strong> The titan bear makes two attacks: one with its bite and one with its claw. It can't make both attacks against the same target.</p>
+
+        <p><strong>Bite.</strong> <em>Melee Weapon Attack:</em> +10 to hit, reach 10 ft., one target. <em>Hit:</em> (4d12 + 7) piercing damage. If the target is a Medium or smaller creature, it is grappled (escape DC 17). Until this grapple ends, the target is restrained, and the titan bear can't bite another target.</p>
+
+        <p><strong>Claw.</strong> <em>Melee Weapon Attack:</em> +10 to hit, reach 10 ft., one target. <em>Hit:</em> (3d8 + 7) slashing damage.</p>
+    </div>
+
+    <h3>The Cursed Pool of Jotunn's Tears</h3>
+    <p><a href="Jotunns_Tears.html" style="color: #8b0000; font-weight: bold;">→ View Complete Location Details & History</a></p>
+    <div class="info-box">
+        <h4>Location & Description</h4>
+        <blockquote>
+            The glacial pool stretches before you like a mirror of black ice, its surface so still it might be solid. But you can see the faint shimmer of movement beneath, and the water itself seems to pulse with a malevolent blue light. Ancient runes are carved into the surrounding stone—giant script that predates any human settlement.
+        </blockquote>
+        <ul>
+            <li><strong>Location:</strong> High glacial cirque, two days' climb up the northern slopes near glacier's edge</li>
+            <li><strong>Magic Type:</strong> Powerful necromantic and transmutation magic</li>
+            <li><strong>Origin:</strong> Created by a giant parent's grief over lost child</li>
+            <li><strong>Features:</strong> Ancient giant runes telling story of grief and revenge</li>
+            <li><strong>Effect:</strong> Transforms creatures that drink from it (enlargement with ice powers)</li>
+            <li><strong>Purification:</strong> Possible through high-level magic or specific ritual components</li>
+        </ul>
+    </div>
+
+    <h3>Player Response Options</h3>
+    <div class="info-box">
+        <h4>Option A: Direct Defense</h4>
+        <ul>
+            <li>Fortify the village and prepare for siege</li>
+            <li>Organize evacuation of non-combatants</li>
+            <li>Set up defensive positions using terrain advantages
+            <li>Organize and arm village militia</li>
+        </ul>
+
+        <h4>Option B: Intercept the Threat</h4>
+        <ul>
+            <li>Travel up the mountain to meet creature before it reaches village</li>
+            <li>Use terrain advantages in the mountains</li>
+            <li>Attempt to drive it away or kill it in favorable terrain</li>
+        </ul>
+
+        <h4>Option C: Investigate the Source</h4>
+        <ul>
+            <li>Seek out the Cursed Pool to understand what happened</li>
+            <li>Find a way to reverse the transformation</li>
+            <li>Permanently solve the problem</li>
+        </ul>
+
+        <h4>Option D: Diplomatic Solution</h4>
+        <ul>
+            <li>Attempt to communicate with the creature</li>
+            <li>Discover if intelligence remains beneath the curse</li>
+            <li>Lead creature back to pool for healing</li>
+        </ul>
+    </div>
+
+    <h3>Available Resources</h3>
+    <div class="npc-card">
+        <h4>For Defense</h4>
+        <ul>
+            <li>Magnus's arsenal: Old weapons and armor from adventuring days</li>
+            <li>Defensive positions with tactical advantages</li>
+            <li>Evacuation routes and fallback positions</li>
+            <li>Village militia volunteers</li>
+        </ul>
+
+        <h4>For Mountain Expedition</h4>
+        <ul>
+            <li>Mountain gear: Cold weather equipment, climbing gear, alpine supplies</li>
+            <li>Tormund's maps and route information</li>
+            <li>Legend research from Magnus about the Cursed Pool</li>
+            <li>Minor magical items and healing supplies from Kira</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>Campaign Integration</h2>
+
+    <h3>Potential Connections</h3>
+    <ul>
+        <li><strong>Harper Interest:</strong> Ancient magic sites relevant to larger supernatural threats</li>
+        <li><strong>Red Wizard Connection:</strong> Transformation magic could interest Thayan researchers</li>
+        <li><strong>Regional Stability:</strong> Success increases village security and PC reputation</li>
+        <li><strong>Supernatural Escalation:</strong> Part of pattern of increasing magical threats in region</li>
+    </ul>
+
+    <h3>Future Hooks</h3>
+    <ul>
+        <li>Other cursed locations mentioned in giant lore</li>
+        <li>Red Wizard interest in the pool's transformative magic</li>
+        <li>Requests for help from other communities facing similar threats</li>
+        <li>Investigation into who or what originally cursed the pool</li>
+        <li>Maps to locations of other transformed creatures</li>
+    </ul>
+
+    <div class="section-divider"></div>
+
+    <h2>DM Notes</h2>
+
+    <h3>Village Defense Advantages</h3>
+    <ul>
+        <li>Natural harbor provides water escape route</li>
+        <li>Mountain walls create defensive choke points</li>
+        <li>Limited approaches to village</li>
+        <li>Towering cliffs provide high ground positions</li>
+    </ul>
+
+    <h3>Atmospheric Elements</h3>
+    <ul>
+        <li>Oppressive silence when wildlife flees</li>
+        <li>Ground trembling with each creature footstep</li>
+        <li>Mist rising from the fjord</li>
+        <li>Mountain echoes amplifying sounds</li>
+        <li>Narrow crescent of habitable land creates claustrophobic feeling during siege</li>
+    </ul>
+
+    <h3>NPC Reactions During Crisis</h3>
+    <ul>
+        <li><strong>Magnus:</strong> Organizes defenses, favors standing ground</li>
+        <li><strong>Captain Brenna:</strong> Prepares boats for evacuation</li>
+        <li><strong>Kira:</strong> Secures supplies, supports investigation</li>
+        <li><strong>Tormund:</strong> Scouts and guides</li>
+        <li><strong>Villagers:</strong> Split between fleeing by boat and defending homes</li>
+    </ul>
+
+    <h3>Rewards & Recognition</h3>
+    <ul>
+        <li>Village formally recognizes PCs as protectors and heroes</li>
+        <li>Offers of permanent residence or honorary citizenship</li>
+        <li>Access to village resources for future adventures</li>
+        <li>Introduction to regional contacts and allies</li>
+        <li>Discounted services, free lodging, equipment access</li>
+    </ul>
+
+    <div class="info-box">
+        <h3>Final Note</h3>
+        <p>Fjord's End represents a frontier community with deep ties to ancient magic and giant lore. Its isolated location makes it both vulnerable to supernatural threats and valuable as a safe haven. The village's response to the Titan Bear crisis will define its relationship with the PCs and determine its role in the larger campaign.</p>
+    </div>
+
+</body>
+</html>

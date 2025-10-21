@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Stone Forest - Ancient Prison of Putrifax</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #d2b48c;
+            color: #2c2416;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            background-color: #c4a678;
+        }
+        .location-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #ecf0f1;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .stat-block {
+            background-color: #faf0e6;
+            border: 2px solid #8b4513;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #d2b48c;
+        }
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+        .history-box {
+            background-color: #fff5e6;
+            border-left: 4px solid #cd7f32;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .danger-box {
+            background-color: #ffe6e6;
+            border-left: 4px solid #8b0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .druid-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid #2e7d32;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .thayan-box {
+            background-color: #fce4ec;
+            border-left: 4px solid #c2185b;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .tactical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .tactical-area {
+            background-color: #f5f5f5;
+            border: 2px solid #666;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .tactical-area h4 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 2px solid #666;
+            padding-bottom: 5px;
+        }
+        .jade-box {
+            background-color: #e0f2f1;
+            border: 3px solid #00695c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .timeline {
+            background-color: #f0f4f8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border-left: 4px solid #4682b4;
+        }
+        .timeline-entry {
+            margin: 15px 0;
+            padding-left: 20px;
+            border-left: 2px solid #bbb;
+        }
+        .timeline-entry strong {
+            color: #2c5f77;
+        }
+        blockquote {
+            background-color: #f9f9f9;
+            border-left: 4px solid #4682b4;
+            margin: 20px 0;
+            padding: 15px 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Campaign Hub</a>
+
+    <div class="location-header">
+        <h1>The Stone Forest</h1>
+        <p style="font-size: 1.2em; font-style: italic;">Ancient Prison of Putrifax the Black</p>
+        <p>Site of Druidic Power • Former Dragon Prison • Thayan Conquest</p>
+    </div>
+
+    <blockquote>
+        Towering limestone pillars rise from the earth like petrified trees, creating a labyrinth of stone that stretches for miles. Sharp, jagged formations reach toward the sky, some as tall as castle towers, their surfaces weathered by millennia into strange shapes and patterns. Narrow passages wind between the pillars, creating a maze where the sun rarely touches the ground. In the heart of this geological wonder stands a broken jade archway, its fragments still pulsing with faint residual magic—all that remains of one of the greatest druidic rituals ever performed.
+    </blockquote>
+
+    <div class="stat-block">
+        <h3>Location Overview</h3>
+        <div class="stat-row">
+            <strong>Type:</strong>
+            <span>Geological Formation / Ancient Prison Site</span>
+        </div>
+        <div class="stat-row">
+            <strong>Size:</strong>
+            <span>Approximately 15 square miles</span>
+        </div>
+        <div class="stat-row">
+            <strong>Terrain:</strong>
+            <span>Limestone karst pillars, narrow passages, underground caves</span>
+        </div>
+        <div class="stat-row">
+            <strong>Danger Level:</strong>
+            <span>Extreme (Thayan patrols, lingering magic, unstable terrain)</span>
+        </div>
+        <div class="stat-row">
+            <strong>Current Control:</strong>
+            <span>Red Wizards of Thay (contested, distant)</span>
+        </div>
+        <div class="stat-row">
+            <strong>Population:</strong>
+            <span>None permanent (Thayan patrols, scavengers, monsters)</span>
+        </div>
+    </div>
+
+    <h2>Geography & Features</h2>
+    <div class="info-box">
+        <h3>The Stone Pillars</h3>
+        <p>The Stone Forest resembles the famous karst formations of Shilin, China—thousands of limestone pillars thrust upward from the earth in dramatic, blade-like formations. The pillars range from 15 to 100 feet in height, creating a vertical maze that disorients travelers and blocks sightlines.</p>
+
+        <h4>Natural Characteristics</h4>
+        <ul>
+            <li><strong>Formation:</strong> Created over millions of years by erosion of an ancient limestone plateau</li>
+            <li><strong>Appearance:</strong> Grey-white stone pillars with sharp edges, weathered into fantastical shapes</li>
+            <li><strong>Passages:</strong> Narrow corridors between pillars, some barely wide enough for a person</li>
+            <li><strong>Caves:</strong> Extensive underground cave system beneath the forest</li>
+            <li><strong>Vegetation:</strong> Sparse—moss, lichens, and hardy shrubs that cling to stone crevices</li>
+            <li><strong>Water:</strong> Underground streams, occasional pools in depressions between pillars</li>
+        </ul>
+
+        <h4>Magical Alterations</h4>
+        <ul>
+            <li><strong>Jade Veins:</strong> Thin veins of jade run through many pillars, remnants of the druidic ritual</li>
+            <li><strong>Resonance:</strong> Some pillars hum or vibrate with residual magic</li>
+            <li><strong>Corruption:</strong> Areas tainted by Putrifax's presence—acidic pools, withered stone</li>
+            <li><strong>Thayan Modifications:</strong> Carved runes, magical sensors, trapped areas</li>
+        </ul>
+    </div>
+
+    <h2>History & Timeline</h2>
+
+    <div class="timeline">
+        <h3>Chronicle of the Stone Forest</h3>
+
+        <div class="timeline-entry">
+            <strong>~3000 years ago - Natural Formation:</strong>
+            <p>The Stone Forest exists as a natural geological wonder. Local tribes consider it sacred, believing spirits dwell within the stone pillars.</p>
+        </div>
+
+        <div class="timeline-entry">
+            <strong>~2100 years ago - Druidic Discovery:</strong>
+            <p>A powerful druid circle discovers the Stone Forest and recognizes its potential as a site of immense natural power. The limestone formations create natural ley line convergences, making it ideal for large-scale rituals.</p>
+        </div>
+
+        <div class="timeline-entry">
+            <strong>~2000 years ago - The Dragon's Rampage:</strong>
+            <p>Putrifax, an ancient black dragon of terrifying power, lays waste to numerous settlements and kingdoms. Conventional armies cannot stop the creature. The dragon's acid breath and cunning make it nearly invincible.</p>
+        </div>
+
+        <div class="timeline-entry">
+            <strong>~2000 years ago - The Great Imprisonment:</strong>
+            <p>Unable to slay Putrifax, an alliance of druids performs an epic ritual lasting nine days and nine nights. Using massive quantities of jade—sacred to the druids and anathema to corruption—they construct an archway at the heart of the Stone Forest. The Imprisonment spell seals Putrifax within the earth beneath the jade archway, bound in magical stone and unable to escape.</p>
+        </div>
+
+        <div class="timeline-entry">
+            <strong>~2000-36 years ago - The Long Sleep:</strong>
+            <p>Putrifax remains imprisoned for nearly two millennia. The druid circle maintains guardianship over the site, though their order gradually diminishes over the centuries. The Stone Forest becomes known as a cursed place, avoided by travelers.</p>
+        </div>
+
+        <div class="timeline-entry">
+            <strong>~50 years ago - Thayan Interest:</strong>
+            <p>Red Wizards of Thay begin researching ancient sites of power. Spies and scholars learn legends of the imprisoned dragon and the jade archway. They see an opportunity to claim an ancient, powerful creature as a weapon.</p>
+        </div>
+
+        <div class="timeline-entry">
+            <strong>36 years ago - The Breaking:</strong>
+            <p>A Thayan expedition, led by powerful necromancers and transmuters, arrives at the Stone Forest. They overwhelm the few remaining druid guardians and begin a ritual to dispel the ancient Imprisonment. After weeks of work, they shatter the jade archway and break the binding. Putrifax awakens, enraged and hungry after two thousand years of confinement.</p>
+        </div>
+
+        <div class="timeline-entry">
+            <strong>36 years ago - The Binding:</strong>
+            <p>The Red Wizards reveal their true plan—they use the moment of Putrifax's weakness (disoriented from millennia of imprisonment) to enact their own binding ritual. Through necromantic magic and domination spells, they enslave the dragon to their will. Putrifax becomes a weapon of Thay.</p>
+        </div>
+
+        <div class="timeline-entry">
+            <strong>5 years ago - Attack on Earthfast:</strong>
+            <p>Under Thayan command, Putrifax destroys the dwarven city of Earthfast. Magnus Irongrip survives and becomes one of the few witnesses to the dragon's current enslaved state.</p>
+        </div>
+
+        <div class="timeline-entry">
+            <strong>Present Day - Contested Ground:</strong>
+            <p>The Red Wizards maintain a presence at the Stone Forest, using it as an outpost and research site. They study the broken ritual and remnant jade magic, seeking to understand ancient druidic power. Harper agents, including Skylark, monitor the site from a distance.</p>
+        </div>
+    </div>
+
+    <h2>The Jade Archway</h2>
+
+    <div class="jade-box">
+        <h3>Heart of the Imprisonment</h3>
+
+        <blockquote>
+            At the center of the Stone Forest stands what remains of the great jade archway. Once, it rose twenty feet high, carved from solid jade and inscribed with druidic runes of binding and protection. Now it lies in pieces, its fragments scattered across the central clearing. The largest piece—half of the arch's crown—remains upright, embedded in the stone. Even broken, it radiates faint magical energy, a pale echo of the power it once contained.
+        </blockquote>
+
+        <h4>Original Construction</h4>
+        <ul>
+            <li><strong>Material:</strong> Approximately 50 tons of pure jade, sourced from sacred quarries across the continent</li>
+            <li><strong>Size:</strong> 20 feet tall, 15 feet wide, 3 feet thick at the base</li>
+            <li><strong>Runes:</strong> Thousands of druidic symbols of binding, earth, and imprisonment</li>
+            <li><strong>Function:</strong> Served as the focal point for the Imprisonment spell, anchoring Putrifax beneath the earth</li>
+            <li><strong>Power Source:</strong> Drew on natural ley line convergences beneath the Stone Forest</li>
+        </ul>
+
+        <h4>Current State</h4>
+        <ul>
+            <li><strong>Destruction:</strong> Shattered by Thayan counter-ritual 36 years ago</li>
+            <li><strong>Fragments:</strong> Largest pieces remain on-site; smaller fragments scattered or claimed by Thayans</li>
+            <li><strong>Residual Magic:</strong> Still radiates abjuration and transmutation magic (detectable with Detect Magic)</li>
+            <li><strong>Corruption:</strong> Some pieces show signs of acidic damage from Putrifax's presence</li>
+            <li><strong>Value:</strong> Jade fragments are extremely valuable—both monetarily and magically</li>
+        </ul>
+
+        <h4>Magical Properties</h4>
+        <p>The jade fragments retain traces of the original ritual's power:</p>
+        <ul>
+            <li>Can be used as material components for powerful abjuration spells</li>
+            <li>Resist corruption and necromantic magic</li>
+            <li>Resonate in the presence of draconic magic</li>
+            <li>May reveal visions of the past when properly attuned</li>
+            <li>Small fragments are worth 50-200 gp; large pieces worth thousands</li>
+        </ul>
+    </div>
+
+    <h2>The Druidic Prison</h2>
+
+    <div class="druid-box">
+        <h3>The Great Imprisonment Ritual</h3>
+
+        <p>The ritual that bound Putrifax was one of the most ambitious druidic workings ever attempted, requiring the cooperation of multiple druid circles and taking years to prepare.</p>
+
+        <h4>The Druid Alliance</h4>
+        <ul>
+            <li><strong>Circle of the Stone:</strong> Earth druids who understood the geological power of the Stone Forest</li>
+            <li><strong>Circle of the Jade Serpent:</strong> Masters of jade magic and mineral lore</li>
+            <li><strong>Circle of Ancient Roots:</strong> Specialists in binding and imprisonment magics</li>
+            <li><strong>Wildshape Guardians:</strong> Druids who took permanent guardian forms to watch over the prison</li>
+        </ul>
+
+        <h4>The Nine-Day Ritual</h4>
+        <p>The imprisonment required:</p>
+        <ul>
+            <li>36 druids of significant power (four circles of nine)</li>
+            <li>Alignment with celestial and terrestrial power nodes</li>
+            <li>The construction of the jade archway as a physical anchor</li>
+            <li>The sacrifice of the lead druid's mortal form to power the binding</li>
+            <li>Constant chanting and ritual work for nine consecutive days and nights</li>
+        </ul>
+
+        <h4>The Spell's Mechanism</h4>
+        <p>The Imprisonment spell used a unique variant:</p>
+        <ul>
+            <li><strong>Type:</strong> Minimus Containment combined with Entombment</li>
+            <li><strong>Prison:</strong> Putrifax was shrunk and sealed within a jade stone beneath the archway, then that stone was entombed in solid rock 100 feet underground</li>
+            <li><strong>Failsafes:</strong> Multiple layers of binding prevented escape even if one layer failed</li>
+            <li><strong>Duration:</strong> Intended to last "until the stars fall and the earth breaks"—essentially permanent</li>
+            <li><strong>Weakness:</strong> Could be dispelled, but would require immense magical power and knowledge of the original ritual</li>
+        </ul>
+
+        <h4>The Guardians</h4>
+        <p>After the ritual, guardian druids remained:</p>
+        <ul>
+            <li>Some took the form of stone or ancient trees, merging with the forest itself</li>
+            <li>Others maintained a monastery nearby (now ruins)</li>
+            <li>Successive generations became fewer as the imprisonment seemed permanent</li>
+            <li>By the time the Thayans arrived, only a handful of guardians remained</li>
+            <li>The last guardian druids died defending the archway 36 years ago</li>
+        </ul>
+    </div>
+
+    <h2>The Thayan Conquest</h2>
+
+    <div class="thayan-box">
+        <h3>Red Wizard Occupation</h3>
+
+        <p>Thirty-six years ago, the Red Wizards of Thay executed a carefully planned operation to claim Putrifax as a weapon.</p>
+
+        <h4>The Breaking Ritual</h4>
+        <ul>
+            <li><strong>Duration:</strong> Three weeks of concentrated magical work</li>
+            <li><strong>Method:</strong> Systematic dispelling of the layered wards, culminating in shattering the jade archway</li>
+            <li><strong>Participants:</strong> 12 Red Wizards (specialists in necromancy, transmutation, and abjuration)</li>
+            <li><strong>Cost:</strong> 4 Red Wizards died in the process, consumed by backlash from the broken ritual</li>
+            <li><strong>Success:</strong> Putrifax released from imprisonment, disoriented and weakened</li>
+        </ul>
+
+        <h4>The Enslavement</h4>
+        <p>The moment Putrifax broke free, the Thayans enacted their true plan:</p>
+        <ul>
+            <li>Used the dragon's moment of weakness to bind it with necromantic chains</li>
+            <li>Employed domination magic to break its will</li>
+            <li>Created a phylactery-like control mechanism to ensure obedience</li>
+            <li>Transported Putrifax to Thayan territory for further conditioning</li>
+        </ul>
+
+        <h4>Current Thayan Presence</h4>
+        <p>The Red Wizards maintain the Stone Forest as a research outpost:</p>
+        <ul>
+            <li><strong>Personnel:</strong> 2-4 Red Wizards at any given time, plus guards and apprentices</li>
+            <li><strong>Total Forces:</strong> 20-30 individuals (wizards, guards, researchers, servants)</li>
+            <li><strong>Fortification:</strong> Central compound built around the broken jade archway</li>
+            <li><strong>Research:</strong> Studying druidic magic, jade properties, and ancient binding rituals</li>
+            <li><strong>Patrols:</strong> Regular sweeps of the Stone Forest to deter intruders</li>
+            <li><strong>Defenses:</strong> Magical wards, traps, summoned creatures, undead guardians</li>
+        </ul>
+
+        <h4>Why They Stay</h4>
+        <ul>
+            <li>The broken jade archway contains valuable magical knowledge</li>
+            <li>Studying the druidic ritual helps them maintain control over Putrifax</li>
+            <li>The site serves as a forward outpost in the region</li>
+            <li>Residual magical energy makes it useful for certain rituals and experiments</li>
+            <li>Prevents others from claiming the jade fragments or learning what happened</li>
+        </ul>
+    </div>
+
+    <h2>Tactical Areas</h2>
+
+    <div class="tactical-grid">
+        <div class="tactical-area">
+            <h4>1. The Outer Pillars</h4>
+            <p><strong>Description:</strong> The outermost ring of the Stone Forest, where the pillars are tallest and most densely packed.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Maze-like passages, easy to get lost</li>
+                <li>Natural chokepoints and ambush spots</li>
+                <li>Climbing surfaces (DC 15 Athletics)</li>
+                <li>Limited visibility (60 ft. maximum)</li>
+            </ul>
+            <p><strong>Tactical Use:</strong> Excellent for stealth approaches, guerrilla tactics, or evasion. Thayan patrols are less frequent here.</p>
+        </div>
+
+        <div class="tactical-area">
+            <h4>2. The Whispering Gallery</h4>
+            <p><strong>Description:</strong> A section where wind whistles through hollow pillars, creating eerie sounds.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Natural acoustic anomalies</li>
+                <li>Hollow pillars (some contain cave entrances)</li>
+                <li>Disadvantage on Perception (hearing) checks</li>
+                <li>Wind-carved formations</li>
+            </ul>
+            <p><strong>Tactical Use:</strong> The noise masks movement but also hides enemy approaches. Some druids used hollow pillars as observation posts.</p>
+        </div>
+
+        <div class="tactical-area">
+            <h4>3. The Jade Vein Corridor</h4>
+            <p><strong>Description:</strong> A passage where multiple pillars show prominent jade veining.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Glowing jade veins (dim light)</li>
+                <li>Residual magic (Detect Magic shows abjuration)</li>
+                <li>Relatively straight path toward center</li>
+                <li>Valuable jade deposits</li>
+            </ul>
+            <p><strong>Tactical Use:</strong> Provides light source and navigation aid, but also makes users visible. Thayans sometimes mine jade here.</p>
+        </div>
+
+        <div class="tactical-area">
+            <h4>4. The Acid Pools</h4>
+            <p><strong>Description:</strong> Areas corrupted by Putrifax's presence during imprisonment, where acidic groundwater has pooled.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Pools of acidic water (2d6 acid damage per round)</li>
+                <li>Corroded, weakened stone</li>
+                <li>Toxic fumes (DC 12 CON save or poisoned)</li>
+                <li>Withered, dead vegetation</li>
+            </ul>
+            <p><strong>Tactical Use:</strong> Hazardous terrain that can be used against enemies. Thayans avoid these areas.</p>
+        </div>
+
+        <div class="tactical-area">
+            <h4>5. The Collapsed Chamber</h4>
+            <p><strong>Description:</strong> Where Thayan excavation created a partial cave-in.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Unstable terrain (DEX saves to avoid falls)</li>
+                <li>Rubble and debris (difficult terrain)</li>
+                <li>Exposed underground caves</li>
+                <li>Abandoned Thayan equipment</li>
+            </ul>
+            <p><strong>Tactical Use:</strong> Dangerous but provides access to underground cave system. Thayans avoid due to instability.</p>
+        </div>
+
+        <div class="tactical-area">
+            <h4>6. The Druid Ruins</h4>
+            <p><strong>Description:</strong> Remains of the ancient druid monastery, now overgrown and crumbling.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Stone buildings (half-collapsed)</li>
+                <li>Druidic symbols and carvings</li>
+                <li>Sacred grove (now dying)</li>
+                <li>Possible hidden caches or lore</li>
+            </ul>
+            <p><strong>Tactical Use:</strong> Cover and concealment, possible rest location. May contain clues about the original ritual or Putrifax.</p>
+        </div>
+
+        <div class="tactical-area">
+            <h4>7. The Central Clearing</h4>
+            <p><strong>Description:</strong> The heart of the Stone Forest, where the jade archway once stood.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Open area (100 ft. diameter)</li>
+                <li>Broken jade archway fragments</li>
+                <li>Thayan compound (fortified)</li>
+                <li>Magical wards and defenses</li>
+                <li>Ritual circle carved in stone</li>
+            </ul>
+            <p><strong>Tactical Use:</strong> Heavily defended by Thayans. Approaching requires stealth or overwhelming force. Site of the most powerful residual magic.</p>
+        </div>
+
+        <div class="tactical-area">
+            <h4>8. The Watchtower Pillar</h4>
+            <p><strong>Description:</strong> The tallest pillar in the forest, used by Thayans as an observation post.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>120 ft. tall stone pillar</li>
+                <li>Carved stairs and platforms (Thayan work)</li>
+                <li>Observation platform at top</li>
+                <li>Usually 2 guards on duty</li>
+                <li>Magical alarm system</li>
+            </ul>
+            <p><strong>Tactical Use:</strong> Provides overview of entire Stone Forest. Must be dealt with for covert approach. Can be climbed or accessed via levitation/flight.</p>
+        </div>
+
+        <div class="tactical-area">
+            <h4>9. The Underground Caves</h4>
+            <p><strong>Description:</strong> Extensive cave system beneath the Stone Forest, where Putrifax was actually imprisoned.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Multiple cave networks</li>
+                <li>Underground streams</li>
+                <li>Chamber where dragon was held (now empty)</li>
+                <li>Partially flooded sections</li>
+                <li>Stalactites and stalagmites</li>
+            </ul>
+            <p><strong>Tactical Use:</strong> Alternative route to central area. Dangerous—contains monsters and possibly Thayan experiments. The original prison chamber radiates powerful magic.</p>
+        </div>
+
+        <div class="tactical-area">
+            <h4>10. The Boundary Stones</h4>
+            <p><strong>Description:</strong> Ancient standing stones marking the perimeter, inscribed with druidic warnings.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Eight massive standing stones</li>
+                <li>Druidic runes (warnings and wards)</li>
+                <li>Residual protective magic (mostly dormant)</li>
+                <li>Weathered but intact</li>
+            </ul>
+            <p><strong>Tactical Use:</strong> Landmarks for navigation. Some may still have weak protective effects. Provide cover.</p>
+        </div>
+    </div>
+
+    <h2>Dangers & Encounters</h2>
+
+    <div class="danger-box">
+        <h3>Threats Within the Stone Forest</h3>
+
+        <h4>Thayan Forces</h4>
+        <ul>
+            <li><strong>Red Wizards (2-4):</strong> Levels 7-12, specialists in necromancy and transmutation</li>
+            <li><strong>Thayan Warriors (8-12):</strong> Elite guards, levels 3-5</li>
+            <li><strong>Apprentices (4-6):</strong> Level 1-3 wizards, primarily researchers</li>
+            <li><strong>Undead Guardians:</strong> Skeletons, zombies, wights patrolling certain areas</li>
+            <li><strong>Summoned Creatures:</strong> Various elementals and outsiders bound to guard duty</li>
+        </ul>
+
+        <h4>Natural Hazards</h4>
+        <ul>
+            <li><strong>Unstable Terrain:</strong> Risk of rockfall or pillar collapse (DC 15 DEX save, 3d10 bludgeoning)</li>
+            <li><strong>Narrow Passages:</strong> Easy to become trapped or squeeze through tight spaces</li>
+            <li><strong>Vertical Drops:</strong> Many areas require climbing; falls can be deadly</li>
+            <li><strong>Getting Lost:</strong> DC 15 Survival check to navigate without getting disoriented</li>
+        </ul>
+
+        <h4>Corrupted Areas</h4>
+        <ul>
+            <li><strong>Acidic Pools:</strong> Dragon corruption, causes acid damage</li>
+            <li><strong>Necrotic Zones:</strong> Areas where Thayan necromancy has poisoned the land</li>
+            <li><strong>Wild Magic:</strong> Residual effects from the broken imprisonment ritual</li>
+        </ul>
+
+        <h4>Creatures</h4>
+        <ul>
+            <li><strong>Stone Elementals:</strong> Awakened by the ritual's breaking, confused and aggressive</li>
+            <li><strong>Corrupted Beasts:</strong> Animals mutated by lingering draconic essence</li>
+            <li><strong>Oozes:</strong> Black puddings and gray oozes in the caves</li>
+            <li><strong>Basilisks:</strong> Drawn to the stone environment</li>
+            <li><strong>Druid Remnants:</strong> Undead or corrupted spirits of fallen guardians</li>
+        </ul>
+
+        <h4>Magical Traps</h4>
+        <ul>
+            <li><strong>Glyphs of Warding:</strong> Thayan-placed explosive runes</li>
+            <li><strong>Alarm Spells:</strong> Alert Thayans to intrusions</li>
+            <li><strong>Illusory Terrain:</strong> Hidden pits and false paths</li>
+            <li><strong>Symbol Spells:</strong> Various debilitating effects</li>
+        </ul>
+    </div>
+
+    <h2>Secrets & Hidden Knowledge</h2>
+
+    <div class="info-box">
+        <h3>What Can Be Discovered</h3>
+
+        <h4>In the Druid Ruins</h4>
+        <ul>
+            <li>Journals describing the imprisonment ritual in detail</li>
+            <li>Information about Putrifax's weaknesses and nature</li>
+            <li>Lore about the jade archway's construction</li>
+            <li>Hidden cache of druidic spell scrolls and components</li>
+            <li>Names and histories of the druids who performed the ritual</li>
+        </ul>
+
+        <h4>In the Underground Caves</h4>
+        <ul>
+            <li>The original prison chamber, still radiating powerful magic</li>
+            <li>Claw marks and acid scars from Putrifax's long captivity</li>
+            <li>Fragments of the jade stone that contained the shrunk dragon</li>
+            <li>Evidence of the Thayan ritual that freed Putrifax</li>
+            <li>Possible insight into how the dragon is currently controlled</li>
+        </ul>
+
+        <h4>From Jade Fragments</h4>
+        <ul>
+            <li>Visions of the past (requires attunement or Identify)</li>
+            <li>Insights into druidic magic and imprisonment techniques</li>
+            <li>Clues about how to potentially re-imprison Putrifax</li>
+            <li>Understanding of the dragon's true name (possibly)</li>
+        </ul>
+
+        <h4>In Thayan Records</h4>
+        <ul>
+            <li>Details about Putrifax's current location and binding</li>
+            <li>Information about Thayan operations and hierarchy</li>
+            <li>Research notes on controlling dragons</li>
+            <li>Communications with Thayan leadership</li>
+            <li>Evidence of other Thayan projects in the region</li>
+        </ul>
+    </div>
+
+    <h2>Plot Hooks & Adventure Ideas</h2>
+
+    <div class="session-note">
+        <h3>Ways to Involve the Stone Forest</h3>
+
+        <h4>Harper Reconnaissance</h4>
+        <ul>
+            <li>Skylark requests PCs to scout Thayan activities</li>
+            <li>Need to determine strength of Thayan presence</li>
+            <li>Gather intelligence on what the Red Wizards are researching</li>
+            <li>Possible objective: Steal Thayan documents</li>
+        </ul>
+
+        <h4>Jade Recovery</h4>
+        <ul>
+            <li>Wealthy patron wants jade fragments for magical research</li>
+            <li>A druid circle wants to reclaim sacred jade to honor fallen guardians</li>
+            <li>PCs learn jade fragments can help understand or counter Putrifax's binding</li>
+            <li>Must navigate both natural hazards and Thayan defenses</li>
+        </ul>
+
+        <h4>Magnus's Quest</h4>
+        <ul>
+            <li>Magnus learns the Stone Forest holds clues to controlling Putrifax</li>
+            <li>Wants PCs to infiltrate and recover information about the dragon's binding</li>
+            <li>Ultimate goal: Find a way to destroy Putrifax or free it from Thayan control</li>
+            <li>Personal stakes for Magnus—this is about avenging Earthfast</li>
+        </ul>
+
+        <h4>Thayan Threat</h4>
+        <ul>
+            <li>Thayans are planning to expand their operation</li>
+            <li>PCs must sabotage the outpost before reinforcements arrive</li>
+            <li>Time-sensitive mission with escalating challenges</li>
+            <li>Success weakens Thayan presence in the region</li>
+        </ul>
+
+        <h4>The Lost Guardian</h4>
+        <ul>
+            <li>Rumors suggest one druid guardian survived the Thayan attack</li>
+            <li>Now trapped or hiding somewhere in the Stone Forest</li>
+            <li>PCs must locate and rescue them</li>
+            <li>Guardian possesses crucial knowledge about the imprisonment ritual</li>
+        </ul>
+
+        <h4>Corrupted Elementals</h4>
+        <ul>
+            <li>Stone elementals awakened by the ritual's breaking are rampaging</li>
+            <li>Threatening nearby settlements</li>
+            <li>PCs must enter Stone Forest and find way to calm or destroy them</li>
+            <li>Discover elemental corruption is tied to broken jade archway</li>
+        </ul>
+
+        <h4>The Re-Imprisonment</h4>
+        <ul>
+            <li>High-level campaign goal: Re-imprison or destroy Putrifax</li>
+            <li>Requires studying the original ritual at the Stone Forest</li>
+            <li>Must gather jade, learn druidic techniques, find the dragon</li>
+            <li>Epic multi-session arc culminating in confrontation with both dragon and Thayans</li>
+        </ul>
+    </div>
+
+    <h2>DM Notes</h2>
+
+    <div class="info-box">
+        <h3>Running the Stone Forest</h3>
+
+        <h4>Atmosphere</h4>
+        <ul>
+            <li><strong>Visual:</strong> Emphasize the alien beauty of the limestone pillars—like a petrified forest made of stone instead of wood</li>
+            <li><strong>Sound:</strong> Wind whistling through passages, the hum of residual magic, distant patrols</li>
+            <li><strong>Feel:</strong> Claustrophobic in narrow passages, exposed in open areas, sense of ancient power and recent violence</li>
+            <li><strong>Tension:</strong> Risk of discovery by Thayan patrols, unstable terrain, lingering corruption</li>
+        </ul>
+
+        <h4>Scaling for Party Level</h4>
+        <ul>
+            <li><strong>Levels 3-5:</strong> Focus on outer areas, avoid direct confrontation with Thayans, emphasize stealth and exploration</li>
+            <li><strong>Levels 6-8:</strong> Can handle small Thayan patrols, explore caves, recover jade fragments</li>
+            <li><strong>Levels 9-12:</strong> Capable of assaulting Thayan compound, confronting Red Wizards, major sabotage missions</li>
+            <li><strong>Levels 13+:</strong> Re-imprisonment ritual, liberating or destroying Putrifax, dismantling entire Thayan operation</li>
+        </ul>
+
+        <h4>Key NPCs</h4>
+        <ul>
+            <li><strong>Zulkir Vrentis:</strong> Lead Red Wizard at the outpost (Necromancer, level 11)</li>
+            <li><strong>Warden Kelos:</strong> Captain of Thayan guards (Fighter, level 6)</li>
+            <li><strong>The Stone Watcher:</strong> Last surviving druid guardian (if still alive—Druid, level 9, possibly corrupted or petrified)</li>
+        </ul>
+
+        <h4>Rewards</h4>
+        <ul>
+            <li>Jade fragments (valuable both as treasure and spell components)</li>
+            <li>Druidic spell scrolls and lore</li>
+            <li>Intelligence about Thayan operations</li>
+            <li>Thayan magical items and equipment</li>
+            <li>Knowledge about Putrifax and how to potentially counter the dragon</li>
+            <li>Favor with Harpers for disrupting Thayan activities</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <a href="index.html" class="back-link">← Back to Campaign Hub</a>
+
+</body>
+</html>

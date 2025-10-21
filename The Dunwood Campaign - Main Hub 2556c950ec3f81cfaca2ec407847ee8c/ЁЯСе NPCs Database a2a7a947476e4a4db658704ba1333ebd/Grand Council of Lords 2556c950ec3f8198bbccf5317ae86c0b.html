@@ -1,0 +1,725 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Grand Council of Lords</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2556c950-ec3f-8198-bbcc-f5317ae86c0b" class="page sans"><header><h1 class="page-title">Grand Council of Lords</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Type</th><td><span class="selected-value select-value-color-green">Settlement</span></td></tr></tbody></table></header><div class="page-body"><h1 id="2556c950-ec3f-81c6-a922-ff9e7c42df1e" class=""><mark class="highlight-default">Grand Council of Lords (Impiltur)</mark></h1><h2 id="2556c950-ec3f-810e-a319-d00fb1a89bf3" class=""><mark class="highlight-default">Overview</mark></h2><p id="2556c950-ec3f-81ce-943d-e8635b018ecf" class=""><mark class="highlight-default">The Grand Council of Lords represents the collective leadership of the Kingdom of Impiltur following the political transformation from monarchy to feudal confederacy in 1385 DR. This council governs from Lyrabar and has proven less competent than previous royal rule, struggling with multiple crises including demon incursions, cult infiltration, and limited military resources for regional security.</mark></p><p id="2556c950-ec3f-81ea-93bf-c56881d28cd6" class="">
+</p><h2 id="2556c950-ec3f-8160-b860-fefa5d988c44" class=""><mark class="highlight-default">Governmental Structure</mark></h2><ul id="2556c950-ec3f-815b-a74f-dc6fa2612388" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Government Type</strong></mark><mark class="highlight-default">: Feudal Confederacy under noble council governance</mark></li></ul><ul id="2556c950-ec3f-8186-8ec0-c39cc7d3d90b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Capital</strong></mark><mark class="highlight-default">: Lyrabar</mark></li></ul><ul id="2556c950-ec3f-81e3-94de-fea33e1373ac" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Leadership Model</strong></mark><mark class="highlight-default">: Council of regional lords and major noble houses</mark></li></ul><ul id="2556c950-ec3f-81be-ba8d-e05d77872a28" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Authority</strong></mark><mark class="highlight-default">: Shared governance with regional autonomy for member lords</mark></li></ul><ul id="2556c950-ec3f-810e-84a0-c25faf910daf" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Established</strong></mark><mark class="highlight-default">: 1385 DR following simultaneous disasters and King Imbrar II&#x27;s death</mark></li></ul><p id="2556c950-ec3f-815f-8246-d17ff2078240" class="">
+</p><h2 id="2556c950-ec3f-8181-a8b8-f8331eefd31f" class=""><mark class="highlight-default">Historical Context &amp; Formation</mark></h2><p id="2556c950-ec3f-816a-a4e0-d1d4bb2e8717" class=""><mark class="highlight-default">The Grand Council emerged from catastrophic events that ended Impiltur&#x27;s traditional monarchy:</mark></p><ul id="2556c950-ec3f-8100-bb79-f7de32299d3e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>King Imbrar II&#x27;s Death</strong></mark><mark class="highlight-default">: Political crisis during Spellplague period (1385 DR)</mark></li></ul><ul id="2556c950-ec3f-81a7-bdb9-c2ad9660f7ae" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Spellplague Demons</strong></mark><mark class="highlight-default">: Massive demon releases in northern territories</mark></li></ul><ul id="2556c950-ec3f-8143-9c2c-ff079c31206e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Sea of Fallen Stars Recession</strong></mark><mark class="highlight-default">: Economic disruption from coastal changes</mark></li></ul><ul id="2556c950-ec3f-8166-9718-f56ede7e650d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Political Restructuring</strong></mark><mark class="highlight-default">: Transition from centralized monarchy to distributed noble governance</mark></li></ul><p id="2556c950-ec3f-8136-a0f7-cf37b082c86f" class="">
+</p><h2 id="2556c950-ec3f-8173-addd-df5110cc0fac" class=""><mark class="highlight-default">Current Leadership Composition</mark></h2><p id="2556c950-ec3f-8102-bb67-fd08e9aa881d" class=""><mark class="highlight-default">The Council consists of lords from major noble houses and regional territories:</mark></p><ul id="2556c950-ec3f-81d6-9749-f6c2f33d2a26" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Regional Representatives</strong></mark><mark class="highlight-default">: Lords from major cities and territories throughout Impiltur</mark></li></ul><ul id="2556c950-ec3f-8173-8fba-d0ee52f3ddc0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Noble Houses</strong></mark><mark class="highlight-default">: Hereditary positions based on traditional feudal relationships</mark></li></ul><ul id="2556c950-ec3f-8168-927a-e39810f9d16a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Economic Interests</strong></mark><mark class="highlight-default">: Merchant leaders and trade guild representatives</mark></li></ul><ul id="2556c950-ec3f-8177-8c1e-c778d48f51a8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Military Command</strong></mark><mark class="highlight-default">: Senior officers and regional defense coordinators</mark></li></ul><p id="2556c950-ec3f-8192-8f5d-dacef8600120" class="">
+</p><h2 id="2556c950-ec3f-8178-b34a-f2f25848ce6c" class=""><mark class="highlight-default">Major Challenges &amp; Governance Issues</mark></h2><h3 id="2556c950-ec3f-8147-b479-d3fdee21a688" class=""><mark class="highlight-default">Demonic Threats</mark></h3><ul id="2556c950-ec3f-818e-942d-fba298e69fc9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Morthak&#x27;s Forces</strong></mark><mark class="highlight-default">: Roaming demons led by powerful demon commander in northern hills</mark></li></ul><ul id="2556c950-ec3f-814b-90fd-de07740129b6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Containment Operations</strong></mark><mark class="highlight-default">: Limited success in preventing spread of demonic corruption</mark></li></ul><ul id="2556c950-ec3f-81f0-bb18-fc125fb500fa" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Resource Allocation</strong></mark><mark class="highlight-default">: Significant military resources devoted to demon containment</mark></li></ul><ul id="2556c950-ec3f-8166-bd9e-d1121a49c499" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Civilian Protection</strong></mark><mark class="highlight-default">: Difficulty protecting outlying settlements from demonic raids</mark></li></ul><p id="2556c950-ec3f-8121-8dd8-fda77a85d529" class="">
+</p><h3 id="2556c950-ec3f-81dc-b1ad-dcdd211e6dad" class=""><mark class="highlight-default">Cult Infiltration</mark></h3><ul id="2556c950-ec3f-81b1-a2b0-c0d2e29b2386" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Fraternity of Tharos</strong></mark><mark class="highlight-default">: Demon-worshipping cultists operating from Dunwood region</mark></li></ul><ul id="2556c950-ec3f-8158-acfc-d5267460b24f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Terrorist Operations</strong></mark><mark class="highlight-default">: Bloody rituals and attacks throughout Impilturan territory</mark></li></ul><ul id="2556c950-ec3f-8101-ad80-dcd255971990" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Intelligence Failures</strong></mark><mark class="highlight-default">: Limited success in identifying and eliminating cult cells</mark></li></ul><ul id="2556c950-ec3f-8168-a89f-efaafd9dd466" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Political Penetration</strong></mark><mark class="highlight-default">: Suspected cult influence within government and military structures</mark></li></ul><p id="2556c950-ec3f-81b7-a7ab-cfce4ef921c5" class="">
+</p><h3 id="2556c950-ec3f-8163-b4f7-cc60a754ac00" class=""><mark class="highlight-default">Administrative Competence</mark></h3><ul id="2556c950-ec3f-81ed-94f0-fb13caadacb8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Leadership Quality</strong></mark><mark class="highlight-default">: Council governance less effective than previous monarchical rule</mark></li></ul><ul id="2556c950-ec3f-8191-a6d1-d09fc5294f6c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Decision-Making</strong></mark><mark class="highlight-default">: Slower response times due to need for consensus among lords</mark></li></ul><ul id="2556c950-ec3f-819d-95f5-c98e6a154636" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Coordination</strong></mark><mark class="highlight-default">: Difficulty coordinating regional responses to kingdom-wide threats</mark></li></ul><ul id="2556c950-ec3f-81f9-b7df-d860c981117e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Resource Management</strong></mark><mark class="highlight-default">: Inefficient allocation of limited military and economic resources</mark></li></ul><p id="2556c950-ec3f-8158-a606-c425c6c356eb" class="">
+</p><h2 id="2556c950-ec3f-816c-82d4-dcf407b381ea" class=""><mark class="highlight-default">Regional Relationships &amp; Politics</mark></h2><h3 id="2556c950-ec3f-81e6-b8d3-cce4cb9ebf41" class=""><mark class="highlight-default">Internal Politics</mark></h3><ul id="2556c950-ec3f-8119-a02d-ced4491660b1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Noble Rivalries</strong></mark><mark class="highlight-default">: Competition between major houses affects policy coordination</mark></li></ul><ul id="2556c950-ec3f-81b0-ba44-e2cd4eef5247" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Regional Autonomy</strong></mark><mark class="highlight-default">: Local lords prioritize their territories over kingdom-wide concerns</mark></li></ul><ul id="2556c950-ec3f-819a-8330-e239d9a37932" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Economic Disputes</strong></mark><mark class="highlight-default">: Trade and taxation disagreements create internal friction</mark></li></ul><ul id="2556c950-ec3f-818d-9d54-f2e25c3c02e2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Military Command</strong></mark><mark class="highlight-default">: Divided authority affects response to external threats</mark></li></ul><p id="2556c950-ec3f-8194-ba92-c2ff8c2e4d20" class="">
+</p><h3 id="2556c950-ec3f-81ed-9120-ea6673a3dc75" class=""><mark class="highlight-default">External Relations</mark></h3><ul id="2556c950-ec3f-8166-b411-e4132cba9e6b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Damara</strong></mark><mark class="highlight-default">: Maintains strong trade relationships and mutual defensive cooperation</mark></li></ul><ul id="2556c950-ec3f-8139-9388-ee73c7e5859a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Dunwood Threats</strong></mark><mark class="highlight-default">: Directly affected by demon incursions and cult terrorism from the forest</mark></li></ul><ul id="2556c950-ec3f-81bd-8e15-c4a190a75903" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Vaasa</strong></mark><mark class="highlight-default">: Concerned about potential Warlock Knight expansion affecting regional stability</mark></li></ul><ul id="2556c950-ec3f-8165-a395-fdf4e87c3ec8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Harper Cooperation</strong></mark><mark class="highlight-default">: Limited but growing cooperation with Harper anti-demon operations</mark></li></ul><p id="2556c950-ec3f-8130-8a99-c3684c7ff327" class="">
+</p><h2 id="2556c950-ec3f-81fc-8b7b-c41f832924b2" class=""><mark class="highlight-default">Military Capabilities &amp; Limitations</mark></h2><ul id="2556c950-ec3f-81d6-951d-d71847227a4b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Regional Militias</strong></mark><mark class="highlight-default">: Primary defense relies on local noble house military forces</mark></li></ul><ul id="2556c950-ec3f-8198-b7f3-f8daffce2e68" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Professional Forces</strong></mark><mark class="highlight-default">: Limited standing army concentrated around major cities</mark></li></ul><ul id="2556c950-ec3f-81ca-86a6-d2fb85d59b18" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Defensive Focus</strong></mark><mark class="highlight-default">: Strategy emphasizes containment rather than aggressive operations</mark></li></ul><ul id="2556c950-ec3f-8103-977b-d13d4601aa2b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Resource Constraints</strong></mark><mark class="highlight-default">: Economic limitations restrict military expansion and modernization</mark></li></ul><p id="2556c950-ec3f-81be-a526-e2fcec5dd6ee" class="">
+</p><h2 id="2556c950-ec3f-81dd-886c-ea3c5ba898db" class=""><mark class="highlight-default">Economic Situation</mark></h2><ul id="2556c950-ec3f-81c6-82ad-ef495af843be" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Trade Recovery</strong></mark><mark class="highlight-default">: Rebuilding from Spellplague-era economic disruptions</mark></li></ul><ul id="2556c950-ec3f-81a0-a313-def9b0458136" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Coastal Commerce</strong></mark><mark class="highlight-default">: Limited by post-Spellplague changes to Sea of Fallen Stars</mark></li></ul><ul id="2556c950-ec3f-8163-8119-db0e780a3ab2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Agricultural Base</strong></mark><mark class="highlight-default">: Traditional feudal economy with agricultural foundation</mark></li></ul><ul id="2556c950-ec3f-8139-8288-ee62e995fc95" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Regional Partners</strong></mark><mark class="highlight-default">: Trade relationships with neighboring stable kingdoms</mark></li></ul><p id="2556c950-ec3f-8112-90d8-c6602dff6817" class="">
+</p><h2 id="2556c950-ec3f-811f-9561-fcc653ba65e2" class=""><mark class="highlight-default">Key Cities &amp; Regional Centers</mark></h2><ul id="2556c950-ec3f-81d4-8841-e45fdb1dd5c3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Lyrabar</strong></mark><mark class="highlight-default">: Capital and seat of Grand Council governance</mark></li></ul><ul id="2556c950-ec3f-8199-a76a-f026dd570a14" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Sarshel</strong></mark><mark class="highlight-default">: Major port city and economic center</mark></li></ul><ul id="2556c950-ec3f-8185-a87c-de113bf2ea3d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Hlammach</strong></mark><mark class="highlight-default">: Important inland trading hub</mark></li></ul><ul id="2556c950-ec3f-817c-8970-d3bba7eae2d2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Filur</strong></mark><mark class="highlight-default">: Fortified city near northern borders with demon activity</mark></li></ul><ul id="2556c950-ec3f-81a9-88b6-fca252d82323" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Dilpur</strong></mark><mark class="highlight-default">: Agricultural center supporting the kingdom&#x27;s economy</mark></li></ul><p id="2556c950-ec3f-81d3-86f7-cb9fb38f5ec3" class="">
+</p><h2 id="2556c950-ec3f-815e-9477-e1c9f8a26dca" class=""><mark class="highlight-default">Strategic Priorities</mark></h2><ol type="1" id="2556c950-ec3f-8192-9635-f0caf7b505f8" class="numbered-list" start="1"><li><mark class="highlight-default"><strong>Demon Containment</strong></mark><mark class="highlight-default">: Primary focus on preventing spread of demonic corruption</mark></li></ol><ol type="1" id="2556c950-ec3f-81f6-97de-f3fffd1e638f" class="numbered-list" start="2"><li><mark class="highlight-default"><strong>Cult Elimination</strong></mark><mark class="highlight-default">: Ongoing operations against Fraternity of Tharos and similar groups</mark></li></ol><ol type="1" id="2556c950-ec3f-81ff-bc87-cf03e888f5b4" class="numbered-list" start="3"><li><mark class="highlight-default"><strong>Border Security</strong></mark><mark class="highlight-default">: Limited military presence in northeastern frontier regions</mark></li></ol><ol type="1" id="2556c950-ec3f-817a-bfa0-c8984dde2838" class="numbered-list" start="4"><li><mark class="highlight-default"><strong>Economic Recovery</strong></mark><mark class="highlight-default">: Rebuilding trade relationships and internal prosperity</mark></li></ol><ol type="1" id="2556c950-ec3f-8158-b840-ed75ca5aa4e5" class="numbered-list" start="5"><li><mark class="highlight-default"><strong>Political Stability</strong></mark><mark class="highlight-default">: Maintaining council governance despite internal divisions</mark></li></ol><p id="2556c950-ec3f-8111-8456-ee297c265e21" class="">
+</p><h2 id="2556c950-ec3f-81ce-8f7a-e52008a56468" class=""><mark class="highlight-default">Faction Relationships</mark></h2><h3 id="2556c950-ec3f-81ee-9558-e1627fb8369d" class=""><mark class="highlight-default">Harpers</mark></h3><ul id="2556c950-ec3f-813a-86c2-eeb2d9bc0c1e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Shared Interests</strong></mark><mark class="highlight-default">: Both oppose demon threats and cult terrorism</mark></li></ul><ul id="2556c950-ec3f-8196-807c-e51c131ad42a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Limited Cooperation</strong></mark><mark class="highlight-default">: Growing collaboration on specific anti-demon operations</mark></li></ul><ul id="2556c950-ec3f-81d1-9c9c-f66ac4984563" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Resource Sharing</strong></mark><mark class="highlight-default">: Exchange of intelligence and occasional material support</mark></li></ul><ul id="2556c950-ec3f-8163-91cd-d63049f6d815" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Political Support</strong></mark><mark class="highlight-default">: General approval for Harper activities against regional threats</mark></li></ul><p id="2556c950-ec3f-815a-ab0b-d8d7dfdf6242" class="">
+</p><h3 id="2556c950-ec3f-810f-8de6-c6d08757dd2d" class=""><mark class="highlight-default">Red Wizards of Thay</mark></h3><ul id="2556c950-ec3f-8147-b502-cf7771a507ad" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Distant Concern</strong></mark><mark class="highlight-default">: Aware of Thayan expansion but focused on immediate demon threats</mark></li></ul><ul id="2556c950-ec3f-810e-adcd-c50766dd10e3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Vulnerability</strong></mark><mark class="highlight-default">: Political instability makes kingdom susceptible to infiltration</mark></li></ul><ul id="2556c950-ec3f-81a9-a7b1-f6e315daf6b4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Intelligence Gap</strong></mark><mark class="highlight-default">: Limited awareness of Thayan activities in northern regions</mark></li></ul><ul id="2556c950-ec3f-819c-ab94-e7dc55d4eeda" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Resource Competition</strong></mark><mark class="highlight-default">: Demon containment limits ability to address other threats</mark></li></ul><p id="2556c950-ec3f-8122-a73a-f09cf2cbce05" class="">
+</p><h2 id="2556c950-ec3f-8108-9e08-eb8d324d63e3" class=""><mark class="highlight-default">Governance Challenges</mark></h2><ul id="2556c950-ec3f-8124-a66d-f06a8a9df774" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Consensus Building</strong></mark><mark class="highlight-default">: Need for agreement among multiple lords slows decision-making</mark></li></ul><ul id="2556c950-ec3f-815d-bc42-d88e00c98aa6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Regional Focus</strong></mark><mark class="highlight-default">: Local priorities often conflict with kingdom-wide strategic needs</mark></li></ul><ul id="2556c950-ec3f-81a8-9c6c-f02cf430e9df" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Military Coordination</strong></mark><mark class="highlight-default">: Divided command structure affects operational effectiveness</mark></li></ul><ul id="2556c950-ec3f-811e-a806-e4aef33953cd" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Information Management</strong></mark><mark class="highlight-default">: Limited intelligence capabilities compared to previous royal administration</mark></li></ul><p id="2556c950-ec3f-81ed-9e3a-de13a873c27e" class="">
+</p><h2 id="2556c950-ec3f-81b2-8a47-eb756cac6c72" class=""><mark class="highlight-default">Campaign Relevance</mark></h2><ul id="2556c950-ec3f-81d9-99d3-e897d259f8da" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Potential Ally</strong></mark><mark class="highlight-default">: Natural partner for Harper operations against demon threats</mark></li></ul><ul id="2556c950-ec3f-8161-a3f1-f34541f32eea" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Resource Provider</strong></mark><mark class="highlight-default">: Can offer supplies and local support for anti-demon activities</mark></li></ul><ul id="2556c950-ec3f-816f-853f-ed7be1872746" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Political Complexity</strong></mark><mark class="highlight-default">: Multiple lords provide various potential contacts and complications</mark></li></ul><ul id="2556c950-ec3f-8192-bbb0-f30f9c6fbee4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Strategic Position</strong></mark><mark class="highlight-default">: Impiltur&#x27;s stability affects broader regional balance of power</mark></li></ul><ul id="2556c950-ec3f-8147-bd71-d370663439be" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Intelligence Source</strong></mark><mark class="highlight-default">: Council members possess valuable information about regional threats</mark></li></ul><p id="2556c950-ec3f-816f-ba8f-fdbaf4a592e1" class="">
+</p><h2 id="2556c950-ec3f-81ca-bb9a-fc5306fe764a" class=""><mark class="highlight-default">Internal Dynamics</mark></h2><ul id="2556c950-ec3f-8101-ba8d-f4a4bb51f6c2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Power Struggles</strong></mark><mark class="highlight-default">: Competition between major noble houses affects policy consistency</mark></li></ul><ul id="2556c950-ec3f-8169-afe6-e5ee10d484fa" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Regional Interests</strong></mark><mark class="highlight-default">: Lords prioritize their own territories over collective concerns</mark></li></ul><ul id="2556c950-ec3f-81d5-9653-f1ea76574f71" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Economic Pressures</strong></mark><mark class="highlight-default">: Trade and taxation disputes create ongoing political tensions</mark></li></ul><ul id="2556c950-ec3f-811a-b2f2-e1f886e12cab" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Military Rivalry</strong></mark><mark class="highlight-default">: Different approaches to defense and security among regional commanders</mark></li></ul><p id="2556c950-ec3f-8102-9f3c-e9a9001157f6" class="">
+</p><h2 id="2556c950-ec3f-81fa-8954-de8b7451a0b8" class=""><mark class="highlight-default">Personality Assessment</mark></h2><p id="2556c950-ec3f-819f-b6ee-ec67400cf310" class=""><mark class="highlight-default">Based on governance patterns and policy decisions:</mark></p><ul id="2556c950-ec3f-8139-8bec-dd045adc3394" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Conservative</strong></mark><mark class="highlight-default">: Tends toward cautious approaches rather than bold initiatives</mark></li></ul><ul id="2556c950-ec3f-81fa-97c1-d6d729644cb9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Reactive</strong></mark><mark class="highlight-default">: Responds to crises rather than implementing proactive strategies</mark></li></ul><ul id="2556c950-ec3f-817b-8ee3-e15312fb2c14" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Fragmented</strong></mark><mark class="highlight-default">: Divided priorities and interests affect unified action</mark></li></ul><ul id="2556c950-ec3f-819f-aa6f-cbf7144ce0ba" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Pragmatic</strong></mark><mark class="highlight-default">: Willing to work with external allies when facing serious threats</mark></li></ul><ul id="2556c950-ec3f-8136-b667-f23eb2bedd1a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Traditional</strong></mark><mark class="highlight-default">: Maintains feudal structures and established noble privileges</mark></li></ul><p id="2556c950-ec3f-816b-8199-d07c763650d7" class="">
+</p><h2 id="2556c950-ec3f-818e-b0e6-c394eb48d247" class=""><mark class="highlight-default">Long-term Outlook</mark></h2><ul id="2556c950-ec3f-8134-8abd-c82765d15ff7" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Stability Concerns</strong></mark><mark class="highlight-default">: Continued demon threats and cult infiltration threaten political cohesion</mark></li></ul><ul id="2556c950-ec3f-8197-bc01-d4ac35a49489" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Economic Recovery</strong></mark><mark class="highlight-default">: Gradual improvement dependent on regional security improvements</mark></li></ul><ul id="2556c950-ec3f-8113-a804-dc0490b556e4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Military Development</strong></mark><mark class="highlight-default">: Need for professional military expansion to address multiple threats</mark></li></ul><ul id="2556c950-ec3f-8178-9d9e-ef4793f57c44" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Political Evolution</strong></mark><mark class="highlight-default">: Possible return to more centralized governance if crises intensify</mark></li></ul><ul id="2556c950-ec3f-8195-a52b-c73f7d628295" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><strong>Regional Integration</strong></mark><mark class="highlight-default">: Potential for closer cooperation with neighboring kingdoms against common threats</mark></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,706 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Dragon Binding Ritual</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2556c950-ec3f-80e9-a60e-e287aa008a7e" class="page sans"><header><h1 class="page-title">Dragon Binding Ritual</h1><p class="page-description"></p></header><div class="page-body"><p id="2556c950-ec3f-813f-9c96-d22833a4b058" class="">Putrifax</p><h1 id="2556c950-ec3f-8188-b63a-d124b9290d42" class=""><strong>From the Journal of Thessarian Vekt, Red Wizard of Conjuration</strong></h1><h2 id="2556c950-ec3f-81f8-bb9d-e565f3c2e3eb" class=""><strong>15th Day of Nightal, 1492 DR</strong></h2><p id="2556c950-ec3f-8184-a47a-dc670efa99ee" class="">The ritual is concluded, and once again I am denied what should rightfully be mine. Tharchion Nyth controls Putrifax for another year, the third consecutive term for that ambitious viper. I suspect she has been bribing the other participants—there is no other explanation for how her <em>geas</em> took hold so readily when mine failed to penetrate the beast&#x27;s defenses yet again.</p><p id="2556c950-ec3f-81da-b565-df3860c22886" class="">Seven days we stood in that circle, the cold wind cutting through our robes as we chanted in shifts. Putrifax glared at us with those sulfurous eyes, acid dripping from her maw onto the frozen ground where it hissed and steamed. The ancient wyrm knows exactly what we&#x27;re doing, of course. She&#x27;s older than any of us by centuries, and her hatred burns as hot as her breath is corrosive. When Kasec the Transmuter stepped too close on the fourth day, she nearly took his head off—only the previous year&#x27;s binding held her back, and barely.</p><p id="2556c950-ec3f-8161-843c-c91e79605af9" class="">The dragon&#x27;s resistance grows stronger each year. Where once we could renew the <em>geas</em> in a day or two, now it takes nearly a tenday of constant casting. Her will is formidable, even for a beast. I counted at least forty-seven failed attempts before Nyth&#x27;s spell finally took hold. The creature actually <em>laughed</em> when my own casting shattered against her mind like glass against stone.</p><p id="2556c950-ec3f-81e7-b5c6-e935dafa7e6d" class="">But I have learned much from observing the process. Next year, I will prepare differently. The spell requires not just power, but perfect timing—striking when the dragon&#x27;s defenses are worn thin from previous attempts. Nyth succeeded because she waited, watching the rest of us exhaust ourselves and Putrifax&#x27;s resistance alike. Cunning, I&#x27;ll grant her that.</p><p id="2556c950-ec3f-81f4-b013-e80050c00deb" class="">The political implications trouble me more than the magical ones. With Putrifax under her command, Nyth controls the most powerful weapon in our northern operations. The dragon&#x27;s mere presence keeps the barbarian tribes in line, and her mobility allows us to strike anywhere along the Sword Coast within days. Szass Tam himself takes notice of whoever holds the beast&#x27;s leash.</p><h1 id="2556c950-ec3f-81bc-9321-ded474cfa0b9" class=""><strong>Harpers Communication - Encrypted</strong></h1><h2 id="2556c950-ec3f-811f-ab5d-f907b066df8b" class=""><strong>For Moonwhisper&#x27;s Eyes Only</strong></h2><h3 id="2556c950-ec3f-81ff-99ea-e0555cae7130" class=""><em><strong>Delivered by Raven, 13th Nightal, 1492 DR</strong></em></h3><p id="2556c950-ec3f-8142-a159-eb403c33f20f" class=""><strong>Songbird,</strong></p><p id="2556c950-ec3f-8186-a697-fd01b76b614f" class="">Our watchers in the north report the annual &quot;renewal ceremony&quot; approaches. Intelligence confirms the Red Serpents will gather at the usual site—the old Netherese ruins north of Luskan—beginning on the 15th.</p><p id="2556c950-ec3f-81e2-9ffb-f0a25a19aa27" class=""><strong>Assets in Play:</strong></p><ul id="2556c950-ec3f-81b8-b58b-f751ec56e416" class="bulleted-list"><li style="list-style-type:disc">Seven confirmed Red Wizards, including the current Binder</li></ul><ul id="2556c950-ec3f-818d-a7a8-ea86f6a075bd" class="bulleted-list"><li style="list-style-type:disc">One Very Large Problem (codename: <em>Acidtongue</em>)</li></ul><ul id="2556c950-ec3f-81df-a5d9-deaeb5b03ddb" class="bulleted-list"><li style="list-style-type:disc">Estimated 40-60 Thayan soldiers providing perimeter security</li></ul><ul id="2556c950-ec3f-8121-ae33-eebb86767632" class="bulleted-list"><li style="list-style-type:disc">Unknown magical protections around the ritual site</li></ul><p id="2556c950-ec3f-81f3-8501-ed0aef9cf471" class=""><strong>The Moral Quandary:</strong> Yes, I know what you&#x27;re thinking. &quot;Free a centuries-old black dragon to spite Thay? Have we lost our minds?&quot; The Circle has debated this for months. The calculation is grim but clear: <em>Acidtongue</em> under Thayan control threatens every settlement from Neverwinter to the Moonshae Isles. Loose and free? She becomes everyone&#x27;s problem, but no longer serves Szass Tam&#x27;s grand designs.</p><p id="2556c950-ec3f-81b7-8db1-c0a3da003e96" class="">Our northern contacts suggest that if freed, there&#x27;s a chance the dragon’s hatred for the Red Wizards might outweigh her natural malevolence. At minimum, it deprives them of their most powerful northern asset.</p><p id="2556c950-ec3f-8116-8caf-c51f38820163" class=""><strong>The Plan - &quot;Songbreak&quot;:</strong></p><ol type="1" id="2556c950-ec3f-816d-be56-e29ff49aba6a" class="numbered-list" start="1"><li><strong>Infiltration</strong>: <em>Whisperwind</em> and her cell will position within one mile of the ritual site</li></ol><ol type="1" id="2556c950-ec3f-81df-9f40-f5920dbdfdda" class="numbered-list" start="2"><li><strong>Disruption</strong>: Strike during the binding attempts—cause enough chaos to break concentration repeatedly</li></ol><ol type="1" id="2556c950-ec3f-81ee-9bc8-f4cb643e0fac" class="numbered-list" start="3"><li><strong>Extraction</strong>: Withdraw before Thayan reinforcements arrive</li></ol><ol type="1" id="2556c950-ec3f-818b-b3a9-ca7c6bdfc41e" class="numbered-list" start="4"><li><strong>Contingency</strong>: If the dragon breaks free, <em>Songbird</em> has prepared contingencies to track and potentially communicate with it</li></ol><p id="2556c950-ec3f-815d-b6bb-e36181141bfd" class=""><strong>Key Intelligence:</strong> Our asset inside (codename: <em>Fledgling</em>) reports growing dissension among the binders. The young one shows signs of... flexibility regarding current policies. Do NOT contact directly—their position is too valuable to risk. They may prove useful during the operation itself.</p><p id="2556c950-ec3f-81f5-bfd4-e4050b556462" class=""><strong>Authorization Level</strong>: This comes from Twilight Hall directly. Storm Silverhand herself reviewed and approved. The words were: &quot;Sometimes the enemy of evil is just a different kind of evil—but evil fighting evil serves the Light.&quot;</p><p id="2556c950-ec3f-817c-b7cb-def5ad7e24a7" class=""><strong>Timeline:</strong></p><ul id="2556c950-ec3f-81ae-8759-dc137f8f0756" class="bulleted-list"><li style="list-style-type:disc">14th Nightal: Final positioning</li></ul><ul id="2556c950-ec3f-8149-bd6d-f4ccda0b2747" class="bulleted-list"><li style="list-style-type:disc">15th Nightal: Operation begins</li></ul><ul id="2556c950-ec3f-81da-b4e7-c53bf0ff5158" class="bulleted-list"><li style="list-style-type:disc">22nd Nightal: Extraction complete, regardless of outcome</li></ul><p id="2556c950-ec3f-8150-a31a-d1b2ff3aa513" class=""><strong>Operational Notes:</strong></p><ul id="2556c950-ec3f-81aa-ba3e-c6ecacc4cb5e" class="bulleted-list"><li style="list-style-type:disc">Bring <em>lots</em> of acid resistance</li></ul><ul id="2556c950-ec3f-8197-9f97-c00cf39d410a" class="bulleted-list"><li style="list-style-type:disc">Pack for winter mountain conditions</li></ul><ul id="2556c950-ec3f-8162-8c17-ee32b58b5b40" class="bulleted-list"><li style="list-style-type:disc">Prepare messaging spells for rapid communication</li></ul><ul id="2556c950-ec3f-8143-b817-f5ebfa85a092" class="bulleted-list"><li style="list-style-type:disc">Remember: we&#x27;re not trying to kill anyone—just disrupt their concentration</li></ul><p id="2556c950-ec3f-8199-b068-ed90dfd54089" class=""><strong>Final Thought:</strong> I won&#x27;t lie to you, Songbird. This plan horrifies me. But eight centuries of Red Wizard control over a dragon horrifies me more. Sometimes our choices are between bad and worse, and we pick the one that serves the greater good.</p><p id="2556c950-ec3f-8102-a873-cdab3fbcf6c8" class="">May Tymora guide your arrows and Oghma sharpen your wit.</p><p id="2556c950-ec3f-8160-bb99-f51dad3fe4c6" class=""><strong>—Nightingale</strong></p><p id="2556c950-ec3f-8185-a6e0-d1e97acfe7e4" class=""><em>Burn after reading. The usual security protocols apply.</em></p><p id="2556c950-ec3f-8165-a898-eaa0aedc8bb8" class=""><em>Postscript: Our divination specialists suggest a 60% chance of operation success, 30% chance of catastrophic failure, and 10% chance of something no one anticipated. Standard Harper odds, really.</em></p><p id="2556c950-ec3f-81b4-93a6-e63b8e72a008" class=""><em>Final note: If this goes wrong, the bards will sing songs about our folly for generations. Make sure they&#x27;re good songs.</em></p><p id="2556c950-ec3f-8144-ae37-e83ad9e1e9d5" class="">https://forgottenrealms.fandom.com/wiki/War_of_the_Silver_Marches</p><p id="2556c950-ec3f-810c-9875-ebd5a4223ba6" class="">https://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_MedRes.jpg</p><p id="2556c950-ec3f-8121-a99b-fae130e209f7" class="">https://marketplace.dndbeyond.com/adventures/SRC-00041</p><p id="2556c950-ec3f-8148-a597-cd939e4226ff" class="">https://roll20.net/compendium/dnd5e/Character%20Advancement#content</p><h3 id="2556c950-ec3f-81fe-8417-ca458b758edb" class=""><strong>Dragon of Icespire Peak</strong></h3><p id="2556c950-ec3f-81a4-8146-e0ad4e432044" class="">https://thealexandrian.net/wordpress/45437/roleplaying-games/review-icewind-dale-rime-of-the-frostmaiden</p><p id="2556c950-ec3f-811d-ada2-f02fcaa19426" class="">icewind-dale-rime-of-the-frostmaiden</p><p id="2556c950-ec3f-81ec-86ec-ce14531ffa80" class="">The <strong>War of the Silver Marches</strong> was a conflict between the <a href="https://forgottenrealms.fandom.com/wiki/Orc">orcs</a> of <a href="https://forgottenrealms.fandom.com/wiki/Many-Arrows">Many-Arrows</a> that took place in the <a href="https://forgottenrealms.fandom.com/wiki/Silver_Marches">Silver Marches</a> over <a href="https://forgottenrealms.fandom.com/wiki/1484_DR">1484 DR</a> to <a href="https://forgottenrealms.fandom.com/wiki/1485_DR">1485 DR</a></p><p id="2556c950-ec3f-81dc-9c06-c1a3a8661a2b" class="">https://forgottenrealms.fandom.com/wiki/Luruar</p><p id="2556c950-ec3f-8154-bde0-c11c91e1b06d" class=""><strong>Luruar</strong>, also commonly known as the <strong>Silver Marches</strong>, was a confederation of cities in the north of <a href="https://forgottenrealms.fandom.com/wiki/Faer%C3%BBn">Faerûn</a>, under the leadership of <a href="https://forgottenrealms.fandom.com/wiki/Alustriel_Silverhand">Alustriel Silverhand</a>, former ruler of Silverymoon. It consisted of <a href="https://forgottenrealms.fandom.com/wiki/Silverymoon">Silverymoon</a>, <a href="https://forgottenrealms.fandom.com/wiki/Citadel_Adbar">Citadel Adbar</a>, <a href="https://forgottenrealms.fandom.com/wiki/Deadsnows">Deadsnows</a>, <a href="https://forgottenrealms.fandom.com/wiki/Jalanthar">Jalanthar</a>, <a href="https://forgottenrealms.fandom.com/wiki/Quaervarr">Quaervarr</a>, <a href="https://forgottenrealms.fandom.com/wiki/Citadel_Felbarr">Citadel Felbarr</a>, <a href="https://forgottenrealms.fandom.com/wiki/Everlund">Everlund</a>, <a href="https://forgottenrealms.fandom.com/wiki/Mithral_Hall">Mithral Hall</a>, and <a href="https://forgottenrealms.fandom.com/wiki/Sundabar">Sundabar</a>, and its goal was to protect <a href="https://forgottenrealms.fandom.com/wiki/The_North">the North</a> against the growing horde of <a href="https://forgottenrealms.fandom.com/wiki/Orc">orcs</a> in the mountains.<a href="https://forgottenrealms.fandom.com/wiki/Luruar#cite_note-SM-peek-6">[6]</a></p><p id="2556c950-ec3f-8124-a9b6-f267d767990c" class="">https://www.5esrd.com/database/creature/brimstone-locusthound/</p><table id="2556c950-ec3f-81b6-9484-ea49bd4f692a" class="simple-table"><thead class="simple-table-header"><tr id="2556c950-ec3f-81c1-b6be-fc5b2804ca89"><th id="IXtm" class="simple-table-header-color simple-table-header"><strong>Experience Points</strong></th><th id="xoNf" class="simple-table-header-color simple-table-header"><strong>Level</strong></th><th id="CmRu" class="simple-table-header-color simple-table-header"><strong>Proficiency Bonus</strong></th></tr></thead><tbody><tr id="2556c950-ec3f-8190-ab7a-d2c5d17641a8"><th id="IXtm" class="simple-table-header-color simple-table-header">0</th><td id="xoNf" class="">1</td><td id="CmRu" class="">+2</td></tr><tr id="2556c950-ec3f-810f-a702-dd8775deaf6d"><th id="IXtm" class="simple-table-header-color simple-table-header">300</th><td id="xoNf" class="">2</td><td id="CmRu" class="">+2</td></tr><tr id="2556c950-ec3f-81c5-9a91-e70281414143"><th id="IXtm" class="simple-table-header-color simple-table-header">900</th><td id="xoNf" class="">3</td><td id="CmRu" class="">+2</td></tr><tr id="2556c950-ec3f-8101-8c88-f07a645c4091"><th id="IXtm" class="simple-table-header-color simple-table-header">2,700</th><td id="xoNf" class="">4</td><td id="CmRu" class="">+2</td></tr><tr id="2556c950-ec3f-81b4-8493-debcd1ed8585"><th id="IXtm" class="simple-table-header-color simple-table-header">6,500</th><td id="xoNf" class="">5</td><td id="CmRu" class="">+3</td></tr><tr id="2556c950-ec3f-8120-a73a-d011edfc04fc"><th id="IXtm" class="simple-table-header-color simple-table-header">14,000</th><td id="xoNf" class="">6</td><td id="CmRu" class="">+3</td></tr><tr id="2556c950-ec3f-81e4-a980-d1cc84cdd147"><th id="IXtm" class="simple-table-header-color simple-table-header">23,000</th><td id="xoNf" class="">7</td><td id="CmRu" class="">+3</td></tr><tr id="2556c950-ec3f-8167-a397-e556f533211f"><th id="IXtm" class="simple-table-header-color simple-table-header">34,000</th><td id="xoNf" class="">8</td><td id="CmRu" class="">+3</td></tr><tr id="2556c950-ec3f-814b-ab08-c142a90e9eae"><th id="IXtm" class="simple-table-header-color simple-table-header">48,000</th><td id="xoNf" class="">9</td><td id="CmRu" class="">+4</td></tr><tr id="2556c950-ec3f-8138-ba25-ed1eba6a2119"><th id="IXtm" class="simple-table-header-color simple-table-header">64,000</th><td id="xoNf" class="">10</td><td id="CmRu" class="">+4</td></tr><tr id="2556c950-ec3f-818b-b796-d0afb98d516e"><th id="IXtm" class="simple-table-header-color simple-table-header">85,000</th><td id="xoNf" class="">11</td><td id="CmRu" class="">+4</td></tr><tr id="2556c950-ec3f-81f2-bdfa-ccdcb88c4605"><th id="IXtm" class="simple-table-header-color simple-table-header">100,000</th><td id="xoNf" class="">12</td><td id="CmRu" class="">+4</td></tr><tr id="2556c950-ec3f-81f8-9d2d-e58ddf285268"><th id="IXtm" class="simple-table-header-color simple-table-header">120,000</th><td id="xoNf" class="">13</td><td id="CmRu" class="">+5</td></tr><tr id="2556c950-ec3f-8127-9652-df0eb84eb714"><th id="IXtm" class="simple-table-header-color simple-table-header">140,000</th><td id="xoNf" class="">14</td><td id="CmRu" class="">+5</td></tr><tr id="2556c950-ec3f-811e-9e2d-f18b3ee3989e"><th id="IXtm" class="simple-table-header-color simple-table-header">165,000</th><td id="xoNf" class="">15</td><td id="CmRu" class="">+5</td></tr><tr id="2556c950-ec3f-81af-987d-c1d0c1729287"><th id="IXtm" class="simple-table-header-color simple-table-header">195,000</th><td id="xoNf" class="">16</td><td id="CmRu" class="">+5</td></tr><tr id="2556c950-ec3f-81f8-8609-df3325762c60"><th id="IXtm" class="simple-table-header-color simple-table-header">225,000</th><td id="xoNf" class="">17</td><td id="CmRu" class="">+6</td></tr><tr id="2556c950-ec3f-813a-91d4-ecd0b8ec41ff"><th id="IXtm" class="simple-table-header-color simple-table-header">265,000</th><td id="xoNf" class="">18</td><td id="CmRu" class="">+6</td></tr><tr id="2556c950-ec3f-81c0-b5fb-e829e982836e"><th id="IXtm" class="simple-table-header-color simple-table-header">305,000</th><td id="xoNf" class="">19</td><td id="CmRu" class="">+6</td></tr><tr id="2556c950-ec3f-812d-b726-fa11feeb076f"><th id="IXtm" class="simple-table-header-color simple-table-header">355,000</th><td id="xoNf" class="">20</td><td id="CmRu" class="">+6</td></tr></tbody></table><h1 id="2556c950-ec3f-81a0-ba19-fe519633d8d6" class=""><strong>Magic Jar</strong></h1><p id="2556c950-ec3f-81a3-9d65-c2c11cca3c9e" class=""><em>6 Necromancy</em></p><ul id="2556c950-ec3f-81ae-b3f2-c52ff39230f2" class="bulleted-list"><li style="list-style-type:disc"><strong>Casting Time:</strong> 1 minute<p id="2556c950-ec3f-81dd-8b4c-e5b61cadcae0" class=""><strong>Range:</strong> Self</p><p id="2556c950-ec3f-817e-925c-d515874acbc9" class=""><strong>Target:</strong> See text</p><p id="2556c950-ec3f-8194-aa42-e0a77a757da9" class=""><strong>Components:</strong> V S M (A gem, crystal, reliquary, or some other ornamental container worth at least 500 gp)</p><p id="2556c950-ec3f-8133-80e9-e6d8f99ce418" class=""><strong>Duration:</strong> Until dispelled</p><p id="2556c950-ec3f-8164-8fa5-f120e8f477f9" class=""><strong>Classes:</strong> Wizard, Occultist</p><p id="2556c950-ec3f-819b-af30-d9125a81a5fe" class="">Your body falls into a catatonic state as your soul leaves it and enters the container you used for the spell’s material component. While your soul inhabits the container, you are aware of your surroundings as if you were in the container’s space. You can’t move or use reactions. The only action you can take is to project your soul up to 100 feet out of the container, either returning to your living body (and ending the spell) or attempting to possess a humanoids body.</p><p id="2556c950-ec3f-8196-b0cf-e5bf6da68938" class="">You can attempt to possess any humanoid within 100 feet of you that you can see (creatures warded by a protection from evil and good or magic circle spell can’t be possessed). The target must make a Charisma saving throw. On a failure, your soul moves into the target’s body, and the target’s soul becomes trapped in the container. On a success, the target resists your efforts to possess it, and you can’t attempt to possess it again for 24 hours.</p><p id="2556c950-ec3f-8185-87c1-cb043df514c6" class="">Once you possess a creature’s body, you control it. Your game statistics are replaced by the statistics of the creature, though you retain your alignment and your Intelligence, Wisdom, and Charisma scores. You retain the benefit of your own class features. If the target has any class levels, you can’t use any of its class features.</p><p id="2556c950-ec3f-8150-9204-c1ee3b51679f" class="">Meanwhile, the possessed creature’s soul can perceive from the container using its own senses, but it can’t move or take actions at all.</p><p id="2556c950-ec3f-81d0-be39-cda9a13066a5" class="">While possessing a body, you can use your action to return from the host body to the container if it is within 100 feet of you, returning the host creature’s soul to its body. If the host body dies while you’re in it, the creature dies, and you must make a Charisma saving throw against your own spellcasting DC. On a success, you return to the container if it is within 100 feet of you. Otherwise, you die.</p><p id="2556c950-ec3f-812e-8ec1-fdd2291f2bde" class="">If the container is destroyed or the spell ends, your soul immediately returns to your body. If your body is more than 100 feet away from you or if your body is dead when you attempt to return to it, you die. If another creature’s soul is in the container when it is destroyed, the creature’s soul returns to its body if the body is alive and within 100 feet. Otherwise, that creature dies.</p><p id="2556c950-ec3f-813d-9b35-c3d399c242c6" class="">When the spell ends, the container is destroyed.</p></li></ul><p id="2556c950-ec3f-8158-b705-cbd96ee08499" class="">https://en.wikipedia.org/wiki/Karst</p><p id="2556c950-ec3f-818b-a6fd-ceee0f7f0f82" class=""><strong>Karst</strong> (<a href="https://en.wikipedia.org/wiki/Help:IPA/English">/kɑːrst/</a>) is a <a href="https://en.wikipedia.org/wiki/Topography">topography</a> formed from the dissolution of soluble <a href="https://en.wikipedia.org/wiki/Carbonate_rock">carbonate rocks</a> such as <a href="https://en.wikipedia.org/wiki/Limestone">limestone</a> and <a href="https://en.wikipedia.org/wiki/Dolomite_(rock)">dolomite</a>. It is characterized by features like <a href="https://en.wikipedia.org/wiki/Polje">poljes</a> above and drainage systems with <a href="https://en.wikipedia.org/wiki/Sinkhole">sinkholes</a> and <a href="https://en.wikipedia.org/wiki/Cave">caves</a> underground.<a href="https://en.wikipedia.org/wiki/Karst#cite_note-1">[1]</a><a href="https://en.wikipedia.org/wiki/Karst#cite_note-2">[2]</a> There is some evidence that karst may occur in more <a href="https://en.wikipedia.org/wiki/Weathering">weathering</a>-resistant rocks such as <a href="https://en.wikipedia.org/wiki/Quartzite">quartzite</a> given the right conditions.<a href="https://en.wikipedia.org/wiki/Karst#cite_note-3">[</a></p><p id="2556c950-ec3f-8110-8d6a-e14a25534d3e" class="">https://en.wikipedia.org/wiki/Stone_Forest</p><p id="2556c950-ec3f-81d4-ab10-e654923c42ff" class="">The <strong>Stone Forest</strong> or <strong>Shilin</strong> (<a href="https://en.wikipedia.org/wiki/Chinese_language">Chinese</a>: <a href="https://en.wiktionary.org/wiki/%E7%9F%B3">石</a><a href="https://en.wiktionary.org/wiki/%E6%9E%97">林</a>; <a href="https://en.wikipedia.org/wiki/Pinyin">pinyin</a>: <em>Shílín</em>) is a notable set of <a href="https://en.wikipedia.org/wiki/Limestone">limestone</a> formations about 500 km2 in area located in <a href="https://en.wikipedia.org/wiki/Shilin_Yi_Autonomous_County">Shilin Yi Autonomous County</a>, <a href="https://en.wikipedia.org/wiki/Yunnan">Yunnan</a> province of <a href="https://en.wikipedia.org/wiki/China">China</a>. The forest is approximately 90 km (56 mi) east of the provincial capital <a href="https://en.wikipedia.org/wiki/Kunming">Kunming</a>.</p><p id="2556c950-ec3f-81ad-9dc8-fe74e57b00f3" class="">In <a href="https://en.wikipedia.org/wiki/Geography">geography</a>, a <strong>bight</strong> (<a href="https://en.wikipedia.org/wiki/Help:IPA/English">/baɪt/</a>) is a concave bend or curvature in a <a href="https://en.wikipedia.org/wiki/Coast">coastline</a>, <a href="https://en.wikipedia.org/wiki/River">river</a> or other geographical feature,<a href="https://en.wikipedia.org/wiki/Bight_(geography)#cite_note-1">[1]</a> or it may refer to a very open <a href="https://en.wikipedia.org/wiki/Bay">bay</a> formed by such a feature.<a href="https://en.wikipedia.org/wiki/Bight_(geography)#cite_note-2">[2]</a> Such bays are typically broad, open, shallow and only slightly recessed.</p><p id="2556c950-ec3f-81f4-9c37-eeab4488f41b" class="">https://en.wikipedia.org/wiki/Fjord</p><p id="2556c950-ec3f-8110-b858-cdcef81246bc" class="">https://en.wikipedia.org/wiki/Spitsbergen</p><p id="2556c950-ec3f-8176-bcf2-c1c225b8badd" class="">https://forgottenrealms.fandom.com/wiki/The_Absolute</p><p id="2556c950-ec3f-81a7-bde6-ca6692050233" class="">https://forgottenrealms.fandom.com/wiki/Uthmere</p><p id="2556c950-ec3f-815a-a10e-e3703677cc4a" class="">https://forgottenrealms.fandom.com/wiki/Harpers</p><p id="2556c950-ec3f-8175-8072-fa2a1f3ed83f" class="">Harper Refuges</p><p id="2556c950-ec3f-81a0-aedb-cfc140d7e41c" class="">https://forgottenrealms.fandom.com/wiki/Lady_of_Poison</p><p id="2556c950-ec3f-8109-ab2b-fcaef3c51dd2" class="">https://forgottenrealms.fandom.com/wiki/Dun-Tharos</p><p id="2556c950-ec3f-8176-ad6a-e29e1c0a1e83" class="">Construction of Dun-Tharos as a traditional citadel of black stone was completed in <a href="https://forgottenrealms.fandom.com/wiki/-970_DR">−970 DR</a> over the ruins of Narathmault by <a href="https://forgottenrealms.fandom.com/wiki/Thargaun_Crell">Thargaun Crell</a>, the first Nentyarch of Tharos (later <a href="https://forgottenrealms.fandom.com/wiki/Narfell">Narfell</a>).</p><ul id="2556c950-ec3f-8177-a3f6-d9dd6bbc7709" class="bulleted-list"><li style="list-style-type:disc">The forest was known to be haunted by <a href="https://forgottenrealms.fandom.com/wiki/Demons">demons</a> who dwelt in the ruins of Dun-Tharos.<a href="https://forgottenrealms.fandom.com/wiki/Dunwood#cite_note-FRCG-p134-3">[3]</a><a href="https://forgottenrealms.fandom.com/wiki/Dunwood#cite_note-UE-p123-28">[28]</a> The defeat of the Rotting Man released demons into the Dunwood that the Empire of Narfell had bound underground.<a href="https://forgottenrealms.fandom.com/wiki/Dunwood#cite_note-FRPG-p102-16">[16]</a><a href="https://forgottenrealms.fandom.com/wiki/Dunwood#cite_note-FRCG-p134-3">[3]</a> Demons of the Dunwood sometimes abducted individuals from surrounding villages.<a href="https://forgottenrealms.fandom.com/wiki/Dunwood#cite_note-FRPG-p103-29">[29]</a><a href="https://forgottenrealms.fandom.com/wiki/Dunwood#cite_note-FRCG-p85-30">[30]</a></li></ul><p id="2556c950-ec3f-815d-bb33-dfa06d738a6c" class="">https://forgottenrealms.fandom.com/wiki/Rotting_Man</p><p id="2556c950-ec3f-81fa-9995-f32336ba1188" class="">https://archive.org/details/ladyofpoison0000cord/page/n2/mode/1up</p><p id="2556c950-ec3f-8135-b8b4-ebad0859bcb3" class="">https://en.wikipedia.org/wiki/Lake_Drummond</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

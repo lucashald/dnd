@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skylark - Level 3 Ranger Character Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .character-sheet {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f0f5f0;
+            padding: 30px;
+            border: 3px solid #2d5016;
+            border-radius: 10px;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background-color: #e6f0e6;
+            border: 2px solid #2d5016;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .stat-box .stat-name {
+            font-weight: bold;
+            font-size: 0.8em;
+            color: #2d5016;
+        }
+        .stat-box .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .stat-box .stat-modifier {
+            font-size: 1em;
+            color: #2c5f77;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #e6f0e6;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            margin: 10px 0;
+        }
+        .skill-item {
+            padding: 5px;
+            background-color: #f5f5f0;
+            border-left: 3px solid #8b9467;
+        }
+        .skill-item.proficient {
+            background-color: #e6f3ff;
+            border-left: 3px solid #2c5f77;
+            font-weight: bold;
+        }
+        .spell-list {
+            background-color: #f0f8ff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #4682b4;
+        }
+        .feature-box {
+            background-color: #f5f0e6;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #2d5016;
+        }
+        .companion-box {
+            background-color: #e6f3ff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #4682b4;
+        }
+        .equipment-list {
+            background-color: #f5f0e6;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #2d5016;
+            border-bottom: 2px solid #2d5016;
+            padding-bottom: 5px;
+        }
+        .proficiency-bonus {
+            display: inline-block;
+            background-color: #2c5f77;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="character-sheet">
+        <h1 style="text-align: center; color: #2d5016;">Skylark</h1>
+        <p style="text-align: center; font-style: italic; color: #2c5f77;">Level 3 Human Ranger (Hunter Conclave)</p>
+
+        <div class="info-row">
+            <span><strong>Race:</strong> Human (Variant)</span>
+            <span><strong>Class:</strong> Ranger 3</span>
+            <span><strong>Background:</strong> Harper Agent</span>
+        </div>
+
+        <div class="info-row">
+            <span><strong>Age:</strong> 35</span>
+            <span><strong>Alignment:</strong> Neutral Good</span>
+            <span><strong>Proficiency Bonus:</strong> <span class="proficiency-bonus">+2</span></span>
+        </div>
+
+        <h2>Ability Scores</h2>
+        <div class="stat-grid">
+            <div class="stat-box">
+                <div class="stat-name">STR</div>
+                <div class="stat-value">13</div>
+                <div class="stat-modifier">+1</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-name">DEX</div>
+                <div class="stat-value">16</div>
+                <div class="stat-modifier">+3</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-name">CON</div>
+                <div class="stat-value">14</div>
+                <div class="stat-modifier">+2</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-name">INT</div>
+                <div class="stat-value">12</div>
+                <div class="stat-modifier">+1</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-name">WIS</div>
+                <div class="stat-value">15</div>
+                <div class="stat-modifier">+2</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-name">CHA</div>
+                <div class="stat-value">10</div>
+                <div class="stat-modifier">+0</div>
+            </div>
+        </div>
+
+        <h2>Combat Stats</h2>
+        <div class="info-row">
+            <span><strong>AC:</strong> 15 (Studded Leather)</span>
+            <span><strong>Initiative:</strong> +3</span>
+            <span><strong>Speed:</strong> 30 ft.</span>
+        </div>
+        <div class="info-row">
+            <span><strong>Hit Points:</strong> 26 (3d10 + 6)</span>
+            <span><strong>Hit Dice:</strong> 3d10</span>
+        </div>
+
+        <h2>Saving Throws</h2>
+        <div class="skills-grid">
+            <div class="skill-item proficient">STR +3 (Proficient)</div>
+            <div class="skill-item proficient">DEX +5 (Proficient)</div>
+            <div class="skill-item">CON +2</div>
+            <div class="skill-item">INT +1</div>
+            <div class="skill-item">WIS +2</div>
+            <div class="skill-item">CHA +0</div>
+        </div>
+
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Acrobatics +3</div>
+            <div class="skill-item proficient">Animal Handling +4 (Proficient)</div>
+            <div class="skill-item">Arcana +1</div>
+            <div class="skill-item proficient">Athletics +3 (Proficient)</div>
+            <div class="skill-item">Deception +0</div>
+            <div class="skill-item">History +1</div>
+            <div class="skill-item proficient">Insight +4 (Proficient)</div>
+            <div class="skill-item">Intimidation +0</div>
+            <div class="skill-item proficient">Investigation +3 (Proficient)</div>
+            <div class="skill-item">Medicine +2</div>
+            <div class="skill-item proficient">Nature +3 (Proficient)</div>
+            <div class="skill-item proficient">Perception +4 (Proficient)</div>
+            <div class="skill-item">Performance +0</div>
+            <div class="skill-item">Persuasion +0</div>
+            <div class="skill-item">Religion +1</div>
+            <div class="skill-item">Sleight of Hand +3</div>
+            <div class="skill-item proficient">Stealth +5 (Proficient)</div>
+            <div class="skill-item proficient">Survival +4 (Proficient)</div>
+        </div>
+
+        <h2>Racial Traits (Variant Human)</h2>
+        <div class="feature-box">
+            <p><strong>Ability Score Increase:</strong> +1 DEX, +1 WIS (already applied)</p>
+            <p><strong>Feat - Alert:</strong></p>
+            <ul>
+                <li>+5 bonus to initiative (included above)</li>
+                <li>Can't be surprised while conscious</li>
+                <li>Other creatures don't gain advantage on attack rolls against you as a result of being hidden from you</li>
+            </ul>
+            <p><strong>Languages:</strong> Common, Elvish, Giant</p>
+        </div>
+
+        <h2>Class Features (Ranger - Hunter)</h2>
+        <div class="feature-box">
+            <p><strong>Spellcasting:</strong> Wisdom-based spellcasting (Spell Save DC 12, Spell Attack +4)</p>
+            <p><strong>Favored Enemy:</strong> Red Wizards and Thayan agents (humanoids). Advantage on Survival checks to track them and Intelligence checks to recall information about them. Learn one language associated with them (Thayan).</p>
+            <p><strong>Natural Explorer (Arctic):</strong></p>
+            <ul>
+                <li>Difficult terrain doesn't slow group's travel in arctic regions</li>
+                <li>Group can't become lost except by magical means</li>
+                <li>Alert to danger even while engaged in another activity (foraging, navigating, tracking)</li>
+                <li>Move stealthily at normal pace when traveling alone</li>
+                <li>Find twice as much food and water when foraging</li>
+                <li>Learn exact number, sizes, and how long ago creatures passed through when tracking</li>
+            </ul>
+            <p><strong>Fighting Style - Archery:</strong> +2 bonus to attack rolls with ranged weapons (included in stats below)</p>
+            <p><strong>Primeval Awareness:</strong> Action and 1 spell slot to sense types of creatures (aberrations, celestials, dragons, elementals, fey, fiends, undead) within 1 mile (6 miles in favored terrain). No information on location or number.</p>
+            <p><strong>Hunter's Prey - Colossus Slayer:</strong> Once per turn, when you hit a creature with a weapon attack and it's below max HP, deal an extra 1d8 damage.</p>
+        </div>
+
+        <h2>Background: Harper Agent</h2>
+        <div class="feature-box">
+            <p><strong>Feature - Harper Network:</strong> Can invoke Harper connections to gain information, safe passage, or shelter from Harper agents and sympathizers throughout the region.</p>
+            <p><strong>Languages:</strong> One additional language (Thayan - from Favored Enemy)</p>
+            <p><strong>Skills:</strong> Insight and Investigation (already included above)</p>
+            <p><strong>Tool Proficiencies:</strong> Disguise kit, one type of musical instrument (Flute - for Harper signals)</p>
+        </div>
+
+        <h2>Spellcasting</h2>
+        <div class="info-row">
+            <span><strong>Spell Save DC:</strong> 12</span>
+            <span><strong>Spell Attack:</strong> +4</span>
+            <span><strong>Spells Known:</strong> 3</span>
+        </div>
+        <div class="info-row">
+            <span><strong>1st Level Slots:</strong> 3</span>
+        </div>
+
+        <div class="spell-list">
+            <h3>1st Level Spells (3 slots)</h3>
+            <ul>
+                <li><strong>Hunter's Mark:</strong> Bonus action to mark target. Extra 1d6 damage on hit and advantage on Wisdom (Perception/Survival) checks to find it (concentration, 1 hour)</li>
+                <li><strong>Cure Wounds:</strong> Heal 1d8 + 2 HP (touch)</li>
+                <li><strong>Alarm:</strong> Set magical alarm on area for 8 hours (ritual)</li>
+            </ul>
+        </div>
+
+        <h2>Weapons</h2>
+        <div class="equipment-list">
+            <p><strong>Longbow:</strong> +7 to hit (DEX +3, Proficiency +2, Archery +2), 1d8+3 piercing, range 150/600</p>
+            <ul>
+                <li><em>With Hunter's Mark:</em> 1d8+3 piercing + 1d6 bonus</li>
+                <li><em>With Colossus Slayer (injured target):</em> 1d8+3 piercing + 1d8 bonus</li>
+                <li><em>With both:</em> 1d8+3 + 1d6 + 1d8 damage</li>
+            </ul>
+            <p><strong>Shortsword:</strong> +5 to hit, 1d6+3 piercing (light, finesse)</p>
+            <p><strong>Dagger:</strong> +5 to hit, 1d4+3 piercing (light, finesse, thrown 20/60)</p>
+        </div>
+
+        <h2>Equipment & Gear</h2>
+        <div class="equipment-list">
+            <h3>Worn/Carried</h3>
+            <ul>
+                <li>Studded leather armor</li>
+                <li>Longbow</li>
+                <li>Quiver with 40 arrows</li>
+                <li>Shortsword</li>
+                <li>Two daggers</li>
+                <li>Explorer's pack</li>
+                <li>Disguise kit</li>
+                <li>Flute (for Harper signals)</li>
+                <li>Harper pin (kept hidden)</li>
+            </ul>
+
+            <h3>Adventuring Gear</h3>
+            <ul>
+                <li>Rope (50 ft. hempen)</li>
+                <li>Tinderbox</li>
+                <li>10 torches</li>
+                <li>Bedroll</li>
+                <li>Waterskin</li>
+                <li>Rations (10 days)</li>
+                <li>Healer's kit</li>
+                <li>Hunting trap</li>
+                <li>Component pouch</li>
+            </ul>
+
+            <h3>Special Items</h3>
+            <ul>
+                <li>Coded Harper journals (intelligence reports)</li>
+                <li>Regional maps with marked locations</li>
+                <li>Signal whistle (to call Adam)</li>
+            </ul>
+
+            <h3>Wealth</h3>
+            <p>85 gold pieces (Harper stipend and mission funds)</p>
+        </div>
+
+        <h2>Animal Companion: Adam the Raven</h2>
+        <div class="companion-box">
+            <h3>Adam - Raven</h3>
+            <p><em>Small beast, unaligned</em></p>
+
+            <div class="info-row">
+                <span><strong>AC:</strong> 12</span>
+                <span><strong>HP:</strong> 1</span>
+                <span><strong>Speed:</strong> 10 ft., fly 50 ft.</span>
+            </div>
+
+            <h4>Ability Scores</h4>
+            <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 5px; margin: 10px 0;">
+                <div style="text-align: center;"><strong>STR</strong><br>2 (-4)</div>
+                <div style="text-align: center;"><strong>DEX</strong><br>14 (+2)</div>
+                <div style="text-align: center;"><strong>CON</strong><br>8 (-1)</div>
+                <div style="text-align: center;"><strong>INT</strong><br>2 (-4)</div>
+                <div style="text-align: center;"><strong>WIS</strong><br>12 (+1)</div>
+                <div style="text-align: center;"><strong>CHA</strong><br>6 (-2)</div>
+            </div>
+
+            <p><strong>Skills:</strong> Perception +3</p>
+            <p><strong>Senses:</strong> Passive Perception 13</p>
+
+            <h4>Abilities</h4>
+            <p><strong>Mimicry:</strong> Can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. Creature that hears the sounds can tell they're imitations with DC 10 Wisdom (Insight) check.</p>
+
+            <h4>Actions</h4>
+            <p><strong>Beak:</strong> Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 piercing damage.</p>
+
+            <h4>Ranger's Companion</h4>
+            <p>As Skylark's companion, Adam:</p>
+            <ul>
+                <li>Acts on Skylark's initiative</li>
+                <li>Can take Attack, Dash, Disengage, Dodge, or Help actions on command</li>
+                <li>Is exceptionally intelligent for a raven</li>
+                <li>Serves as scout, messenger, and lookout</li>
+                <li>Often watches the pier and alerts Skylark to arrivals</li>
+            </ul>
+        </div>
+
+        <h2>Personality & Traits</h2>
+        <div class="feature-box">
+            <p><strong>Personality Traits:</strong></p>
+            <ul>
+                <li>I watch and listen carefully before speaking or acting</li>
+                <li>I often consult with Adam before making decisions</li>
+            </ul>
+
+            <p><strong>Ideals:</strong></p>
+            <ul>
+                <li><strong>Protection:</strong> Those who cannot defend themselves deserve defenders (Good)</li>
+                <li><strong>Knowledge:</strong> Understanding threats is the first step to defeating them (Neutral)</li>
+            </ul>
+
+            <p><strong>Bonds:</strong></p>
+            <ul>
+                <li>The Harpers gave me purpose and direction; I serve them faithfully</li>
+                <li>Fjord's End is under my protection</li>
+                <li>Adam is my closest companion and friend</li>
+            </ul>
+
+            <p><strong>Flaws:</strong></p>
+            <ul>
+                <li>I trust my instincts and observations over others' words</li>
+                <li>I can be overly cautious about sharing information</li>
+            </ul>
+        </div>
+
+        <h2>Harper Mission & Activities</h2>
+        <div class="feature-box">
+            <p><strong>Primary Mission:</strong> Monitor threats in the northern territories, particularly Red Wizard activities, supernatural dangers, and political instability.</p>
+
+            <p><strong>Current Objectives:</strong></p>
+            <ul>
+                <li>Establish Fjord's End as a Harper safe haven</li>
+                <li>Track Red Wizard movements near the Stone Forest</li>
+                <li>Investigate ancient magical sites (Cursed Pool, Giantspire Peak)</li>
+                <li>Build network of reliable contacts and informants</li>
+                <li>Identify potential Harper recruits</li>
+                <li>Protect remote settlements from various threats</li>
+            </ul>
+
+            <p><strong>Key Contacts:</strong></p>
+            <ul>
+                <li><strong>Magnus Irongrip:</strong> Fellow Harper, trusted ally, handles sea-based operations</li>
+                <li><strong>Regional Harper Network:</strong> Agents throughout northern territories</li>
+                <li><strong>Local Allies:</strong> Various contacts in Fjord's End and nearby settlements (most unaware of Harper connections)</li>
+            </ul>
+        </div>
+
+        <h2>Combat Tactics</h2>
+        <div class="feature-box">
+            <h3>Preferred Approach</h3>
+            <ul>
+                <li>Scouts ahead using Adam to gather intelligence</li>
+                <li>Prefers ranged combat, using longbow from concealed positions</li>
+                <li>Opens combat with Hunter's Mark on priority target</li>
+                <li>Focuses fire on wounded enemies to trigger Colossus Slayer</li>
+                <li>Uses terrain and stealth to gain advantage</li>
+                <li>Saves spell slots for healing or critical Hunter's Mark uses</li>
+            </ul>
+
+            <h3>Round-by-Round Example</h3>
+            <p><strong>Round 1:</strong> Bonus action Hunter's Mark, Action attack with longbow (+7, 1d8+3+1d6)</p>
+            <p><strong>Round 2+:</strong> Attack wounded enemies when possible for Colossus Slayer bonus (1d8+3+1d6+1d8 total)</p>
+        </div>
+
+        <h2>Expertise Areas</h2>
+        <div class="feature-box">
+            <p><strong>Wilderness Survival:</strong> Expert tracker and guide in arctic terrain, can navigate without getting lost, finds resources efficiently</p>
+
+            <p><strong>Intelligence Gathering:</strong> Skilled at observation, uses Adam for reconnaissance, maintains networks of informants</p>
+
+            <p><strong>Threat Assessment:</strong> Knowledgeable about Red Wizards, ancient magical sites, regional dangers, and political situations</p>
+
+            <p><strong>Covert Operations:</strong> Experienced in disguise, stealth, and working undercover for extended periods</p>
+        </div>
+
+        <h2>Notes & Backstory Summary</h2>
+        <div class="feature-box">
+            <p><strong>Role:</strong> Senior Harper agent operating in the northern reaches, specializing in intelligence gathering and threat monitoring.</p>
+
+            <p><strong>Base of Operations:</strong> Fjord's End, which he is developing as a Harper safe haven and operations center.</p>
+
+            <p><strong>Signature Method:</strong> Uses Adam the raven as an extension of his awareness, often knowing of arrivals and events before physically present.</p>
+
+            <p><strong>Recruitment:</strong> Responsible for bringing Magnus Irongrip into the Harpers. Actively seeks capable individuals to aid Harper missions.</p>
+
+            <p><strong>Current Focus:</strong> Monitoring Red Wizard activities, investigating ancient magical sites, and protecting remote settlements from various threats.</p>
+
+            <p><strong>Personality:</strong> Patient, observant, cautious about revealing information. Speaks in measured tones and always maintains awareness of surroundings. Deeply loyal to Harper ideals and those under his protection.</p>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px;">
+            <a href="Skylark.html" style="color: #4682b4; font-weight: bold;">← Back to Full Character Profile</a> |
+            <a href="index.html" style="color: #4682b4; font-weight: bold;">Campaign Hub</a>
+        </p>
+    </div>
+</body>
+</html>

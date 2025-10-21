@@ -1,0 +1,706 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The Titan&#x27;s Thirst - Session Outline</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2556c950-ec3f-8084-8c91-c06f00f8b1c6" class="page sans"><header><h1 class="page-title">The Titan&#x27;s Thirst - Session Outline</h1><p class="page-description"></p></header><div class="page-body"><h1 id="2556c950-ec3f-81dc-bdb5-ebf9638abfea" class=""><strong>The Titan&#x27;s Thirst - Session Outline</strong></h1><p id="2556c950-ec3f-8132-851f-fcb8d6ee10ec" class=""><em>A creature from the cursed glacial pool threatens the valley</em></p><h2 id="2556c950-ec3f-8100-a771-f0283c1562ce" class=""><strong>Session Overview</strong></h2><p id="2556c950-ec3f-8195-8414-f0d06ba5c14e" class=""><strong>Level</strong>: 5-7</p><p id="2556c950-ec3f-8151-9f26-ce6fd17eb9cb" class=""><strong>Duration</strong>: 4-6 hours</p><p id="2556c950-ec3f-8119-86f9-d11074008fab" class=""><strong>Theme</strong>: Ancient curses, environmental horror, community defense</p><p id="2556c950-ec3f-81a8-8163-dab882a8e175" class="">A massive creature, transformed by drinking from the legendary Cursed Pool of Jotunn&#x27;s Tears, descends from the high peaks to threaten Fjord&#x27;s End. The PCs must decide whether to defend the village, investigate the source of the curse, or attempt to cure the afflicted beast.</p><h2 id="2556c950-ec3f-8144-9f26-da20e41be073" class=""><strong>Opening: The Warning Signs</strong></h2><h3 id="2556c950-ec3f-8170-8b17-c80913f88b27" class=""><strong>Scene 1: Unnatural Omens </strong><em><strong>(15 minutes)</strong></em></h3><p id="2556c950-ec3f-81a8-a178-da877a182e93" class=""><strong>Location</strong>: Fjord&#x27;s End village</p><p id="2556c950-ec3f-8140-a970-fa3ff074afbb" class=""><strong>Time</strong>: Early morning, mist rising from the fjord</p><p id="2556c950-ec3f-81bd-a618-ed1b25bea3b4" class=""><strong>Read-Aloud</strong>:</p><blockquote id="2556c950-ec3f-81d9-9cbb-c408847d1660" class="">The morning mist clings to the fjord&#x27;s dark waters as you emerge from the Glacier&#x27;s Rest Inn. But something feels wrong. The usual symphony of mountain birds is absent, replaced by an oppressive silence that seems to press against your ears. Magnus Ironhold stands at the harbor&#x27;s edge, his weathered face creased with worry as he stares up at the Giantspire peaks.</blockquote><p id="2556c950-ec3f-81b1-8e49-e94e1db6a10f" class=""><strong>Key Events</strong>:</p><ul id="2556c950-ec3f-8125-a1e3-fa0c5a090fca" class="bulleted-list"><li style="list-style-type:disc"><strong>Missing Wildlife</strong>: No birds, and the ravens that usually perch around the village have vanished</li></ul><ul id="2556c950-ec3f-8178-bfe8-eaf20b89738c" class="bulleted-list"><li style="list-style-type:disc"><strong>Nervous Animals</strong>: Village dogs whine and refuse to leave their owners&#x27; sides</li></ul><ul id="2556c950-ec3f-8122-9b02-c2500f5664dc" class="bulleted-list"><li style="list-style-type:disc"><strong>Geological Signs</strong>: Minor tremors felt through the ground, loose stones falling from cliff faces</li></ul><ul id="2556c950-ec3f-8192-b3bc-f4b15181384f" class="bulleted-list"><li style="list-style-type:disc"><strong>Magnus&#x27;s Concern</strong>: The dwarf speaks of &quot;old warnings&quot; and &quot;things that should stay sleeping&quot;</li></ul><p id="2556c950-ec3f-811a-8b7f-ddc579d907a6" class=""><strong>Information Gathering</strong>:</p><ul id="2556c950-ec3f-8160-bcb7-db770cecadc8" class="bulleted-list"><li style="list-style-type:disc"><strong>Magnus Ironhold</strong> knows legends of the Cursed Pool but dismisses them as &quot;mountain tales&quot;</li></ul><ul id="2556c950-ec3f-8149-b458-d43b0783c936" class="bulleted-list"><li style="list-style-type:disc"><strong>Tormund Stormwatch</strong> reports strange lights on the high peaks three nights ago</li></ul><ul id="2556c950-ec3f-81f0-a278-c7b4fbd0c5ae" class="bulleted-list"><li style="list-style-type:disc"><strong>Captain Brenna</strong> mentions her boats&#x27; fish-finding equipment detected something massive moving in the deep fjord waters</li></ul><h3 id="2556c950-ec3f-817c-8912-fe1db81edb80" class=""><strong>Scene 2: The Titan&#x27;s Roar </strong><em><strong>(10 minutes)</strong></em></h3><p id="2556c950-ec3f-8178-a253-e0aba4fccd6e" class=""><strong>Location</strong>: Fjord&#x27;s End</p><p id="2556c950-ec3f-8180-9bae-f91106095e4f" class=""><strong>Time</strong>: Mid-morning</p><p id="2556c950-ec3f-8133-8005-fa6801ac0158" class=""><strong>Read-Aloud</strong>:</p><blockquote id="2556c950-ec3f-816a-bb57-e5edb13c2e69" class="">A sound unlike anything you&#x27;ve ever heard echoes through the fjord—a roar that seems to shake the very foundations of the mountains. It&#x27;s not the cry of any natural beast, but something deeper, more primal, touched with an anguish that makes your bones ache. In the distance, high on the mountain slopes, you see a cascade of rocks tumbling down the cliffs. Something vast is moving up there, and it&#x27;s heading this way.</blockquote><p id="2556c950-ec3f-815a-b67e-d227f53fd7bd" class=""><strong>Key Events</strong>:</p><ul id="2556c950-ec3f-8190-8298-d7c3e7a02608" class="bulleted-list"><li style="list-style-type:disc"><strong>The First Roar</strong>: Establishes the creature&#x27;s presence and emotional state (pain/rage)</li></ul><ul id="2556c950-ec3f-8159-8baf-d0a3c1884b58" class="bulleted-list"><li style="list-style-type:disc"><strong>Avalanche Activity</strong>: Rocks and snow falling from the upper slopes</li></ul><ul id="2556c950-ec3f-81f8-b03e-dfa6fe47fb8a" class="bulleted-list"><li style="list-style-type:disc"><strong>Panic Preparations</strong>: Villagers begin emergency preparations based on old protocols</li></ul><ul id="2556c950-ec3f-813c-afcd-f382365e7ff1" class="bulleted-list"><li style="list-style-type:disc"><strong>Distance Assessment</strong>: The creature is still hours away but clearly approaching</li></ul><p id="2556c950-ec3f-815e-b5f8-ea5223764fc0" class=""><strong>NPC Reactions</strong>:</p><ul id="2556c950-ec3f-819c-8c8d-caea232f0762" class="bulleted-list"><li style="list-style-type:disc"><strong>Magnus</strong> immediately begins organizing village defenses</li></ul><ul id="2556c950-ec3f-81f8-b302-ddc3c1c657c0" class="bulleted-list"><li style="list-style-type:disc"><strong>Kira Brightwater</strong> starts moving supplies to secure locations</li></ul><ul id="2556c950-ec3f-8154-8892-da9d600faec2" class="bulleted-list"><li style="list-style-type:disc"><strong>Tormund</strong> prepares to scout the creature&#x27;s approach</li></ul><ul id="2556c950-ec3f-81bc-819c-cef57239bfb6" class="bulleted-list"><li style="list-style-type:disc">Some villagers want to flee by boat, others insist on defending their homes</li></ul><h2 id="2556c950-ec3f-8115-be6b-d9d4a82a0393" class=""><strong>Act I: Investigation and Preparation</strong></h2><h3 id="2556c950-ec3f-81de-a44d-ebd1062d77a0" class=""><strong>Scene 3: Choosing a Response </strong><em><strong>(20 minutes)</strong></em></h3><p id="2556c950-ec3f-81e1-a696-ee1f28c750dd" class=""><strong>Location</strong>: Village center</p><p id="2556c950-ec3f-81e0-bbd8-cfe5bcdcefbb" class=""><strong>Time</strong>: Late morning</p><p id="2556c950-ec3f-81f6-aaea-f01fe321ab6b" class="">The villagers look to the PCs for leadership. Multiple options are presented:</p><p id="2556c950-ec3f-8125-b6e5-f1936ecfe59a" class=""><strong>Option A: Direct Defense</strong></p><ul id="2556c950-ec3f-8157-9e84-ea8cebfba41b" class="bulleted-list"><li style="list-style-type:disc">Fortify the village and prepare for siege</li></ul><ul id="2556c950-ec3f-818a-ac78-c4bcd9212498" class="bulleted-list"><li style="list-style-type:disc">Organize evacuation of non-combatants</li></ul><ul id="2556c950-ec3f-8110-9041-c631d225bcd8" class="bulleted-list"><li style="list-style-type:disc">Set up defensive positions using terrain advantages</li></ul><p id="2556c950-ec3f-81b4-8ae5-d082ab4b57f6" class=""><strong>Option B: Intercept the Threat</strong></p><ul id="2556c950-ec3f-81ff-92e8-f1b111147182" class="bulleted-list"><li style="list-style-type:disc">Travel up the mountain to meet the creature before it reaches the village</li></ul><ul id="2556c950-ec3f-8175-87a4-f7287ee74aec" class="bulleted-list"><li style="list-style-type:disc">Attempt to drive it away or kill it in more favorable terrain</li></ul><ul id="2556c950-ec3f-81e3-8873-e498c12405c3" class="bulleted-list"><li style="list-style-type:disc">Risk being caught in the open against an unknown threat</li></ul><p id="2556c950-ec3f-817d-b12c-e78dd44ff7f2" class=""><strong>Option C: Investigate the Source</strong></p><ul id="2556c950-ec3f-8113-93e6-d6ae7a8f20f2" class="bulleted-list"><li style="list-style-type:disc">Seek out the Cursed Pool to understand what happened</li></ul><ul id="2556c950-ec3f-8116-971a-cd1af80ce20a" class="bulleted-list"><li style="list-style-type:disc">Possibly find a way to reverse the transformation</li></ul><ul id="2556c950-ec3f-81f1-b507-f2e79c7e5386" class="bulleted-list"><li style="list-style-type:disc">Leave the village temporarily vulnerable</li></ul><p id="2556c950-ec3f-8109-8e04-dc4b3826d10d" class=""><strong>Option D: Diplomatic Solution</strong></p><ul id="2556c950-ec3f-8170-bc30-cd4ce6dd3657" class="bulleted-list"><li style="list-style-type:disc">Attempt to communicate with the creature</li></ul><ul id="2556c950-ec3f-8115-a868-eb7ed4094fcd" class="bulleted-list"><li style="list-style-type:disc">Discover if intelligence remains beneath the curse</li></ul><ul id="2556c950-ec3f-814c-bd2c-c0a906124bf3" class="bulleted-list"><li style="list-style-type:disc">Potentially the most dangerous but most rewarding approach</li></ul><p id="2556c950-ec3f-8107-a50d-fb1ef381600f" class=""><strong>Key NPCs Present</strong>:</p><ul id="2556c950-ec3f-81e0-99d1-f791bda27d63" class="bulleted-list"><li style="list-style-type:disc"><strong>Magnus Ironhold</strong>: Favors fortification and defense</li></ul><ul id="2556c950-ec3f-81fc-8b7b-d7fcaa47b453" class="bulleted-list"><li style="list-style-type:disc"><strong>Captain Brenna</strong>: Advocates for partial evacuation by boat</li></ul><ul id="2556c950-ec3f-8152-b56e-c4014331d101" class="bulleted-list"><li style="list-style-type:disc"><strong>Tormund Stormwatch</strong>: Volunteers to guide any mountain expedition</li></ul><ul id="2556c950-ec3f-816b-8df5-d2bb5d8dbf2e" class="bulleted-list"><li style="list-style-type:disc"><strong>Kira Brightwater</strong>: Supports investigating the root cause</li></ul><h3 id="2556c950-ec3f-812d-9e4e-c84a8a38bb07" class=""><strong>Scene 4: Gathering Resources </strong><em><strong>(30 minutes)</strong></em></h3><p id="2556c950-ec3f-8129-a268-f834fbc500d5" class=""><strong>Location</strong>: Various village locations</p><p id="2556c950-ec3f-81f6-8bd1-cd8cf6646a4b" class=""><strong>Time</strong>: Midday</p><p id="2556c950-ec3f-8105-8cc8-f9388f5f135d" class="">Based on the party&#x27;s chosen approach, they can gather resources and information:</p><p id="2556c950-ec3f-8154-b859-ddc879bf2a1d" class=""><strong>If Defending</strong>:</p><ul id="2556c950-ec3f-81e1-8085-c33115084d69" class="bulleted-list"><li style="list-style-type:disc"><strong>Magnus&#x27;s Arsenal</strong>: Old weapons and armor from his adventuring days</li></ul><ul id="2556c950-ec3f-818d-ae4f-c50998b2c641" class="bulleted-list"><li style="list-style-type:disc"><strong>Defensive Positions</strong>: Survey the village&#x27;s tactical advantages</li></ul><ul id="2556c950-ec3f-81de-9406-ca530b62769d" class="bulleted-list"><li style="list-style-type:disc"><strong>Evacuation Routes</strong>: Plan fallback positions and escape paths</li></ul><ul id="2556c950-ec3f-814a-b328-e9d0d0c3e859" class="bulleted-list"><li style="list-style-type:disc"><strong>Village Militia</strong>: Organize and arm willing defenders</li></ul><p id="2556c950-ec3f-8110-81f0-cd57a6db3ad6" class=""><strong>If Investigating/Intercepting</strong>:</p><ul id="2556c950-ec3f-8194-afcd-fe507a5619af" class="bulleted-list"><li style="list-style-type:disc"><strong>Mountain Gear</strong>: Cold weather equipment, climbing gear, alpine supplies</li></ul><ul id="2556c950-ec3f-810b-964d-cb2d6a6bd80e" class="bulleted-list"><li style="list-style-type:disc"><strong>Local Knowledge</strong>: Tormund provides maps and route information</li></ul><ul id="2556c950-ec3f-81fb-93db-fcb3a6e14ca7" class="bulleted-list"><li style="list-style-type:disc"><strong>Legend Research</strong>: Magnus shares what he knows about the Cursed Pool</li></ul><ul id="2556c950-ec3f-8174-ad26-df34688fb4db" class="bulleted-list"><li style="list-style-type:disc"><strong>Magical Preparation</strong>: Kira has some minor magical items and healing supplies</li></ul><p id="2556c950-ec3f-81e2-8a1d-f00dd4cbebc5" class=""><strong>Important Information Available</strong>:</p><ul id="2556c950-ec3f-81f3-be83-e4908200c012" class="bulleted-list"><li style="list-style-type:disc"><strong>The Cursed Pool Legend</strong>: High glacial tarn touched by ancient giant magic</li></ul><ul id="2556c950-ec3f-81ce-99a1-c216fe643f2e" class="bulleted-list"><li style="list-style-type:disc"><strong>Location</strong>: Two days&#x27; climb up the northern slopes, near the glacier&#x27;s edge</li></ul><ul id="2556c950-ec3f-81ba-a4c3-e9d65ea31934" class="bulleted-list"><li style="list-style-type:disc"><strong>Previous Incidents</strong>: Rumors of enlarged animals, but nothing this massive</li></ul><ul id="2556c950-ec3f-8132-8fd1-f57acb5634f6" class="bulleted-list"><li style="list-style-type:disc"><strong>The Curse Nature</strong>: Transformation seems permanent but might be reversible</li></ul><h2 id="2556c950-ec3f-810d-aacf-d7ce40072b3d" class=""><strong>Act II: The Encounter</strong></h2><h3 id="2556c950-ec3f-8131-b2d8-ffb4ae39c5c3" class=""><strong>Scene 5A: The Village Defense </strong><em><strong>(If PCs chose to fortify)</strong></em></h3><h3 id="2556c950-ec3f-8159-b134-d19d28e170a7" class=""><strong>The Creature Arrives </strong><em><strong>(45 minutes)</strong></em></h3><p id="2556c950-ec3f-81ea-8cc5-eb09671cb1d3" class=""><strong>Location</strong>: Fjord&#x27;s End and surrounding area</p><p id="2556c950-ec3f-8127-b698-d75164af055b" class=""><strong>Time</strong>: Late afternoon</p><p id="2556c950-ec3f-816c-acab-dbc1b71bcb9e" class=""><strong>Read-Aloud</strong>:</p><blockquote id="2556c950-ec3f-81e0-93a7-c76469b9c105" class="">The ground trembles with each footstep as the creature finally comes into view around the mountain&#x27;s shoulder. What was once a brown bear now stands thirty feet tall at the shoulder, its fur matted with ice and its eyes glowing with an unnatural blue light. Ancient ice clings to its massive claws, and with each breath, clouds of freezing mist pour from its muzzle. It moves with the slow, inevitable purpose of a glacier—unstoppable and inexorable.</blockquote><p id="2556c950-ec3f-817c-872d-e8baebe63f6a" class=""><strong>Titan Bear Stats</strong> <em>(CR 8)</em>:</p><ul id="2556c950-ec3f-81e2-bfa5-d0c7a2508e0c" class="bulleted-list"><li style="list-style-type:disc"><strong>Gargantuan Beast</strong> (originally Brown Bear)</li></ul><ul id="2556c950-ec3f-8108-9006-ee1e762350c1" class="bulleted-list"><li style="list-style-type:disc"><strong>AC</strong>: 16 (Natural Armor)</li></ul><ul id="2556c950-ec3f-81b9-9579-f386ab60275d" class="bulleted-list"><li style="list-style-type:disc"><strong>HP</strong>: 180 (19d12 + 57)</li></ul><ul id="2556c950-ec3f-8175-85e0-ed660c4dc3a7" class="bulleted-list"><li style="list-style-type:disc"><strong>Speed</strong>: 40 ft., climb 30 ft.</li></ul><ul id="2556c950-ec3f-8183-9e88-d41d9c485aa9" class="bulleted-list"><li style="list-style-type:disc"><strong>STR</strong>: 25, <strong>DEX</strong>: 10, <strong>CON</strong>: 16, <strong>INT</strong>: 4, <strong>WIS</strong>: 13, <strong>CHA</strong>: 7</li></ul><ul id="2556c950-ec3f-814b-a3af-f71d99e226b2" class="bulleted-list"><li style="list-style-type:disc"><strong>Damage Resistances</strong>: Cold</li></ul><ul id="2556c950-ec3f-8124-bdc1-fad891366940" class="bulleted-list"><li style="list-style-type:disc"><strong>Senses</strong>: Darkvision 60 ft.</li></ul><ul id="2556c950-ec3f-811f-be21-e08dbc352fee" class="bulleted-list"><li style="list-style-type:disc"><strong>Challenge</strong>: 8 (3,900 XP)</li></ul><p id="2556c950-ec3f-818f-b0b1-f1160b5af325" class=""><strong>Special Abilities</strong>:</p><ul id="2556c950-ec3f-8162-801b-ea6f90ecd538" class="bulleted-list"><li style="list-style-type:disc"><strong>Glacial Breath</strong>: (Recharge 5-6) 30-foot cone, 3d8 cold damage, DEX save DC 15</li></ul><ul id="2556c950-ec3f-81c8-9e04-ef30bfc0054e" class="bulleted-list"><li style="list-style-type:disc"><strong>Trampling Charge</strong>: If moves 20+ feet straight toward target, extra 2d10 bludgeoning damage</li></ul><ul id="2556c950-ec3f-8121-bc30-c47aa28ee8c4" class="bulleted-list"><li style="list-style-type:disc"><strong>Ice Aura</strong>: 10-foot radius difficult terrain from forming ice</li></ul><ul id="2556c950-ec3f-81f0-872a-edee0a1fca8d" class="bulleted-list"><li style="list-style-type:disc"><strong>Legendary Actions</strong>: 3 per turn (move, claw attack, or breath weapon)</li></ul><p id="2556c950-ec3f-81fa-9684-f5379ddc1ab5" class=""><strong>Encounter Phases</strong>:</p><ol type="1" id="2556c950-ec3f-8121-a49a-cd99119779e5" class="numbered-list" start="1"><li><strong>Approach</strong>: Creature destroys outer defenses, villagers flee to prepared positions</li></ol><ol type="1" id="2556c950-ec3f-8175-af99-ccd869bc1e8c" class="numbered-list" start="2"><li><strong>Initial Assault</strong>: Bear attacks fortified positions, PCs coordinate defense</li></ol><ol type="1" id="2556c950-ec3f-8162-8687-c3f184a00af4" class="numbered-list" start="3"><li><strong>Desperate Defense</strong>: Bear breaks through, combat moves to village center</li></ol><ol type="1" id="2556c950-ec3f-81e6-b6c9-e4171880eb4c" class="numbered-list" start="4"><li><strong>Resolution</strong>: Defeat, drive off, or cure the creature</li></ol><h3 id="2556c950-ec3f-8164-8ab5-cf8d2a323b33" class=""><strong>Scene 5B: Mountain Interception </strong><em><strong>(If PCs chose to intercept)</strong></em></h3><h3 id="2556c950-ec3f-8186-9340-e934f00f9bba" class=""><strong>The High Encounter </strong><em><strong>(45 minutes)</strong></em></h3><p id="2556c950-ec3f-816d-85e8-df89fe740e1b" class=""><strong>Location</strong>: Mountain slopes above Fjord&#x27;s End</p><p id="2556c950-ec3f-8172-9dc7-d8ab5185330b" class=""><strong>Time</strong>: Afternoon, depending on travel time</p><p id="2556c950-ec3f-8101-a60d-d4f9755d2805" class=""><strong>Environmental Challenges</strong>:</p><ul id="2556c950-ec3f-819b-9e6d-d370b2c98685" class="bulleted-list"><li style="list-style-type:disc"><strong>Treacherous Terrain</strong>: Steep slopes, loose rock, patches of ice</li></ul><ul id="2556c950-ec3f-8100-a5f6-c445e669f391" class="bulleted-list"><li style="list-style-type:disc"><strong>Altitude Effects</strong>: Thin air, cold temperatures, sudden weather changes</li></ul><ul id="2556c950-ec3f-81ad-b227-e41032a33211" class="bulleted-list"><li style="list-style-type:disc"><strong>Limited Escape Routes</strong>: Narrow ledges, cliff faces, avalanche danger</li></ul><p id="2556c950-ec3f-8169-9925-d506918f0de4" class=""><strong>Tactical Advantages</strong>:</p><ul id="2556c950-ec3f-8112-9c18-d2cbd0efff4b" class="bulleted-list"><li style="list-style-type:disc"><strong>Higher Ground</strong>: PCs can choose engagement distance and angle</li></ul><ul id="2556c950-ec3f-8114-8c86-c759e721ec03" class="bulleted-list"><li style="list-style-type:disc"><strong>Environmental Weapons</strong>: Rockslides, ice formations, narrow passages</li></ul><ul id="2556c950-ec3f-81c6-aeb1-c1564285383d" class="bulleted-list"><li style="list-style-type:disc"><strong>Retreat Options</strong>: Multiple paths to fall back if needed</li></ul><p id="2556c950-ec3f-8179-bb4f-cbe981af6afd" class=""><strong>The Encounter</strong>: Same Titan Bear statistics, but modified tactics:</p><ul id="2556c950-ec3f-81b4-80e4-e3cf24b8c3d7" class="bulleted-list"><li style="list-style-type:disc">Uses terrain to its advantage (climbing, jumping between ledges)</li></ul><ul id="2556c950-ec3f-8122-a521-cd3359aefd03" class="bulleted-list"><li style="list-style-type:disc">Glacial breath more dangerous in confined spaces</li></ul><ul id="2556c950-ec3f-819f-8970-cc53c7133b82" class="bulleted-list"><li style="list-style-type:disc">Avalanche risk from loud sounds or impacts</li></ul><ul id="2556c950-ec3f-8166-95c1-dca09e8f5db9" class="bulleted-list"><li style="list-style-type:disc">Potential to drive creature off rather than kill it</li></ul><h3 id="2556c950-ec3f-81e8-b09c-f3252da95aa7" class=""><strong>Scene 5C: The Cursed Pool </strong><em><strong>(If PCs chose investigation)</strong></em></h3><h3 id="2556c950-ec3f-8101-8782-d0a54e24eaf6" class=""><strong>The Source of Corruption </strong><em><strong>(60 minutes)</strong></em></h3><p id="2556c950-ec3f-8134-a880-ee68d656be9f" class=""><strong>Location</strong>: High glacial cirque, Cursed Pool of Jotunn&#x27;s Tears</p><p id="2556c950-ec3f-8167-bfa3-ef53e4ace3bf" class=""><strong>Time</strong>: After mountain travel</p><p id="2556c950-ec3f-81a2-b650-d6b7cc896b93" class=""><strong>Read-Aloud</strong>:</p><blockquote id="2556c950-ec3f-81e4-b8ef-deeb3a9e7e23" class="">The glacial pool stretches before you like a mirror of black ice, its surface so still it might be solid. But you can see the faint shimmer of movement beneath, and the water itself seems to pulse with a malevolent blue light. Ancient runes are carved into the surrounding stone—giant script that predates any human settlement. The very air here thrums with old magic, and you can feel the weight of ancient sorrow pressing down upon you.</blockquote><p id="2556c950-ec3f-816a-b0b0-d44f65eb576d" class=""><strong>The Pool&#x27;s Properties</strong>:</p><ul id="2556c950-ec3f-8114-a0e0-e315febad582" class="bulleted-list"><li style="list-style-type:disc"><strong>Curse Detection</strong>: Powerful necromantic and transmutation magic</li></ul><ul id="2556c950-ec3f-8124-8aee-c19708863bc7" class="bulleted-list"><li style="list-style-type:disc"><strong>Giant Runes</strong>: Tell the story of a giant&#x27;s grief and revenge</li></ul><ul id="2556c950-ec3f-813f-a9c6-e2813a915ea0" class="bulleted-list"><li style="list-style-type:disc"><strong>Active Magic</strong>: Pool still transforms creatures that drink from it</li></ul><ul id="2556c950-ec3f-81fc-a10c-c4b71a57384c" class="bulleted-list"><li style="list-style-type:disc"><strong>Purification Possibility</strong>: High-level magic or specific ritual components could cleanse it</li></ul><p id="2556c950-ec3f-81cc-b8b2-f7681612f663" class=""><strong>Potential Encounters</strong>:</p><ul id="2556c950-ec3f-8121-833c-fd1cd95a85a7" class="bulleted-list"><li style="list-style-type:disc"><strong>Enlarged Mountain Goats</strong>: 2-3 Large-sized goats with Titan Bear template (scaled down)</li></ul><ul id="2556c950-ec3f-81d9-a915-c847b9deaa9a" class="bulleted-list"><li style="list-style-type:disc"><strong>Frost Giant Spirit</strong>: The source of the curse, bound to the pool</li></ul><ul id="2556c950-ec3f-816b-9c12-de0f39af65b5" class="bulleted-list"><li style="list-style-type:disc"><strong>Environmental Hazards</strong>: Unstable ice, magical storms, altitude sickness</li></ul><p id="2556c950-ec3f-81f4-a653-c0204a744e24" class=""><strong>Resolution Options</strong>:</p><ul id="2556c950-ec3f-819d-a2bc-d906343f572e" class="bulleted-list"><li style="list-style-type:disc"><strong>Cleanse the Pool</strong>: Remove the curse permanently (requires specific magic/components)</li></ul><ul id="2556c950-ec3f-81d0-a1e3-db83a3419fa9" class="bulleted-list"><li style="list-style-type:disc"><strong>Temporarily Suppress</strong>: Stop current effects but curse remains dormant</li></ul><ul id="2556c950-ec3f-81ad-af44-d1919702ec19" class="bulleted-list"><li style="list-style-type:disc"><strong>Bind the Spirit</strong>: Negotiate with the giant&#x27;s ghost to end its revenge</li></ul><ul id="2556c950-ec3f-81ed-a23d-d5f4ea77dbda" class="bulleted-list"><li style="list-style-type:disc"><strong>Gather Information</strong>: Learn how to reverse transformations</li></ul><h2 id="2556c950-ec3f-81cf-a590-d8c6fd67fbee" class=""><strong>Act III: Resolution and Consequences</strong></h2><h3 id="2556c950-ec3f-8186-9b13-e9bfd565609d" class=""><strong>Scene 6: Aftermath </strong><em><strong>(30 minutes)</strong></em></h3><p id="2556c950-ec3f-81f5-9f37-c6c1c921f5aa" class=""><strong>Location</strong>: Varies based on previous choices</p><p id="2556c950-ec3f-81da-8ce3-dacf5886fe31" class=""><strong>Time</strong>: Evening</p><p id="2556c950-ec3f-81f7-8a2a-dd0d99abaec5" class=""><strong>If Creature Defeated</strong>:</p><ul id="2556c950-ec3f-81a6-aa79-f738e4b75ee1" class="bulleted-list"><li style="list-style-type:disc">Village celebration, but somber recognition of the ongoing threat</li></ul><ul id="2556c950-ec3f-8163-a095-d0afe28e1f15" class="bulleted-list"><li style="list-style-type:disc">Examination of creature remains reveals extent of magical transformation</li></ul><ul id="2556c950-ec3f-8125-945a-ccac92bf284f" class="bulleted-list"><li style="list-style-type:disc">Discussion of long-term solutions to prevent future incidents</li></ul><p id="2556c950-ec3f-8173-b8e1-d5da4a417961" class=""><strong>If Creature Driven Off</strong>:</p><ul id="2556c950-ec3f-8111-b320-ff5c0f2fb500" class="bulleted-list"><li style="list-style-type:disc">Temporary relief, but knowledge that threat could return</li></ul><ul id="2556c950-ec3f-8180-862b-c602febed640" class="bulleted-list"><li style="list-style-type:disc">Debate about pursuing permanent solution vs. improved defenses</li></ul><ul id="2556c950-ec3f-818d-833b-f1d3b2b78693" class="bulleted-list"><li style="list-style-type:disc">Tracking the creature&#x27;s retreat to determine its new territory</li></ul><p id="2556c950-ec3f-8169-8777-c5d7f6d46263" class=""><strong>If Curse Resolved</strong>:</p><ul id="2556c950-ec3f-81fa-b038-ccfc2c764c15" class="bulleted-list"><li style="list-style-type:disc">Creature returns to normal size (if still alive) and flees</li></ul><ul id="2556c950-ec3f-8114-825f-eb8742ce4772" class="bulleted-list"><li style="list-style-type:disc">Pool&#x27;s purification has regional effects (better weather, wildlife returns)</li></ul><ul id="2556c950-ec3f-81a1-aab1-c0a8d78f159d" class="bulleted-list"><li style="list-style-type:disc">Villagers&#x27; gratitude and recognition of PCs as true heroes</li></ul><p id="2556c950-ec3f-8145-a6a1-f9b88c2a8770" class=""><strong>If Investigation Only</strong>:</p><ul id="2556c950-ec3f-8165-adc3-d78824676081" class="bulleted-list"><li style="list-style-type:disc">PCs return with knowledge but threat still active</li></ul><ul id="2556c950-ec3f-8165-8768-e42e17393d56" class="bulleted-list"><li style="list-style-type:disc">Must choose immediate response with better information</li></ul><ul id="2556c950-ec3f-8106-bc06-e4359799bd62" class="bulleted-list"><li style="list-style-type:disc">Opportunity for more informed second attempt</li></ul><h3 id="2556c950-ec3f-8140-8333-dc465c72ae85" class=""><strong>Scene 7: Long-term Planning </strong><em><strong>(15 minutes)</strong></em></h3><p id="2556c950-ec3f-817d-a253-e55136f056fe" class=""><strong>Location</strong>: Fjord&#x27;s End village center</p><p id="2556c950-ec3f-817c-8da1-f4fee45a02d3" class=""><strong>Time</strong>: That evening</p><p id="2556c950-ec3f-814f-8312-d0b4d196b24e" class=""><strong>Village Council Meeting</strong>:</p><ul id="2556c950-ec3f-81eb-b266-dee8e213dc03" class="bulleted-list"><li style="list-style-type:disc"><strong>Magnus Ironhold</strong>: Proposes establishing formal watch on the high peaks</li></ul><ul id="2556c950-ec3f-81fe-9d96-d7a66329992c" class="bulleted-list"><li style="list-style-type:disc"><strong>Captain Brenna</strong>: Suggests creating evacuation protocols for similar threats</li></ul><ul id="2556c950-ec3f-8118-8de3-efaba17c6542" class="bulleted-list"><li style="list-style-type:disc"><strong>Tormund Stormwatch</strong>: Volunteers to monitor the mountain approach routes</li></ul><ul id="2556c950-ec3f-8189-a573-dcaeb39ad953" class="bulleted-list"><li style="list-style-type:disc"><strong>Kira Brightwater</strong>: Advocates for researching other local legends and threats</li></ul><p id="2556c950-ec3f-8168-b242-fc6de8b7ae8e" class=""><strong>PC Recognition</strong>:</p><ul id="2556c950-ec3f-81b3-a205-c9d91a817c7e" class="bulleted-list"><li style="list-style-type:disc">Village formally recognizes PCs as protectors and heroes</li></ul><ul id="2556c950-ec3f-812b-876c-f057a58ecdba" class="bulleted-list"><li style="list-style-type:disc">Offers of permanent residence, honorary citizenship, or other rewards</li></ul><ul id="2556c950-ec3f-8145-84ca-c7e090c54b56" class="bulleted-list"><li style="list-style-type:disc">Access to village resources for future adventures</li></ul><ul id="2556c950-ec3f-814e-9b69-cc50818372cb" class="bulleted-list"><li style="list-style-type:disc">Introduction to regional contacts and allies</li></ul><p id="2556c950-ec3f-81db-bdfb-c10ef16f9799" class=""><strong>Future Hooks</strong>:</p><ul id="2556c950-ec3f-8129-9217-cf8716b0880d" class="bulleted-list"><li style="list-style-type:disc">Other cursed locations mentioned in giant lore</li></ul><ul id="2556c950-ec3f-814e-97ca-d09691a1a9b2" class="bulleted-list"><li style="list-style-type:disc">Red Wizard interest in the pool&#x27;s transformative magic</li></ul><ul id="2556c950-ec3f-8114-8f8a-e6b9b55ee30d" class="bulleted-list"><li style="list-style-type:disc">Requests for help from other communities facing similar threats</li></ul><ul id="2556c950-ec3f-815d-a744-c9e56921a879" class="bulleted-list"><li style="list-style-type:disc">Investigation into who or what originally cursed the pool</li></ul><h2 id="2556c950-ec3f-81e9-ad5e-de089e9f2042" class=""><strong>Alternative Developments</strong></h2><h3 id="2556c950-ec3f-8118-9e27-dc11fb633747" class=""><strong>Diplomatic Resolution</strong></h3><p id="2556c950-ec3f-81d9-84fc-d84426cd6e59" class="">If PCs attempt to communicate with the Titan Bear:</p><ul id="2556c950-ec3f-8140-9234-f5da02886cfd" class="bulleted-list"><li style="list-style-type:disc"><strong>Intelligence Check (DC 15)</strong>: Recognize signs of remaining animal intelligence</li></ul><ul id="2556c950-ec3f-8110-812a-dc7897718fa2" class="bulleted-list"><li style="list-style-type:disc"><strong>Animal Handling (DC 20)</strong>: Calm the creature enough for interaction</li></ul><ul id="2556c950-ec3f-81be-92cd-fe6660e8e5c8" class="bulleted-list"><li style="list-style-type:disc"><strong>Druidcraft/Speak with Animals</strong>: Discover the bear&#x27;s pain and confusion</li></ul><ul id="2556c950-ec3f-81a3-90ec-d6a84cb8978c" class="bulleted-list"><li style="list-style-type:disc"><strong>Possible Outcomes</strong>: Lead creature back to pool for healing, establish ongoing relationship</li></ul><h3 id="2556c950-ec3f-8141-9d45-cffc1382e88a" class=""><strong>Research Discovery</strong></h3><p id="2556c950-ec3f-81fa-9eec-d691b38fb8b3" class="">Investigation into the pool&#x27;s history might reveal:</p><ul id="2556c950-ec3f-8162-a661-e632a8b054bd" class="bulleted-list"><li style="list-style-type:disc"><strong>Giant&#x27;s Tragedy</strong>: Pool created by giant parent&#x27;s grief over lost child</li></ul><ul id="2556c950-ec3f-815f-882a-f85a454dff6d" class="bulleted-list"><li style="list-style-type:disc"><strong>Reversal Method</strong>: Specific ritual requiring rare components</li></ul><ul id="2556c950-ec3f-81f5-918b-e25883f0eee3" class="bulleted-list"><li style="list-style-type:disc"><strong>Temporal Aspects</strong>: Curse grows stronger during certain celestial alignments</li></ul><ul id="2556c950-ec3f-8139-9c25-d41057675db9" class="bulleted-list"><li style="list-style-type:disc"><strong>Other Victims</strong>: Maps to locations of other transformed creatures</li></ul><h3 id="2556c950-ec3f-811d-87c3-db6623d59b62" class=""><strong>Escalation Scenarios</strong></h3><p id="2556c950-ec3f-8175-970f-c91303f2d8f4" class="">If the session runs long or PCs need additional challenges:</p><ul id="2556c950-ec3f-8166-9c7a-fba772f2872a" class="bulleted-list"><li style="list-style-type:disc"><strong>Multiple Creatures</strong>: Family group of transformed animals arrives</li></ul><ul id="2556c950-ec3f-81e2-a9e6-e5ba10bca3d0" class="bulleted-list"><li style="list-style-type:disc"><strong>Environmental Disaster</strong>: Creature&#x27;s presence triggers avalanche or rockfall</li></ul><ul id="2556c950-ec3f-810f-85c1-ff87c9cf576b" class="bulleted-list"><li style="list-style-type:disc"><strong>Outside Interest</strong>: Red Wizard agents arrive to study/capture the creature</li></ul><ul id="2556c950-ec3f-81f4-8d0a-d0b091545170" class="bulleted-list"><li style="list-style-type:disc"><strong>Chain Reaction</strong>: Creature&#x27;s roar attracts other dangerous mountain predators</li></ul><h2 id="2556c950-ec3f-8175-99f2-f29fb160d9d2" class=""><strong>Rewards and Experience</strong></h2><h3 id="2556c950-ec3f-81d7-84da-ccdb425b4a5c" class=""><strong>Combat Victory</strong></h3><ul id="2556c950-ec3f-8124-8b5b-dfff9cce9d89" class="bulleted-list"><li style="list-style-type:disc"><strong>Titan Bear</strong>: 3,900 XP (divided among party)</li></ul><ul id="2556c950-ec3f-81b3-aa18-cd3e56e3b61c" class="bulleted-list"><li style="list-style-type:disc"><strong>Environmental Challenges</strong>: 200-500 XP per overcome obstacle</li></ul><ul id="2556c950-ec3f-81ae-ba71-f0ba5a387cae" class="bulleted-list"><li style="list-style-type:disc"><strong>Tactical Bonus</strong>: Extra XP for creative use of terrain or teamwork</li></ul><h3 id="2556c950-ec3f-8144-a4fb-da32c8925151" class=""><strong>Investigation Success</strong></h3><ul id="2556c950-ec3f-8147-9a6f-e7693f109de1" class="bulleted-list"><li style="list-style-type:disc"><strong>Pool Discovery</strong>: 1,000 XP for finding and understanding the source</li></ul><ul id="2556c950-ec3f-818b-867c-e854b6a45f64" class="bulleted-list"><li style="list-style-type:disc"><strong>Lore Uncovered</strong>: 500 XP for learning the pool&#x27;s history</li></ul><ul id="2556c950-ec3f-813b-a844-e6ba38b6d133" class="bulleted-list"><li style="list-style-type:disc"><strong>Curse Resolution</strong>: 2,000 XP for permanently solving the problem</li></ul><h3 id="2556c950-ec3f-8166-b0d2-e6340b3ebf60" class=""><strong>Social/Roleplay</strong></h3><ul id="2556c950-ec3f-819a-8316-f080422ce0b4" class="bulleted-list"><li style="list-style-type:disc"><strong>Village Relations</strong>: 500 XP for positive community outcome</li></ul><ul id="2556c950-ec3f-81f8-a955-c8519b2c9818" class="bulleted-list"><li style="list-style-type:disc"><strong>Creative Solutions</strong>: 300-700 XP for non-combat problem solving</li></ul><ul id="2556c950-ec3f-8165-9ddb-d9c424469193" class="bulleted-list"><li style="list-style-type:disc"><strong>Future Planning</strong>: 200 XP for establishing long-term protections</li></ul><h3 id="2556c950-ec3f-818e-852e-c2e2463b004f" class=""><strong>Material Rewards</strong></h3><ul id="2556c950-ec3f-817c-a675-ed07ef3de350" class="bulleted-list"><li style="list-style-type:disc"><strong>Village Gratitude</strong>: Discounted services, free lodging, equipment access</li></ul><ul id="2556c950-ec3f-81ba-9253-d27f79447ed7" class="bulleted-list"><li style="list-style-type:disc"><strong>Giant Relics</strong>: Ancient items from the pool site (if discovered)</li></ul><ul id="2556c950-ec3f-8126-85e6-c33a6d89d94f" class="bulleted-list"><li style="list-style-type:disc"><strong>Magical Components</strong>: Materials from transformed creature (if defeated)</li></ul><ul id="2556c950-ec3f-816f-b23f-c19e076788fb" class="bulleted-list"><li style="list-style-type:disc"><strong>Maps and Information</strong>: Details about other regional threats and opportunities</li></ul><h2 id="2556c950-ec3f-81d7-8a84-d2236b9c518d" class=""><strong>Session Notes for DM</strong></h2><h3 id="2556c950-ec3f-8187-8c57-c920e139c38c" class=""><strong>Flexibility Points</strong></h3><ul id="2556c950-ec3f-810a-87fd-e43cdb94ee73" class="bulleted-list"><li style="list-style-type:disc">Creature&#x27;s approach speed can be adjusted based on party preparation time needed</li></ul><ul id="2556c950-ec3f-81d4-a593-dea0971e624c" class="bulleted-list"><li style="list-style-type:disc">Pool location can be relocated if PCs choose unexpected travel route</li></ul><ul id="2556c950-ec3f-8131-b14d-d246f2640c40" class="bulleted-list"><li style="list-style-type:disc">Creature&#x27;s intelligence level can vary based on party&#x27;s attempted interaction</li></ul><ul id="2556c950-ec3f-8181-bf09-c4d4c71c3ace" class="bulleted-list"><li style="list-style-type:disc">Village NPC reactions can be modified based on established relationships</li></ul><h3 id="2556c950-ec3f-81cb-beea-d82972bcfdaf" class=""><strong>Scaling Options</strong></h3><ul id="2556c950-ec3f-81ff-a8e7-d2436cff3fe2" class="bulleted-list"><li style="list-style-type:disc"><strong>Easier</strong>: Reduce creature HP to 120, remove legendary actions</li></ul><ul id="2556c950-ec3f-81a4-9d4a-e16c3a65b30a" class="bulleted-list"><li style="list-style-type:disc"><strong>Harder</strong>: Add second transformed creature or environmental hazards</li></ul><ul id="2556c950-ec3f-81c5-a70b-fa8931b50011" class="bulleted-list"><li style="list-style-type:disc"><strong>Roleplay Focus</strong>: Emphasize investigation and negotiation over combat</li></ul><ul id="2556c950-ec3f-8135-aae6-c0b5b1ce65d1" class="bulleted-list"><li style="list-style-type:disc"><strong>Combat Focus</strong>: Add village defense mini-encounters with militia</li></ul><h3 id="2556c950-ec3f-8103-9b98-caacb916e9a7" class=""><strong>Connection to Main Campaign</strong></h3><ul id="2556c950-ec3f-8189-9e32-c835a1348de9" class="bulleted-list"><li style="list-style-type:disc"><strong>Harper Interest</strong>: Ancient magic sites relevant to larger supernatural threats</li></ul><ul id="2556c950-ec3f-8133-96d7-e88640a09ea6" class="bulleted-list"><li style="list-style-type:disc"><strong>Red Wizard Connection</strong>: Transformation magic could interest Thayan researchers</li></ul><ul id="2556c950-ec3f-813c-844c-d9eca0d57e94" class="bulleted-list"><li style="list-style-type:disc"><strong>Regional Stability</strong>: Success increases village security and PC reputation</li></ul><ul id="2556c950-ec3f-8145-a76e-ed05fb151f65" class="bulleted-list"><li style="list-style-type:disc"><strong>Supernatural Escalation</strong>: Part of pattern of increasing magical threats in region</li></ul><p id="2556c950-ec3f-81ac-87ac-f6c9f5997d20" class="">This session provides a complete adventure that can stand alone or integrate seamlessly into the larger Dunwood campaign, offering multiple resolution paths while highlighting the region&#x27;s ancient magical dangers.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
