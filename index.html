@@ -10,6 +10,15 @@
     <h1>Fjord's End Campaign Summary</h1>
     <p><em>A comprehensive reference guide for your session</em></p>
 
+    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; padding: 15px; background-color: #34495e; border-radius: 5px;">
+        <a href="#location-overview" style="padding: 10px 15px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">📍 Location</a>
+        <a href="#player-characters" style="padding: 10px 15px; background-color: #9b59b6; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">⚔️ Player Characters</a>
+        <a href="#key-npcs" style="padding: 10px 15px; background-color: #e67e22; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">👥 Key NPCs</a>
+        <a href="#atmosphere" style="padding: 10px 15px; background-color: #1abc9c; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">🎭 Atmosphere</a>
+        <a href="#session-outline" style="padding: 10px 15px; background-color: #c0392b; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">📖 Session</a>
+        <a href="#dm-notes" style="padding: 10px 15px; background-color: #8b4513; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">📝 DM Notes</a>
+    </div>
+
     <div class="info-box" style="background-color: #2c3e50; color: #ecf0f1; padding: 20px; margin-bottom: 20px;">
         <h3 style="margin-top: 0; color: #ecf0f1;">Dice Roller</h3>
         <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
@@ -64,7 +73,12 @@
         <span class="location-stat">Type: Settlement</span>
     </div>
 
-    <h2>Location Overview</h2>
+    <h2 id="location-overview">Location Overview</h2>
+
+    <div style="background-color: #ffcccc; border: 2px solid #cc0000; padding: 15px; margin: 15px 0; border-radius: 5px;">
+        <h3 style="margin-top: 0; color: #cc0000;">⚠️ WARNING: Major Threat</h3>
+        <p><strong><a href="Dun_Tharos.html" style="color: #cc0000; font-weight: bold;">Dun-Tharos</a></strong> - An ancient fortress in the heart of the Rawlinswood has fallen under control of the Rotting Man, a Chosen of Talona. The corruption and plague spreading from this location represent an existential threat to the region. → <a href="Dun_Tharos.html" style="color: #cc0000; font-weight: bold;">View Complete Briefing</a></p>
+    </div>
 
     <h3>The Elvish Name: <span class="elvish">Earcilyanór</span></h3>
     <p>Pronounced <em>Earcilyanoˊr</em>, meaning "Sea-Gorge-Land" in Elvish.</p>
@@ -88,7 +102,7 @@
 
     <div class="section-divider"></div>
 
-    <h2>Player Characters</h2>
+    <h2 id="player-characters">Player Characters</h2>
 
     <div class="npc-card">
         <h3>Ember - Tabaxi Warlock & Selunite Minister</h3>
@@ -131,14 +145,16 @@
 
     <div class="section-divider"></div>
 
-    <h2>Key NPCs</h2>
+    <h2 id="key-npcs">Key NPCs</h2>
 
     <div class="npc-card">
-        <h3>Skylark - Harper Ranger</h3>
+        <h3>Skylark - Harper Druid (Appears as Ranger)</h3>
         <p><strong>Race:</strong> Human</p>
-        <p><strong>Role:</strong> Harper agent, ranger, regional scout</p>
+        <p><strong>True Class:</strong> Druid (publicly appears to be a ranger)</p>
+        <p><strong>Role:</strong> Harper agent, regional scout, druidic protector</p>
         <p><strong>Affiliation:</strong> The Harpers</p>
         <p><strong>Animal Companion:</strong> Adam the Raven</p>
+        <p><strong>Notable Item:</strong> Wears a Ring of Warmth; lacks typical cold-weather gear due to magical protection</p>
         <p><strong>Note:</strong> The raven watching arrivals at the pier is Adam, Skylark's companion and scout</p>
         <p><a href="Skylark.html" style="color: #4682b4; font-weight: bold;">→ View Full Character Profile</a></p>
     </div>
@@ -193,16 +209,22 @@
 
     <div class="npc-card">
         <h3>Ingvar Runestone - Innkeeper</h3>
-        <p><strong>Race:</strong> Dwarf</p>
+        <p><strong>Race:</strong> Dwarf (Mountain Dwarf)</p>
         <p><strong>Role:</strong> Owner and keeper of the Glacier's Rest Inn (the only inn in town)</p>
-        <p><strong>Family:</strong> Father of Ingrid</p>
+        <p><strong>Family:</strong> Father of <a href="Ingrid_Runestone.html" style="color: #8b4513;">Ingrid Runestone</a></p>
+        <p><strong>Note:</strong> Reliable, fair-dealing innkeeper who supports his daughter's work</p>
     </div>
 
     <div class="npc-card">
-        <h3>Ingrid Runestone - Inn Worker</h3>
-        <p><strong>Role:</strong> Works at the Glacier's Rest Inn</p>
-        <p><strong>Family:</strong> Daughter of Ingvar Runestone</p>
+        <h3>Ingrid Runestone - Harper Affiliate & Innkeeper</h3>
+        <p><strong>Race:</strong> Half-Dwarf (Dwarf father, Human mother)</p>
+        <p><strong>Role:</strong> Manager of the Glacier's Rest Inn, Harper information contact</p>
+        <p><strong>Family:</strong> Daughter of <a href="#" style="color: #8b4513;">Ingvar Runestone</a> (dwarf innkeeper); mother <a href="Ingrid_Runestone.html" style="color: #8b4513;">Mira</a> is a Harper agent on extended mission</p>
+        <p><strong>Affiliation:</strong> The Harpers (affiliate, works with <a href="Skylark.html" style="color: #4682b4;">Skylark</a>)</p>
+        <p><strong>Specialty:</strong> Information gathering, message relay, secure contact facilitation</p>
+        <p><strong>Regional Contacts:</strong> Aldric Thorne (Uthmere), Captain Elara Voss (Ilmwatch)</p>
         <p><strong>Service:</strong> Offers "best room in the house" - a corner chamber overlooking the harbor</p>
+        <p><a href="Ingrid_Runestone.html" style="color: #8b4513; font-weight: bold;">→ View Full Character Profile</a></p>
     </div>
 
     <div class="npc-card">
@@ -213,10 +235,14 @@
     </div>
 
     <div class="npc-card">
-        <h3>Kira Brightwater - Local Mage/Healer</h3>
-        <p><strong>Role:</strong> Local magical expert</p>
-        <p><strong>Resources:</strong> Has some minor magical items and healing supplies</p>
-        <p><strong>In Crisis:</strong> Starts moving supplies to secure locations, supports investigating root causes, advocates for researching other local legends and threats</p>
+        <h3>Kira Brightwater - Healer & Priestess of the Triad</h3>
+        <p><strong>Role:</strong> Primary healer and spiritual guide of Fjord's End</p>
+        <p><strong>Faith:</strong> Priestess of the Triad (the town's predominant religion)</p>
+        <p><strong>Location:</strong> Maintains the Shrine of the Triad (community spiritual center)</p>
+        <p><strong>Specialty:</strong> Divine healing magic, practical medicine, spiritual guidance</p>
+        <p><strong>Resources:</strong> Maintains modest collection of healing potions, blessed items, rare herbs, and magical components</p>
+        <p><strong>In Crisis:</strong> Organizes emergency medical care, manages healing supplies, supports investigation into threat causes, maintains community morale through faith and hope</p>
+        <p><a href="Kira_Brightwater.html" style="color: #9370db; font-weight: bold;">→ View Full Character Profile</a></p>
     </div>
 
     <div class="npc-card">
@@ -235,14 +261,24 @@
         <p><strong>Role:</strong> Runs a small bakery in the village</p>
         <p><strong>Personality:</strong> Kind-hearted older woman, warm and welcoming, always ready to share a story or a slice of pie</p>
         <p><strong>Specialty:</strong> Delicious pies and breads that bring joy to everyone who visits</p>
-        <p><strong>Family:</strong> Mother of Tormon, a skilled hunter</p>
-        <p><strong>Current Situation:</strong> Worried about her son Tormon (also called Thomas), who has been missing for a couple of days</p>
+        <p><strong>Family:</strong> Mother of <a href="Rory_Andersson.html" style="color: #d2691e;">Rory Andersson</a>, a skilled hunter</p>
+        <p><strong>Current Situation:</strong> Worried about her son Rory, who has been missing for a tenday with no communication</p>
         <p><a href="Solveig_Andersson.html" style="color: #d2691e; font-weight: bold;">→ View Full Character Profile</a></p>
+    </div>
+
+    <div class="npc-card">
+        <h3>Rory Andersson - Hunter</h3>
+        <p><strong>Race:</strong> Human</p>
+        <p><strong>Role:</strong> Skilled hunter</p>
+        <p><strong>Family:</strong> Son of <a href="Solveig_Andersson.html" style="color: #d2691e;">Solveig Andersson</a> (baker), father disappeared exploring the ancient Narfell ruins</p>
+        <p><strong>Status:</strong> Missing for a tenday; has not sent any updates via animal messenger (his usual method of contact)</p>
+        <p><strong>Known Facts:</strong> Has explored the Narfell ruins before; promised his mother he wouldn't go there but broke that promise; found a scroll of Shape Stone in the ruins and sold it to Kumari</p>
+        <p><a href="Rory_Andersson.html" style="color: #d2691e; font-weight: bold;">→ View Full Character Profile</a></p>
     </div>
 
     <div class="section-divider"></div>
 
-    <h2>Atmosphere & Ambiance</h2>
+    <h2 id="atmosphere">Atmosphere & Ambiance</h2>
 
     <h3>Normal Conditions</h3>
     <ul>
@@ -259,7 +295,7 @@
 
     <div class="section-divider"></div>
 
-    <h2>The Titan's Thirst - Session Outline</h2>
+    <h2 id="session-outline">The Titan's Thirst - Session Outline</h2>
     <p><em>A creature from the cursed glacial pool threatens the valley</em></p>
 
     <div class="session-note">
@@ -472,7 +508,7 @@
 
     <div class="section-divider"></div>
 
-    <h2>DM Notes</h2>
+    <h2 id="dm-notes">DM Notes</h2>
 
     <h3>Village Defense Advantages</h3>
     <ul>
