@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clymph Tower - Demon Prison</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #d2b48c;
+            color: #2c2416;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            background-color: #c4a678;
+        }
+        .demon-box {
+            background-color: #2a1a2e;
+            color: #e0e0e0;
+            border-left: 4px solid #cc0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .demon-box h4 {
+            color: #ff6b6b;
+        }
+        .history-box {
+            background-color: #1a1a2e;
+            color: #d0d0d0;
+            border-left: 4px solid #8b0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .history-box h4 {
+            color: #d2691e;
+        }
+        .tactical-box {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff6f00;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff9c4;
+            border: 2px solid #f57c00;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .hazard {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        .abyss-box {
+            background-color: #1a0a2e;
+            color: #ff6b6b;
+            border-left: 4px solid #9d0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Main Hub</a>
+
+    <h1>Clymph Tower</h1>
+    <p><em>The Demon Prison - A Monument to Hubris</em></p>
+
+    <div class="info-box">
+        <h3>Quick Reference</h3>
+        <span class="location-stat">Type: Ruined Fortress / Demon Prison</span>
+        <span class="location-stat">Region: The Great Dale</span>
+        <span class="location-stat">Age: ~500 years (ruined)</span>
+        <span class="location-stat">Builder: Clymph the Demonbinder</span>
+        <span class="location-stat">Threat Level: Catastrophic</span>
+        <span class="location-stat">Containment Status: Stable but Ancient</span>
+    </div>
+
+    <div class="warning-box">
+        <h3>⚠️ EXTREME DANGER ⚠️</h3>
+        <p><strong>Clymph Tower is one of the most dangerous locations in the known world.</strong></p>
+        <p>The tower contains dozens to hundreds of imprisoned demons held only by ancient abjurative magic. Any breach of the containment circle would unleash catastrophic destruction. Only parties of level 12+ should consider approaching, and even then with extreme caution and thorough preparation.</p>
+    </div>
+
+    <h2>Physical Description</h2>
+
+    <div class="info-box">
+        <h3>The Ruins</h3>
+
+        <blockquote>
+            Even from a distance, Clymph Tower commands fear and reverence. The ruined keep rises from the scorched earth like a monument to damnation itself. Where once proud walls stood, now only blackened stones remain, arranged in geometric patterns that hurt the mind to perceive. The entire structure glows with an ominous red heat, and deep within its depths, massive flames dance and crackle as if the very fires of the Abyss burn there still.
+        </blockquote>
+
+        <h4>Structural Features</h4>
+        <ul>
+            <li><strong>Perimeter Wall:</strong> Once a mighty fortification; now reduced to blackened rubble averaging 12 feet high</li>
+            <li><strong>Central Tower:</strong> The keep rises approximately 80 feet from the ground, though only fragments remain intact</li>
+            <li><strong>Material:</strong> Granite and basalt, unnaturally darkened and fused by intense heat</li>
+            <li><strong>Magical Circle:</strong> Ancient abjurative runes carved into the foundation stones in an intricate pattern</li>
+            <li><strong>Heat Output:</strong> Radiates intense warmth; temperature increases dramatically as you approach the center</li>
+            <li><strong>Fire Manifestation:</strong> Bright orange and red flames visible from the deepest chambers, visible at night from miles away</li>
+        </ul>
+
+        <h4>Surrounding Area</h4>
+        <ul>
+            <li><strong>Scorched Earth:</strong> A 300-foot radius of blackened, lifeless ground with no vegetation</li>
+            <li><strong>Ash Fields:</strong> Fine gray ash covers everything; disturbed easily by wind or movement</li>
+            <li><strong>Stone Formations:</strong> Twisted, melted stone shapes around the perimeter—remnants of failed escape attempts?</li>
+            <li><strong>Creature Avoidance:</strong> No animals approach; even birds avoid the airspace above</li>
+            <li><strong>Atmospheric Distortion:</strong> Heat shimmer visible year-round; air tastes of sulfur and ash</li>
+        </ul>
+
+        <h4>Notable Features</h4>
+        <ul>
+            <li><strong>Main Gate:</strong> Massive iron gateway, warped and fused shut by ancient magic and heat</li>
+            <li><strong>Guard Towers:</strong> Four corner towers, now reduced to jagged stubs</li>
+            <li><strong>Underground Levels:</strong> Partially collapsed spiral staircase descends into darkness—likely where the gate to the Abyss opens</li>
+            <li><strong>The Barrier:</strong> An invisible but palpable abjurative field surrounds the entire structure</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>The Demon Prison</h2>
+
+    <div class="abyss-box">
+        <h3>Containment Architecture</h3>
+
+        <p>Clymph Tower is not merely a fortress—it is an elaborate magical trap designed by one of the greatest demonbinders of ancient Narfell. Understanding its structure is key to understanding why it still holds after five centuries.</p>
+
+        <h4>The Abjurative Circle</h4>
+        <ul>
+            <li><strong>Scope:</strong> Encompasses the entire footprint of the tower, roughly 200 feet in diameter</li>
+            <li><strong>Composition:</strong> Carved into foundation stones in a pattern of concentric circles and geometric symbols</li>
+            <li><strong>Language:</strong> Written in Infernal and ancient Narfelli demonbinding script</li>
+            <li><strong>Power Source:</strong> Originally powered by Clymph's own lifeblood; now sustained by the residual magical energy of the imprisoned demons</li>
+            <li><strong>Function:</strong> Creates an impenetrable barrier preventing any teleportation, planar travel, or dimensional transit in or out</li>
+            <li><strong>Integrity:</strong> Still holding strong after 500 years, but showing signs of age and stress</li>
+        </ul>
+
+        <h4>The Abyssal Gateway</h4>
+        <ul>
+            <li><strong>Location:</strong> Deep underground in the tower's lowest levels</li>
+            <li><strong>Type:</strong> Permanent portal to the Abyss, crafted through infernal rituals</li>
+            <li><strong>Status:</strong> One-way (inbound); outbound travel is blocked by the abjurative circle</li>
+            <li><strong>Manifestation:</strong> Appears as a writhing tear in reality, surrounded by flame and shadow</li>
+            <li><strong>Original Purpose:</strong> Summoning point for Clymph's demonic army</li>
+            <li><strong>Current State:</strong> Sealed and locked by counter-rituals Clymph performed as he realized his mistake</li>
+        </ul>
+
+        <h4>Demon Population</h4>
+        <ul>
+            <li><strong>Number:</strong> Estimates range from "dozens" to "hundreds"—the true count is unknown</li>
+            <li><strong>Types:</strong> Varied demon types, from lesser quasits to potentially a balor or similar demon lord</li>
+            <li><strong>Behavior:</strong> Trapped and furious; pace the containment chamber constantly</li>
+            <li><strong>Communication:</strong> Occasionally speak through cracks in the tower, attempting to tempt or threaten potential escapees</li>
+            <li><strong>Weakness:</strong> Divided loyalties and infighting weaken them; they would turn on each other as readily as escaping</li>
+            <li><strong>Concern:</strong> If one powerful demon (demon prince or lord) emerges to unite them, containment could fail</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>History: Clymph the Demonbinder</h2>
+
+    <div class="history-box">
+        <h3>The Narfell Empire</h3>
+
+        <p>Approximately 500 years ago, during the later days of Narfell's power (before the empire's fall to Raumathar), a sorcerer named Clymph rose to prominence among the demon-binding elite of the imperial court.</p>
+
+        <h4>Clymph's Ambition</h4>
+        <ul>
+            <li><strong>Goal:</strong> Create an independent kingdom in the Great Dale, free from imperial control</li>
+            <li><strong>Method:</strong> Summon and bind a demonic army to conquer the region</li>
+            <li><strong>Vision:</strong> A realm where infernal and mortal powers balanced in dark harmony</li>
+            <li><strong>Belief:</strong> He was clever enough to master demons where others had failed</li>
+        </ul>
+
+        <h4>The Grand Summoning</h4>
+        <p>Clymph spent years preparing Clymph Tower, imbuing every stone with abjurative magic and inscribing countless binding runes. He believed his knowledge surpassed even the legendary demonbinders of old. He was wrong.</p>
+
+        <ul>
+            <li><strong>The Ritual:</strong> Performed at the height of his power, calling for demonic servants of all types</li>
+            <li><strong>The Response:</strong> More demons answered than he anticipated—far more</li>
+            <li><strong>The Problem:</strong> The sheer number and power of entities answering the call overwhelmed his ability to control them</li>
+            <li><strong>The Chaos:</strong> Demons began fighting each other, attacking Clymph's servants, and testing the containment</li>
+        </ul>
+
+        <h4>Clymph's Final Act</h4>
+        <p>Realizing his disaster, Clymph performed one final, desperate act. He sealed the gateway and modified the abjurative circle, linking it to his own life force. As he poured his power into the reinforced magic, the demons turned on him. But it was too late—the circle held.</p>
+
+        <ul>
+            <li><strong>Clymph's Death:</strong> Torn apart by the demons he tried to control, his blood mixed with the stones</li>
+            <li><strong>The Tower's Fate:</strong> Left behind as a prison, now powered by the rage and despair of trapped demons</li>
+            <li><strong>Legacy:</strong> A warning to all demonbinders: some things cannot be controlled, only contained</li>
+        </ul>
+
+        <h4>Five Centuries of Imprisonment</h4>
+        <ul>
+            <li><strong>Stability:</strong> The magical prison has held for 500 years with remarkable stability</li>
+            <li><strong>Degradation:</strong> Recent millennia have seen the magic weaken slightly; some scholars worry about eventual failure</li>
+            <li><strong>Legends:</strong> Local tales speak of those foolish enough to approach the tower being driven mad by demonic whispers</li>
+            <li><strong>Incidents:</strong> Occasionally the magic flares, causing nearby tremors or increased flame manifestation</li>
+            <li><strong>Current Status:</strong> The prison is stable but ancient—like a dam holding back a river of hatred</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>Environmental Hazards</h2>
+
+    <div class="tactical-box">
+        <h3>Heat & Temperature</h3>
+
+        <h4>Temperature Zones</h4>
+        <ul>
+            <li><strong>Beyond 500 feet:</strong> Normal temperature; faint heat shimmer visible</li>
+            <li><strong>300-500 feet:</strong> Noticeably warm (90-100°F); mild discomfort</li>
+            <li><strong>100-300 feet:</strong> Very hot (120-150°F); Constitution save DC 12 every 10 minutes or gain exhaustion</li>
+            <li><strong>0-100 feet (at ruins):</strong> Extreme heat (180-220°F); Constitution save DC 15 every 5 minutes or gain exhaustion</li>
+            <li><strong>Within tower structure:</strong> Unbearable heat (250°F+); Constitution save DC 18 every round or gain exhaustion; unprotected flesh blistered</li>
+        </ul>
+
+        <h4>Heat Mitigation</h4>
+        <ul>
+            <li><strong>Magical Protection:</strong> Fire resistance, endure elements, or similar magic essential</li>
+            <li><strong>Physical Gear:</strong> Heavy protective clothing offers minimal benefit (–2 to save DC)</li>
+            <li><strong>Water-based Healing:</strong> Potions provide temporary relief but limited use</li>
+            <li><strong>Shade/Cover:</strong> Ruins provide some shelter but not much; heat radiates from stone</li>
+        </ul>
+
+        <h3>Magical Aura</h3>
+
+        <h4>Abjurative Field</h4>
+        <ul>
+            <li><span class="hazard">Planar Travel Blocked:</span> Teleportation, dimension door, and similar abilities fail within 500 feet</li>
+            <li><span class="hazard">Scrying Interference:</span> Magical scrying and surveillance becomes unreliable (DC 16 check to see clearly)</li>
+            <li><span class="hazard">Summoning Negated:</span> Cannot summon creatures or open portals within the field</li>
+            <li><span class="hazard">Mental Assault:</span> Demons constantly broadcast rage and despair; Wisdom save DC 14 or suffer short-term madness</li>
+        </ul>
+
+        <h4>Demonic Manifestations</h4>
+        <ul>
+            <li><strong>Whispers:</strong> Constant infernal whispers at the edge of hearing; Intelligence (Arcana) or Wisdom saves to resist temptation</li>
+            <li><strong>Shadows:</strong> Unnatural shadows move counter to light sources; occasional glimpses of demonic silhouettes</li>
+            <li><strong>Flame Manifestations:</strong> Random bursts of fire from cracks and crevices; treat as hazardous terrain</li>
+            <li><strong>Reality Distortion:</strong> Time seems slow near the tower; distances are deceptive</li>
+        </ul>
+
+        <h3>Environmental Obstacles</h3>
+
+        <ul>
+            <li><strong>Unstable Rubble:</strong> Crumbling walls and fallen stones; difficult terrain throughout</li>
+            <li><strong>Ash Drifts:</strong> Deep ash accumulation; moving through costs extra movement</li>
+            <li><strong>Toxic Air:</strong> Sulfurous fumes; Constitution save DC 11 every hour or sickened</li>
+            <li><strong>Melted Stone:</strong> Sharp, jagged formations that count as difficult terrain and deal 1d6 piercing damage per 10 feet of movement</li>
+            <li><strong>Subsidence Zones:</strong> Ground may collapse into deeper chambers; Dexterity save DC 13 or fall 10-30 feet</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>Adventure Structure: "The Burning Question"</h2>
+
+    <div class="session-note">
+        <h3>Campaign Arc Overview</h3>
+        <p>Clymph Tower presents a multi-session investigation and potentially multi-encounter campaign arc. The party might be drawn to the tower for various reasons, and the tower itself poses many potential hooks and complications.</p>
+    </div>
+
+    <h3>Session 1: Rumors & Investigation</h3>
+    <div class="info-box">
+        <h4>Overview</h4>
+        <p><strong>Level 8-10 | Duration: 3-4 hours | Theme: Investigation, mystery, foreshadowing</strong></p>
+
+        <p>The party hears disturbing rumors about Clymph Tower and decides to investigate. They gather information from locals, scholars, and NPCs with knowledge of ancient Narfell.</p>
+
+        <h4>Investigation Hooks</h4>
+        <ul>
+            <li><strong>Increased Seismic Activity:</strong> Tremors have increased in frequency over the past tenday; local settlements are concerned</li>
+            <li><strong>Demonic Whispers:</strong> Travelers report hearing infernal voices on the wind; growing madness in nearby settlements</li>
+            <li><strong>NPC Request:</strong> A scholar or concerned official asks the party to investigate the tower and report its condition</li>
+            <li><strong>Personal Discovery:</strong> A party member receives an ominous dream or vision connected to the tower</li>
+            <li><strong>Artifact Hunting:</strong> Someone seeks an item lost in or around the tower centuries ago</li>
+        </ul>
+
+        <h4>Information Gathering</h4>
+        <ul>
+            <li><strong>Arcana Checks:</strong> Knowledge of Narfelli demonbinding, abjurative magic, demon lore</li>
+            <li><strong>History Checks:</strong> Information about Clymph, the Narfell Empire, the tower's construction</li>
+            <li><strong>Local Knowledge:</strong> Warnings from shepherds, miners, and travelers about the tower</li>
+            <li><strong>Library Research:</strong> Ancient texts describing Clymph's ambitions and the tower's purpose</li>
+            <li><strong>NPC Testimonies:</strong> Stories from survivors of demonic hauntings or possession</li>
+        </ul>
+
+        <h4>Encounters</h4>
+        <ul>
+            <li><strong>Social:</strong> NPCs sharing warnings and stories</li>
+            <li><strong>Roleplaying:</strong> A possessed or formerly possessed individual providing cryptic warnings</li>
+            <li><strong>Environmental:</strong> Party witnesses distant tremor or flame manifestation from the tower</li>
+            <li><strong>Subtle Horror:</strong> Growing sense of dread as the party learns more</li>
+        </ul>
+
+        <h4>Objectives</h4>
+        <ul>
+            <li>Gather sufficient information to make an informed decision about approaching the tower</li>
+            <li>Understand the basic nature of the threat (demon prison, not random ruins)</li>
+            <li>Prepare for the journey and potential encounters</li>
+            <li>Establish party motivation and investment in the tower's fate</li>
+        </ul>
+    </div>
+
+    <h3>Session 2: The Approach & Reconnaissance</h3>
+    <div class="info-box">
+        <h4>Overview</h4>
+        <p><strong>Level 8-10 | Duration: 4-5 hours | Theme: Environmental horror, mounting dread, tactical assessment</strong></p>
+
+        <p>The party journeys to Clymph Tower and conducts a careful reconnaissance of the site without entering the structure itself.</p>
+
+        <h4>Journey to the Tower</h4>
+        <ul>
+            <li><strong>Distance:</strong> Varies by campaign geography; assume 1-3 days of travel</li>
+            <li><strong>Encounters:</strong> Few creatures approach the tower; party may encounter refugees or cautious locals along the way</li>
+            <li><strong>Environmental Clues:</strong> Scorched earth spreads wider than expected; ash drifts accumulate</li>
+            <li><strong>Atmospheric Building:</strong> Temperature increases; demonic whispers grow louder; visual distortions increase</li>
+        </ul>
+
+        <h4>Reconnaissance Phase</h4>
+        <ul>
+            <li><strong>Initial Approach:</strong> Party establishes camp at safe distance (500+ feet from tower)</li>
+            <li><strong>Observation:</strong> Long-range observation of the structure and surroundings; noting guard routes (none), environmental features, entry points</li>
+            <li><strong>Skill Checks:</strong> Perception, Arcana, and Investigation checks to understand the layout</li>
+            <li><strong>Magical Detection:</strong> Detect magic reveals overwhelming abjuration aura; possibly other magical presences</li>
+        </ul>
+
+        <h4>Encounters During Reconnaissance</h4>
+        <ul>
+            <li><strong>Demonic Communication:</strong> Demons notice the party's presence and attempt to communicate; offer promises, threats, or bargains</li>
+            <li><strong>Environmental Event:</strong> A flare-up in demonic activity; flames burst higher, ground trembles, magical discharge visible</li>
+            <li><strong>Local Encounter:</strong> A hermit, researcher, or exile living near the tower shares information or warnings</li>
+            <li><strong>Madness Saves:</strong> Extended exposure to the tower's aura forces Wisdom saves against short-term madness</li>
+            <li><strong>Supernatural Phenomenon:</strong> Party witnesses something impossible—demonic shapes in the flames, voices speaking names, or temporal distortion</li>
+        </ul>
+
+        <h4>Critical Decisions</h4>
+        <ul>
+            <li>Whether to approach closer or maintain distance</li>
+            <li>Whether to attempt communication with trapped demons</li>
+            <li>Whether to attempt entry into the tower itself</li>
+            <li>How long to remain in the area before heading back</li>
+        </ul>
+
+        <h4>Objectives</h4>
+        <ul>
+            <li>Assess the tower's physical condition and stability of containment</li>
+            <li>Determine if the threat is immediate or merely long-term</li>
+            <li>Gather additional information about the demons inside</li>
+            <li>Decide on next steps (entry, return for reinforcements, inform authorities, etc.)</li>
+        </ul>
+    </div>
+
+    <h3>Session 3: Infiltration & Containment Assessment (Optional)</h3>
+    <div class="info-box">
+        <h4>Overview</h4>
+        <p><strong>Level 10-12 | Duration: 5-6 hours | Theme: Exploration, puzzle-solving, escalating danger</strong></p>
+
+        <p>If the party chooses to enter the tower, they face a dangerous exploration of its interior. The goal is assessment and, if possible, reinforcement of the containment.</p>
+
+        <h4>Entry Methods</h4>
+        <ul>
+            <li><strong>Main Gate:</strong> Sealed by abjurative magic; may be opened with sufficient magical force or the right ritual</li>
+            <li><strong>Breached Sections:</strong> Damage to the walls provides entry points, though they're dangerous and unstable</li>
+            <li><strong>Underground Access:</strong> If accessible, ruins lead downward toward the central chamber</li>
+            <li><strong>Magical Entry:</strong> Ritual magic or powerful divination might reveal hidden passages</li>
+        </ul>
+
+        <h4>Interior Exploration</h4>
+        <ul>
+            <li><strong>Guard Chambers:</strong> Empty but designed to house Clymph's original servants (now long dead)</li>
+            <li><strong>Ritual Rooms:</strong> Chambers with binding circles and demonbinding apparatus</li>
+            <li><strong>Living Quarters:</strong> Clymph's personal chambers; evidence of his final days</li>
+            <li><strong>Library:</strong> Partially intact archives with demonbinding texts and research (mostly ruined)</li>
+            <li><strong>Central Chamber:</strong> The main containment area where the abjurative circle is centered; extremely dangerous</li>
+        </ul>
+
+        <h4>Challenges</h4>
+        <ul>
+            <li><span class="hazard">Temperature Escalation:</span> Heat increases dramatically deeper into the tower</li>
+            <li><span class="hazard">Structural Instability:</span> Floors and walls threaten to collapse; Dexterity saves required regularly</li>
+            <li><span class="hazard">Demonic Presence:</span> Demons attempt to manipulate, possess, or psychologically assault party members</li>
+            <li><span class="hazard">Magical Traps:</span> Wards and bindings left behind by Clymph; disarming requires Arcana checks or magical expertise</li>
+            <li><span class="hazard">Environmental Hazards:</span> Toxic gas, molten stone, flame vents, and subsidence zones</li>
+        </ul>
+
+        <h4>Discoveries</h4>
+        <ul>
+            <li><strong>Clymph's Journal:</strong> Partially intact writings revealing his thoughts and growing desperation</li>
+            <li><strong>Containment Specifications:</strong> Records of the abjurative circle's design and maintenance requirements</li>
+            <li><strong>Demon Catalog:</strong> A list (possibly incomplete) of demons originally summoned</li>
+            <li><strong>Repair Ritual:</strong> Instructions for reinforcing the containment (dangerous to attempt)</li>
+            <li><strong>Escape Protocols:</strong> Evidence that one demon (possibly a powerful one) has learned much about the barrier's weak points</li>
+        </ul>
+
+        <h4>Potential Encounters</h4>
+        <ul>
+            <li><strong>Demon Manifestation:</strong> A powerful demon appears, limited by the barrier but able to interact at its edges</li>
+            <li><strong>Haunting:</strong> Clymph's tormented spirit or a ghost of his final moments</li>
+            <li><strong>Trap Activation:</strong> Trigger an ancient protective ward that attacks intruders</li>
+            <li><strong>Partial Breach:</strong> The party's actions accidentally weaken part of the containment; a lesser demon partially manifests</li>
+        </ul>
+
+        <h4>Objectives</h4>
+        <ul>
+            <li>Map the interior and understand the containment structure</li>
+            <li>Locate and recover important information or artifacts</li>
+            <li>Assess whether the containment needs immediate reinforcement</li>
+            <li>Escape before the tower's dangers overwhelm the party</li>
+        </ul>
+    </div>
+
+    <h3>Session 4: The Threat Emerges (Climactic)</h3>
+    <div class="info-box">
+        <h4>Overview</h4>
+        <p><strong>Level 12+ | Duration: 6+ hours | Theme: Epic confrontation, catastrophic potential, moral choices</strong></p>
+
+        <p>Events come to a head. Either the party discovers signs of imminent containment failure, or their actions trigger a crisis. They must either reinforce the prison or face a major demonic emergence.</p>
+
+        <h4>Crisis Scenarios</h4>
+
+        <h5>Scenario A: Containment Collapse Warning</h5>
+        <ul>
+            <li>Party discovers that the abjurative circle is degrading faster than anticipated</li>
+            <li>Expert analysis suggests 1-6 months before total failure</li>
+            <li>A powerful demon has been systematically weakening the barrier for years</li>
+        </ul>
+
+        <h5>Scenario B: Ritual Misfire</h5>
+        <ul>
+            <li>Party or NPCs attempt to reinforce containment; ritual goes wrong</li>
+            <li>Demons surge against the weakened barrier; partial breach occurs</li>
+            <li>Lesser demons begin manifesting outside the tower</li>
+        </ul>
+
+        <h5>Scenario C: External Threat</h5>
+        <ul>
+            <li>Another group (cultists, wizards, or worse) arrives seeking to break the seal</li>
+            <li>Combat between party and external threat occurs while demons press from within</li>
+            <li>Risk of containment failure increases as fighting destabilizes the structure</li>
+        </ul>
+
+        <h4>Confrontation Mechanics</h4>
+        <ul>
+            <li><strong>Multiple Fronts:</strong> Party faces both external threats and demonic pressure</li>
+            <li><strong>Escalating Danger:</strong> As the session progresses, the situation grows worse; more demons press against barriers</li>
+            <li><strong>Moral Choices:</strong> Party must decide between self-preservation and preventing catastrophic release</li>
+            <li><strong>Ritual Magic:</strong> Reinforcing the circle requires time, components, and successful skill checks; party must hold the line</li>
+        </ul>
+
+        <h4>Potential Demon Encounters</h4>
+        <ul>
+            <li><strong>Lesser Demons (CR 2-5):</strong> Quasits, imps, or dretches that partially manifest</li>
+            <li><strong>Significant Demons (CR 6-8):</strong> Hezrous, vrock, or glabrezu attempting escape</li>
+            <li><strong>Demon Leader (CR 9+):</strong> A major demon (balor, nalfeshnee) coordinating the breach attempt</li>
+            <li><strong>The Collective:</strong> Party faces multiple demons working together as a swarm</li>
+        </ul>
+
+        <h4>Resolution Options</h4>
+        <ul>
+            <li><strong>Successful Reinforcement:</strong> Party performs the ritual and stabilizes containment; tower remains sealed for another century</li>
+            <li><strong>Pyrrhic Containment:</strong> Containment reinforced but at great cost; party or NPCs are possessed or corrupted</li>
+            <li><strong>Partial Breach:</strong> Party prevents total catastrophe but some demons escape; ongoing threat to region</li>
+            <li><strong>Catastrophic Failure:</strong> Containment fails despite party's efforts; demons emerge; region faces existential threat</li>
+            <li><strong>Sacrifice Play:</strong> A party member or important NPC sacrifices themselves to reinforce the barrier</li>
+        </ul>
+
+        <h4>Aftermath & Consequences</h4>
+        <ul>
+            <li><strong>If Successful:</strong> Party is hailed as saviors; region is safe; tower becomes historical monument</li>
+            <li><strong>If Failed:</strong> Campaign focus shifts to dealing with demonic invasion; region mobilizes for war</li>
+            <li><strong>Mixed Results:</strong> Ongoing threat; tower requires periodic maintenance; opens door for future sessions</li>
+        </ul>
+
+        <h4>Objectives</h4>
+        <ul>
+            <li>Prevent or minimize demonic escape</li>
+            <li>Reinforce the abjurative circle if possible</li>
+            <li>Survive and protect the region</li>
+            <li>Decide the tower's role in the campaign going forward</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>Adventure Hooks & Complications</h2>
+
+    <div class="session-note">
+        <h3>Why the Party Cares About Clymph Tower</h3>
+
+        <h4>Direct Threats</h4>
+        <ul>
+            <li><strong>Increased Tremors:</strong> Earthquakes threaten settlements; party asked to investigate source</li>
+            <li><strong>Demonic Manifestations:</strong> Demons appearing in towns; their source traced to the tower</li>
+            <li><strong>Possession Epidemic:</strong> People becoming possessed; investigation reveals connection to tower weakening</li>
+            <li><strong>Refugee Crisis:</strong> People fleeing the tower's immediate area; they bring dire warnings</li>
+        </ul>
+
+        <h4>Personal Stakes</h4>
+        <ul>
+            <li><strong>Lost Companion:</strong> A trusted NPC or ally was corrupted or captured by demonic influence</li>
+            <li><strong>Ancient Artifact:</strong> Something of great value is known to be in or near the tower</li>
+            <li><strong>Family Connection:</strong> A party member has a personal or ancestral tie to Clymph or his era</li>
+            <li><strong>Prophecy:</strong> A divination or prophecy specifically names Clymph Tower</li>
+        </ul>
+
+        <h4>Political Pressure</h4>
+        <ul>
+            <li><strong>Regional Authority:</strong> Governments demand investigation and containment assurance</li>
+            <li><strong>Harper Mission:</strong> The Harpers task the party with preventing catastrophe</li>
+            <li><strong>Religious Order:</strong> A god's clergy demands the tower be purified or sealed permanently</li>
+            <li><strong>Competing Parties:</strong> Multiple groups (good and evil) seek the tower for different reasons</li>
+        </ul>
+
+        <h4>Ongoing Complications</h4>
+        <ul>
+            <li><strong>Cult Activity:</strong> Followers of Orcus or other demon lords work to weaken containment</li>
+            <li><strong>Academic Competition:</strong> Rival wizards or scholars pursue forbidden knowledge from the tower</li>
+            <li><strong>Moral Dilemmas:</strong> Some demons aren't purely evil; party faces ethical choices about containment</li>
+            <li><strong>Periodic Crises:</strong> Tower requires ongoing maintenance; multiple sessions of dealing with recurrent problems</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>DM Notes</h2>
+
+    <div class="info-box">
+        <h3>Running Clymph Tower</h3>
+
+        <h4>Atmosphere & Tone</h4>
+        <p>Clymph Tower should feel apocalyptic and desperate:</p>
+        <ul>
+            <li>Emphasize the sense of cosmic horror—this is a wound in reality itself</li>
+            <li>Describe the demonic voices as tempting, mocking, and increasingly urgent</li>
+            <li>Use environmental descriptions to build dread (rising temperature, increasing vibration, growing flames)</li>
+            <li>Make players feel the weight of containment—one mistake could doom the region</li>
+            <li>Interplay between the terrible beauty of demonic power and the horror of its imprisonment</li>
+        </ul>
+
+        <h4>Pacing the Campaign Arc</h4>
+        <ul>
+            <li><strong>Session 1:</strong> Mystery and investigation; slowly revealing the scope of the threat</li>
+            <li><strong>Session 2:</strong> Environmental horror; growing sense of wrongness and danger</li>
+            <li><strong>Session 3:</strong> Exploration and puzzle-solving; understanding the mechanisms of containment</li>
+            <li><strong>Session 4:</strong> Epic confrontation; the tower and its secrets tested to the limit</li>
+        </ul>
+
+        <h4>Scaling by Level</h4>
+        <ul>
+            <li><strong>Levels 8-9:</strong> Focus on investigation and minor encounters; avoid major demon battles</li>
+            <li><strong>Levels 10-11:</strong> Include dangerous exploration and significant demonic encounters; reinforce possibilities</li>
+            <li><strong>Levels 12+:</strong> Full-scale confrontation with powerful demons; epic battle mechanics and ritual magic</li>
+        </ul>
+
+        <h4>The Demons</h4>
+        <ul>
+            <li><strong>Not Mindless:</strong> Demons are intelligent and strategic; they've had centuries to plan</li>
+            <li><strong>Divided Purposes:</strong> Some want escape; others are content in the Abyss; some are insane</li>
+            <li><strong>Temptation Focus:</strong> Demons try to corrupt and manipulate before fighting</li>
+            <li><strong>Hierarchy:</strong> One demon (demon prince or powerful lord) likely leads; killing it causes internal chaos</li>
+        </ul>
+
+        <h4>Environmental Challenges</h4>
+        <ul>
+            <li><strong>Heat as Threat:</strong> Temperature should be a constant concern; resource management for cooling</li>
+            <li><strong>Time Pressure:</strong> The longer party stays, the worse it gets; sense of urgency builds</li>
+            <li><strong>Structural Decay:</strong> Tower is ancient and unstable; add random hazards and collapses</li>
+            <li><strong>Magical Interference:</strong> Abjurative magic limits party options; force creative problem-solving</li>
+        </ul>
+
+        <h4>Player Agency</h4>
+        <ul>
+            <li><strong>Multiple Solutions:</strong> Containment can be reinforced through different rituals and approaches</li>
+            <li><strong>Sacrifice Options:</strong> Allow players to make meaningful sacrifices (companions, magical items, resources)</li>
+            <li><strong>Partial Successes:</strong> Don't force a binary win/lose outcome; allow nuanced results</li>
+            <li><strong>Future Hooks:</strong> Leave room for ongoing connection to the tower and its mysteries</li>
+        </ul>
+
+        <h4>Reward Considerations</h4>
+        <ul>
+            <li><strong>Experience:</strong> Substantial rewards for preventing catastrophe</li>
+            <li><strong>Treasure:</strong> Artifacts recovered from tower; demonic items with interesting properties</li>
+            <li><strong>Reputation:</strong> Party becomes known as heroes who held back Hell itself</li>
+            <li><strong>Ongoing Benefits:</strong> Access to restricted knowledge, support from grateful organizations</li>
+            <li><strong>Complications:</strong> Demons don't forget; party may face long-term demonic enmity</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <a href="index.html" class="back-link">← Back to Main Hub</a>
+
+</body>
+</html>

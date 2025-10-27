@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clymph Tower - Demon Prison</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #d2b48c;
+            color: #2c2416;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            background-color: #c4a678;
+        }
+        .demon-box {
+            background-color: #2a1a2e;
+            color: #e0e0e0;
+            border-left: 4px solid #cc0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .demon-box h4 {
+            color: #ff6b6b;
+        }
+        .history-box {
+            background-color: #1a1a2e;
+            color: #d0d0d0;
+            border-left: 4px solid #8b0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .history-box h4 {
+            color: #d2691e;
+        }
+        .tactical-box {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff6f00;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff9c4;
+            border: 2px solid #f57c00;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .hp-tracker {
+            background-color: #f5f5f5;
+            border: 2px solid #333;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .hp-tracker h4 {
+            margin-top: 0;
+            color: #d32f2f;
+        }
+        .hp-display {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #d32f2f;
+        }
+        .hp-bar-container {
+            width: 100%;
+            height: 40px;
+            background-color: #ddd;
+            border: 2px solid #333;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .hp-bar {
+            height: 100%;
+            background-color: #4caf50;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .hp-controls {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        .hp-button {
+            padding: 8px 15px;
+            font-size: 0.9em;
+            border: 1px solid #333;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.2s;
+        }
+        .hp-button:hover {
+            background-color: #c0c0c0;
+        }
+        .damage-button {
+            background-color: #ffcdd2;
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        .damage-button:hover {
+            background-color: #ef9a9a;
+        }
+        .heal-button {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        .heal-button:hover {
+            background-color: #a5d6a7;
+        }
+        .reset-button {
+            background-color: #b3e5fc;
+            color: #01579b;
+            font-weight: bold;
+        }
+        .reset-button:hover {
+            background-color: #81d4fa;
+        }
+        .damage-input {
+            padding: 6px;
+            border: 1px solid #999;
+            border-radius: 3px;
+            width: 60px;
+        }
+        .hazard {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        .abyss-box {
+            background-color: #1a0a2e;
+            color: #ff6b6b;
+            border-left: 4px solid #9d0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Main Hub</a>
+
+    <h1>Clymph Tower</h1>
+    <p><em>The Demon Prison - A Monument to Hubris</em></p>
+
+    <div class="info-box">
+        <h3>Quick Reference</h3>
+        <span class="location-stat">Type: Ruined Fortress / Demon Prison</span>
+        <span class="location-stat">Region: The Great Dale</span>
+        <span class="location-stat">Age: ~500 years (ruined)</span>
+        <span class="location-stat">Builder: Clymph the Demonbinder</span>
+        <span class="location-stat">Threat Level: Catastrophic</span>
+        <span class="location-stat">Containment Status: Stable but Ancient</span>
+    </div>
+
+    <div class="session-note">
+        <h3>Tower Maps</h3>
+        <p><strong>Lower Tower Layout:</strong></p>
+        <img src="images/Tower-Lower.jpg" alt="Clymph Tower Lower Levels Map" style="max-width: 100%; height: auto; margin: 10px 0;">
+        <p><strong>Upper Tower Layout:</strong></p>
+        <img src="images/Tower-Upper.jpg" alt="Clymph Tower Upper Levels Map" style="max-width: 100%; height: auto; margin: 10px 0;">
+    </div>
+
+    <div class="warning-box">
+        <h3>⚠️ EXTREME DANGER ⚠️</h3>
+        <p><strong>Clymph Tower is one of the most dangerous locations in the known world.</strong></p>
+        <p>The tower contains dozens to hundreds of imprisoned demons held only by ancient abjurative magic. Any breach of the containment circle would unleash catastrophic destruction. Only parties of level 12+ should consider approaching, and even then with extreme caution and thorough preparation.</p>
+    </div>
+
+    <h2>Physical Description</h2>
+
+    <div class="info-box">
+        <h3>The Ruins</h3>
+
+        <blockquote>
+            Even from a distance, Clymph Tower commands fear and reverence. The ruined keep rises from the scorched earth like a monument to damnation itself. Where once proud walls stood, now only blackened stones remain, arranged in geometric patterns that hurt the mind to perceive. The entire structure glows with an ominous red heat, and deep within its depths, massive flames dance and crackle as if the very fires of the Abyss burn there still.
+        </blockquote>
+
+        <h4>Structural Features</h4>
+        <ul>
+            <li><strong>Perimeter Wall:</strong> Once a mighty fortification; now reduced to blackened rubble averaging 12 feet high</li>
+            <li><strong>Central Tower:</strong> The keep rises approximately 80 feet from the ground, though only fragments remain intact</li>
+            <li><strong>Material:</strong> Granite and basalt, unnaturally darkened and fused by intense heat</li>
+            <li><strong>Magical Circle:</strong> Ancient abjurative runes carved into the foundation stones in an intricate pattern</li>
+            <li><strong>Heat Output:</strong> Radiates intense warmth; temperature increases dramatically as you approach the center</li>
+            <li><strong>Fire Manifestation:</strong> Bright orange and red flames visible from the deepest chambers, visible at night from miles away</li>
+        </ul>
+
+        <h4>Surrounding Area</h4>
+        <ul>
+            <li><strong>Scorched Earth:</strong> A 300-foot radius of blackened, lifeless ground with no vegetation</li>
+            <li><strong>Ash Fields:</strong> Fine gray ash covers everything; disturbed easily by wind or movement</li>
+            <li><strong>Stone Formations:</strong> Twisted, melted stone shapes around the perimeter—remnants of failed escape attempts?</li>
+            <li><strong>Creature Avoidance:</strong> No animals approach; even birds avoid the airspace above</li>
+            <li><strong>Atmospheric Distortion:</strong> Heat shimmer visible year-round; air tastes of sulfur and ash</li>
+        </ul>
+
+        <h4>Notable Features</h4>
+        <ul>
+            <li><strong>Main Gate:</strong> Massive iron gateway, warped and fused shut by ancient magic and heat</li>
+            <li><strong>Guard Towers:</strong> Four corner towers, now reduced to jagged stubs</li>
+            <li><strong>Underground Levels:</strong> Partially collapsed spiral staircase descends into darkness—likely where the gate to the Abyss opens</li>
+            <li><strong>The Barrier:</strong> An invisible but palpable abjurative field surrounds the entire structure</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>The Demon Prison</h2>
+
+    <div class="abyss-box">
+        <h3>Containment Architecture</h3>
+
+        <p>Clymph Tower is not merely a fortress—it is an elaborate magical trap designed by one of the greatest demonbinders of ancient Narfell. Understanding its structure is key to understanding why it still holds after five centuries.</p>
+
+        <h4>The Abjurative Circle</h4>
+        <ul>
+            <li><strong>Scope:</strong> Encompasses the entire footprint of the tower, roughly 200 feet in diameter</li>
+            <li><strong>Composition:</strong> Carved into foundation stones in a pattern of concentric circles and geometric symbols</li>
+            <li><strong>Language:</strong> Written in Infernal and ancient Narfelli demonbinding script</li>
+            <li><strong>Power Source:</strong> Originally powered by Clymph's own lifeblood; now sustained by the residual magical energy of the imprisoned demons</li>
+            <li><strong>Function:</strong> Creates an impenetrable barrier preventing any teleportation, planar travel, or dimensional transit in or out</li>
+            <li><strong>Integrity:</strong> Still holding strong after 500 years, but showing signs of age and stress</li>
+        </ul>
+
+        <h4>The Abyssal Gateway</h4>
+        <ul>
+            <li><strong>Location:</strong> Deep underground in the tower's lowest levels</li>
+            <li><strong>Type:</strong> Permanent portal to the Abyss, crafted through infernal rituals</li>
+            <li><strong>Status:</strong> One-way (inbound); outbound travel is blocked by the abjurative circle</li>
+            <li><strong>Manifestation:</strong> Appears as a writhing tear in reality, surrounded by flame and shadow</li>
+            <li><strong>Original Purpose:</strong> Summoning point for Clymph's demonic army</li>
+            <li><strong>Current State:</strong> Sealed and locked by counter-rituals Clymph performed as he realized his mistake</li>
+        </ul>
+
+        <h4>Demon Population</h4>
+        <ul>
+            <li><strong>Number:</strong> Estimates range from "dozens" to "hundreds"—the true count is unknown</li>
+            <li><strong>Types:</strong> Varied demon types, from lesser quasits to potentially a balor or similar demon lord</li>
+            <li><strong>Behavior:</strong> Trapped and furious; pace the containment chamber constantly</li>
+            <li><strong>Communication:</strong> Occasionally speak through cracks in the tower, attempting to tempt or threaten potential escapees</li>
+            <li><strong>Weakness:</strong> Divided loyalties and infighting weaken them; they would turn on each other as readily as escaping</li>
+            <li><strong>Concern:</strong> If one powerful demon (demon prince or lord) emerges to unite them, containment could fail</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>History: Clymph the Demonbinder</h2>
+
+    <div class="history-box">
+        <h3>The Narfell Empire</h3>
+
+        <p>Approximately 500 years ago, during the later days of Narfell's power (before the empire's fall to Raumathar), a sorcerer named Clymph rose to prominence among the demon-binding elite of the imperial court.</p>
+
+        <h4>Clymph's Ambition</h4>
+        <ul>
+            <li><strong>Goal:</strong> Create an independent kingdom in the Great Dale, free from imperial control</li>
+            <li><strong>Method:</strong> Summon and bind a demonic army to conquer the region</li>
+            <li><strong>Vision:</strong> A realm where infernal and mortal powers balanced in dark harmony</li>
+            <li><strong>Belief:</strong> He was clever enough to master demons where others had failed</li>
+        </ul>
+
+        <h4>The Grand Summoning</h4>
+        <p>Clymph spent years preparing Clymph Tower, imbuing every stone with abjurative magic and inscribing countless binding runes. He believed his knowledge surpassed even the legendary demonbinders of old. He was wrong.</p>
+
+        <ul>
+            <li><strong>The Ritual:</strong> Performed at the height of his power, calling for demonic servants of all types</li>
+            <li><strong>The Response:</strong> More demons answered than he anticipated—far more</li>
+            <li><strong>The Problem:</strong> The sheer number and power of entities answering the call overwhelmed his ability to control them</li>
+            <li><strong>The Chaos:</strong> Demons began fighting each other, attacking Clymph's servants, and testing the containment</li>
+        </ul>
+
+        <h4>Clymph's Final Act</h4>
+        <p>Realizing his disaster, Clymph performed one final, desperate act. He sealed the gateway and modified the abjurative circle, linking it to his own life force. As he poured his power into the reinforced magic, the demons turned on him. But it was too late—the circle held.</p>
+
+        <ul>
+            <li><strong>Clymph's Death:</strong> Torn apart by the demons he tried to control, his blood mixed with the stones</li>
+            <li><strong>The Tower's Fate:</strong> Left behind as a prison, now powered by the rage and despair of trapped demons</li>
+            <li><strong>Legacy:</strong> A warning to all demonbinders: some things cannot be controlled, only contained</li>
+        </ul>
+
+        <h4>Five Centuries of Imprisonment</h4>
+        <ul>
+            <li><strong>Stability:</strong> The magical prison has held for 500 years with remarkable stability</li>
+            <li><strong>Degradation:</strong> Recent millennia have seen the magic weaken slightly; some scholars worry about eventual failure</li>
+            <li><strong>Legends:</strong> Local tales speak of those foolish enough to approach the tower being driven mad by demonic whispers</li>
+            <li><strong>Incidents:</strong> Occasionally the magic flares, causing nearby tremors or increased flame manifestation</li>
+            <li><strong>Current Status:</strong> The prison is stable but ancient—like a dam holding back a river of hatred</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>Environmental Hazards</h2>
+
+    <div class="tactical-box">
+        <h3>Heat & Temperature</h3>
+
+        <h4>Temperature Zones</h4>
+        <ul>
+            <li><strong>Beyond 500 feet:</strong> Normal temperature; faint heat shimmer visible</li>
+            <li><strong>300-500 feet:</strong> Noticeably warm (90-100°F); mild discomfort</li>
+            <li><strong>100-300 feet:</strong> Very hot (120-150°F); Constitution save DC 12 every 10 minutes or gain exhaustion</li>
+            <li><strong>0-100 feet (at ruins):</strong> Extreme heat (180-220°F); Constitution save DC 15 every 5 minutes or gain exhaustion</li>
+            <li><strong>Within tower structure:</strong> Unbearable heat (250°F+); Constitution save DC 18 every round or gain exhaustion; unprotected flesh blistered</li>
+        </ul>
+
+        <h4>Heat Mitigation</h4>
+        <ul>
+            <li><strong>Magical Protection:</strong> Fire resistance, endure elements, or similar magic essential</li>
+            <li><strong>Physical Gear:</strong> Heavy protective clothing offers minimal benefit (–2 to save DC)</li>
+            <li><strong>Water-based Healing:</strong> Potions provide temporary relief but limited use</li>
+            <li><strong>Shade/Cover:</strong> Ruins provide some shelter but not much; heat radiates from stone</li>
+        </ul>
+
+        <h3>Magical Aura</h3>
+
+        <h4>Abjurative Field</h4>
+        <ul>
+            <li><span class="hazard">Planar Travel Blocked:</span> Teleportation, dimension door, and similar abilities fail within 500 feet</li>
+            <li><span class="hazard">Scrying Interference:</span> Magical scrying and surveillance becomes unreliable (DC 16 check to see clearly)</li>
+            <li><span class="hazard">Summoning Negated:</span> Cannot summon creatures or open portals within the field</li>
+            <li><span class="hazard">Mental Assault:</span> Demons constantly broadcast rage and despair; Wisdom save DC 14 or suffer short-term madness</li>
+        </ul>
+
+        <h4>Demonic Manifestations</h4>
+        <ul>
+            <li><strong>Whispers:</strong> Constant infernal whispers at the edge of hearing; Intelligence (Arcana) or Wisdom saves to resist temptation</li>
+            <li><strong>Shadows:</strong> Unnatural shadows move counter to light sources; occasional glimpses of demonic silhouettes</li>
+            <li><strong>Flame Manifestations:</strong> Random bursts of fire from cracks and crevices; treat as hazardous terrain</li>
+            <li><strong>Reality Distortion:</strong> Time seems slow near the tower; distances are deceptive</li>
+        </ul>
+
+        <h3>Environmental Obstacles</h3>
+
+        <ul>
+            <li><strong>Unstable Rubble:</strong> Crumbling walls and fallen stones; difficult terrain throughout</li>
+            <li><strong>Ash Drifts:</strong> Deep ash accumulation; moving through costs extra movement</li>
+            <li><strong>Toxic Air:</strong> Sulfurous fumes; Constitution save DC 11 every hour or sickened</li>
+            <li><strong>Melted Stone:</strong> Sharp, jagged formations that count as difficult terrain and deal 1d6 piercing damage per 10 feet of movement</li>
+            <li><strong>Subsidence Zones:</strong> Ground may collapse into deeper chambers; Dexterity save DC 13 or fall 10-30 feet</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>Adventure Structure: "The Burning Question"</h2>
+
+    <div class="session-note">
+        <h3>Campaign Arc Overview</h3>
+        <p>Clymph Tower presents a multi-session investigation and potentially multi-encounter campaign arc. The party might be drawn to the tower for various reasons, and the tower itself poses many potential hooks and complications.</p>
+    </div>
+
+    <h3>Session 1: Rumors & Investigation</h3>
+    <div class="info-box">
+        <h4>Overview</h4>
+        <p><strong>Level 8-10 | Duration: 3-4 hours | Theme: Investigation, mystery, foreshadowing</strong></p>
+
+        <p>The party hears disturbing rumors about Clymph Tower and decides to investigate. They gather information from locals, scholars, and NPCs with knowledge of ancient Narfell.</p>
+
+        <h4>Investigation Hooks</h4>
+        <ul>
+            <li><strong>Increased Seismic Activity:</strong> Tremors have increased in frequency over the past tenday; local settlements are concerned</li>
+            <li><strong>Demonic Whispers:</strong> Travelers report hearing infernal voices on the wind; growing madness in nearby settlements</li>
+            <li><strong>NPC Request:</strong> A scholar or concerned official asks the party to investigate the tower and report its condition</li>
+            <li><strong>Personal Discovery:</strong> A party member receives an ominous dream or vision connected to the tower</li>
+            <li><strong>Artifact Hunting:</strong> Someone seeks an item lost in or around the tower centuries ago</li>
+        </ul>
+
+        <h4>Information Gathering</h4>
+        <ul>
+            <li><strong>Arcana Checks:</strong> Knowledge of Narfelli demonbinding, abjurative magic, demon lore</li>
+            <li><strong>History Checks:</strong> Information about Clymph, the Narfell Empire, the tower's construction</li>
+            <li><strong>Local Knowledge:</strong> Warnings from shepherds, miners, and travelers about the tower</li>
+            <li><strong>Library Research:</strong> Ancient texts describing Clymph's ambitions and the tower's purpose</li>
+            <li><strong>NPC Testimonies:</strong> Stories from survivors of demonic hauntings or possession</li>
+        </ul>
+
+        <h4>Encounters</h4>
+        <ul>
+            <li><strong>Social:</strong> NPCs sharing warnings and stories</li>
+            <li><strong>Roleplaying:</strong> A possessed or formerly possessed individual providing cryptic warnings</li>
+            <li><strong>Environmental:</strong> Party witnesses distant tremor or flame manifestation from the tower</li>
+            <li><strong>Subtle Horror:</strong> Growing sense of dread as the party learns more</li>
+        </ul>
+
+        <h4>Objectives</h4>
+        <ul>
+            <li>Gather sufficient information to make an informed decision about approaching the tower</li>
+            <li>Understand the basic nature of the threat (demon prison, not random ruins)</li>
+            <li>Prepare for the journey and potential encounters</li>
+            <li>Establish party motivation and investment in the tower's fate</li>
+        </ul>
+    </div>
+
+    <h3>Session 2: The Approach & Reconnaissance</h3>
+    <div class="info-box">
+        <h4>Overview</h4>
+        <p><strong>Level 8-10 | Duration: 4-5 hours | Theme: Environmental horror, mounting dread, tactical assessment</strong></p>
+
+        <p>The party journeys to Clymph Tower and conducts a careful reconnaissance of the site without entering the structure itself.</p>
+
+        <h4>Journey to the Tower</h4>
+        <ul>
+            <li><strong>Distance:</strong> Varies by campaign geography; assume 1-3 days of travel</li>
+            <li><strong>Encounters:</strong> Few creatures approach the tower; party may encounter refugees or cautious locals along the way</li>
+            <li><strong>Environmental Clues:</strong> Scorched earth spreads wider than expected; ash drifts accumulate</li>
+            <li><strong>Atmospheric Building:</strong> Temperature increases; demonic whispers grow louder; visual distortions increase</li>
+        </ul>
+
+        <h4>Reconnaissance Phase</h4>
+        <ul>
+            <li><strong>Initial Approach:</strong> Party establishes camp at safe distance (500+ feet from tower)</li>
+            <li><strong>Observation:</strong> Long-range observation of the structure and surroundings; noting guard routes (none), environmental features, entry points</li>
+            <li><strong>Skill Checks:</strong> Perception, Arcana, and Investigation checks to understand the layout</li>
+            <li><strong>Magical Detection:</strong> Detect magic reveals overwhelming abjuration aura; possibly other magical presences</li>
+        </ul>
+
+        <h4>Encounters During Reconnaissance</h4>
+        <ul>
+            <li><strong>Demonic Communication:</strong> Demons notice the party's presence and attempt to communicate; offer promises, threats, or bargains</li>
+            <li><strong>Environmental Event:</strong> A flare-up in demonic activity; flames burst higher, ground trembles, magical discharge visible</li>
+            <li><strong>Local Encounter:</strong> A hermit, researcher, or exile living near the tower shares information or warnings</li>
+            <li><strong>Madness Saves:</strong> Extended exposure to the tower's aura forces Wisdom saves against short-term madness</li>
+            <li><strong>Supernatural Phenomenon:</strong> Party witnesses something impossible—demonic shapes in the flames, voices speaking names, or temporal distortion</li>
+        </ul>
+
+        <h4>Critical Decisions</h4>
+        <ul>
+            <li>Whether to approach closer or maintain distance</li>
+            <li>Whether to attempt communication with trapped demons</li>
+            <li>Whether to attempt entry into the tower itself</li>
+            <li>How long to remain in the area before heading back</li>
+        </ul>
+
+        <h4>Objectives</h4>
+        <ul>
+            <li>Assess the tower's physical condition and stability of containment</li>
+            <li>Determine if the threat is immediate or merely long-term</li>
+            <li>Gather additional information about the demons inside</li>
+            <li>Decide on next steps (entry, return for reinforcements, inform authorities, etc.)</li>
+        </ul>
+    </div>
+
+    <h3>Session 3: Infiltration & Containment Assessment (Optional)</h3>
+    <div class="info-box">
+        <h4>Overview</h4>
+        <p><strong>Level 10-12 | Duration: 5-6 hours | Theme: Exploration, puzzle-solving, escalating danger</strong></p>
+
+        <p>If the party chooses to enter the tower, they face a dangerous exploration of its interior. The goal is assessment and, if possible, reinforcement of the containment.</p>
+
+        <h4>Entry Methods</h4>
+        <ul>
+            <li><strong>Main Gate:</strong> Sealed by abjurative magic; may be opened with sufficient magical force or the right ritual</li>
+            <li><strong>Breached Sections:</strong> Damage to the walls provides entry points, though they're dangerous and unstable</li>
+            <li><strong>Underground Access:</strong> If accessible, ruins lead downward toward the central chamber</li>
+            <li><strong>Magical Entry:</strong> Ritual magic or powerful divination might reveal hidden passages</li>
+        </ul>
+
+        <h4>Interior Exploration</h4>
+        <ul>
+            <li><strong>Guard Chambers:</strong> Empty but designed to house Clymph's original servants (now long dead)</li>
+            <li><strong>Ritual Rooms:</strong> Chambers with binding circles and demonbinding apparatus</li>
+            <li><strong>Living Quarters:</strong> Clymph's personal chambers; evidence of his final days</li>
+            <li><strong>Library:</strong> Partially intact archives with demonbinding texts and research (mostly ruined)</li>
+            <li><strong>Central Chamber:</strong> The main containment area where the abjurative circle is centered; extremely dangerous</li>
+        </ul>
+
+        <h4>Challenges</h4>
+        <ul>
+            <li><span class="hazard">Temperature Escalation:</span> Heat increases dramatically deeper into the tower</li>
+            <li><span class="hazard">Structural Instability:</span> Floors and walls threaten to collapse; Dexterity saves required regularly</li>
+            <li><span class="hazard">Demonic Presence:</span> Demons attempt to manipulate, possess, or psychologically assault party members</li>
+            <li><span class="hazard">Magical Traps:</span> Wards and bindings left behind by Clymph; disarming requires Arcana checks or magical expertise</li>
+            <li><span class="hazard">Environmental Hazards:</span> Toxic gas, molten stone, flame vents, and subsidence zones</li>
+        </ul>
+
+        <h4>Discoveries</h4>
+        <ul>
+            <li><strong>Clymph's Journal:</strong> Partially intact writings revealing his thoughts and growing desperation</li>
+            <li><strong>Containment Specifications:</strong> Records of the abjurative circle's design and maintenance requirements</li>
+            <li><strong>Demon Catalog:</strong> A list (possibly incomplete) of demons originally summoned</li>
+            <li><strong>Repair Ritual:</strong> Instructions for reinforcing the containment (dangerous to attempt)</li>
+            <li><strong>Escape Protocols:</strong> Evidence that one demon (possibly a powerful one) has learned much about the barrier's weak points</li>
+        </ul>
+
+        <h4>Potential Encounters</h4>
+        <ul>
+            <li><strong>Demon Manifestation:</strong> A powerful demon appears, limited by the barrier but able to interact at its edges</li>
+            <li><strong>Haunting:</strong> Clymph's tormented spirit or a ghost of his final moments</li>
+            <li><strong>Trap Activation:</strong> Trigger an ancient protective ward that attacks intruders</li>
+            <li><strong>Partial Breach:</strong> The party's actions accidentally weaken part of the containment; a lesser demon partially manifests</li>
+        </ul>
+
+        <h4>Objectives</h4>
+        <ul>
+            <li>Map the interior and understand the containment structure</li>
+            <li>Locate and recover important information or artifacts</li>
+            <li>Assess whether the containment needs immediate reinforcement</li>
+            <li>Escape before the tower's dangers overwhelm the party</li>
+        </ul>
+    </div>
+
+    <h3>Session 4: The Threat Emerges (Climactic)</h3>
+    <div class="info-box">
+        <h4>Overview</h4>
+        <p><strong>Level 12+ | Duration: 6+ hours | Theme: Epic confrontation, catastrophic potential, moral choices</strong></p>
+
+        <p>Events come to a head. Either the party discovers signs of imminent containment failure, or their actions trigger a crisis. They must either reinforce the prison or face a major demonic emergence.</p>
+
+        <h4>Crisis Scenarios</h4>
+
+        <h5>Scenario A: Containment Collapse Warning</h5>
+        <ul>
+            <li>Party discovers that the abjurative circle is degrading faster than anticipated</li>
+            <li>Expert analysis suggests 1-6 months before total failure</li>
+            <li>A powerful demon has been systematically weakening the barrier for years</li>
+        </ul>
+
+        <h5>Scenario B: Ritual Misfire</h5>
+        <ul>
+            <li>Party or NPCs attempt to reinforce containment; ritual goes wrong</li>
+            <li>Demons surge against the weakened barrier; partial breach occurs</li>
+            <li>Lesser demons begin manifesting outside the tower</li>
+        </ul>
+
+        <h5>Scenario C: External Threat</h5>
+        <ul>
+            <li>Another group (cultists, wizards, or worse) arrives seeking to break the seal</li>
+            <li>Combat between party and external threat occurs while demons press from within</li>
+            <li>Risk of containment failure increases as fighting destabilizes the structure</li>
+        </ul>
+
+        <h4>Confrontation Mechanics</h4>
+        <ul>
+            <li><strong>Multiple Fronts:</strong> Party faces both external threats and demonic pressure</li>
+            <li><strong>Escalating Danger:</strong> As the session progresses, the situation grows worse; more demons press against barriers</li>
+            <li><strong>Moral Choices:</strong> Party must decide between self-preservation and preventing catastrophic release</li>
+            <li><strong>Ritual Magic:</strong> Reinforcing the circle requires time, components, and successful skill checks; party must hold the line</li>
+        </ul>
+
+        <h4>Potential Demon Encounters</h4>
+        <ul>
+            <li><strong>Lesser Demons (CR 2-5):</strong> Quasits, imps, or dretches that partially manifest</li>
+            <li><strong>Significant Demons (CR 6-8):</strong> Hezrous, vrock, or glabrezu attempting escape</li>
+            <li><strong>Demon Leader (CR 9+):</strong> A major demon (balor, nalfeshnee) coordinating the breach attempt</li>
+            <li><strong>The Collective:</strong> Party faces multiple demons working together as a swarm</li>
+        </ul>
+
+        <h4>Resolution Options</h4>
+        <ul>
+            <li><strong>Successful Reinforcement:</strong> Party performs the ritual and stabilizes containment; tower remains sealed for another century</li>
+            <li><strong>Pyrrhic Containment:</strong> Containment reinforced but at great cost; party or NPCs are possessed or corrupted</li>
+            <li><strong>Partial Breach:</strong> Party prevents total catastrophe but some demons escape; ongoing threat to region</li>
+            <li><strong>Catastrophic Failure:</strong> Containment fails despite party's efforts; demons emerge; region faces existential threat</li>
+            <li><strong>Sacrifice Play:</strong> A party member or important NPC sacrifices themselves to reinforce the barrier</li>
+        </ul>
+
+        <h4>Aftermath & Consequences</h4>
+        <ul>
+            <li><strong>If Successful:</strong> Party is hailed as saviors; region is safe; tower becomes historical monument</li>
+            <li><strong>If Failed:</strong> Campaign focus shifts to dealing with demonic invasion; region mobilizes for war</li>
+            <li><strong>Mixed Results:</strong> Ongoing threat; tower requires periodic maintenance; opens door for future sessions</li>
+        </ul>
+
+        <h4>Objectives</h4>
+        <ul>
+            <li>Prevent or minimize demonic escape</li>
+            <li>Reinforce the abjurative circle if possible</li>
+            <li>Survive and protect the region</li>
+            <li>Decide the tower's role in the campaign going forward</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>Alternative Adventure: "Trapped" - Level 4 Rescue Mission</h2>
+
+    <div class="session-note">
+        <h3>Campaign Arc Overview</h3>
+        <p><strong>Level 4 Party | Duration: 1-2 sessions | Theme: Survival, horror, desperate escape</strong></p>
+        <p>A lower-level party is forced to seek refuge inside Clymph Tower while pursued by the Titan Bear. Trapped between demonic prisoners below and a deadly predator outside, they must rescue their companion Rory Andersson while finding a way to escape.</p>
+    </div>
+
+    <h3>Setup: The Chase</h3>
+    <div class="info-box">
+        <h4>How the Party Gets There</h4>
+        <p>The party has been searching for Rory Andersson, the missing hunter from Fjord's End. Their investigation leads them to Clymph Tower. As they explore the exterior ruins and lower ground level, they are suddenly attacked by the Titan Bear—the cursed creature from the Jotunn's Tears pool that threatened Fjord's End weeks ago.</p>
+
+        <h4>The Encounter</h4>
+        <ul>
+            <li><strong>Bear Location:</strong> The creature has made its lair in the scorched plains surrounding the tower</li>
+            <li><strong>Party Situation:</strong> They spot the bear at a distance but are cut off from their retreat route</li>
+            <li><strong>The Chase:</strong> As they flee toward the tower, the bear pursues with terrifying speed (50 ft. movement)</li>
+            <li><strong>Last Refuge:</strong> The abjurative circle barrier repels the bear; it cannot follow them inside</li>
+            <li><strong>New Problem:</strong> Party is now trapped in the tower with demons below and a waiting predator outside</li>
+        </ul>
+
+        <h4>Bear Behavior at the Barrier</h4>
+        <ul>
+            <li><strong>Cannot Enter:</strong> The abjurative circle actively repels the creature; it screams in rage and pain at the boundary</li>
+            <li><strong>Relentless Guard:</strong> The bear settles just outside bow range (200+ feet), pacing and watching for any exit attempt</li>
+            <li><strong>Attacks on Retreat:</strong> If the party tries to leave the tower, the bear intercepts them before they can move 60 feet</li>
+            <li><strong>Aggression Pattern:</strong> Occasionally roars and charges at the barrier, creating seismic vibrations inside the tower</li>
+        </ul>
+    </div>
+
+    <h3>Session Overview: "Trapped"</h3>
+    <div class="info-box">
+        <h4>Key Objectives</h4>
+        <ol>
+            <li>Find Rory Andersson (he's hiding on an upper floor, traumatized)</li>
+            <li>Navigate ground and first-floor levels safely</li>
+            <li>Avoid breaking the abjurative circle (which would release demons and the bear simultaneously)</li>
+            <li>Escape the tower without being caught by the waiting bear</li>
+        </ol>
+
+        <h4>Location Constraints</h4>
+        <ul>
+            <li><strong>Ground Floor & First Floor:</strong> Accessible; party can explore freely</li>
+            <li><strong>Sealed Lower Levels:</strong> Iron doors sealed by abjurative magic; cannot be opened without catastrophic consequences</li>
+            <li><strong>Upper Floors:</strong> Partially collapsed; some accessible via interior stairwell (damaged but passable)</li>
+            <li><strong>Roof/Tower Top:</strong> Destroyed but offers possible escape routes (see below)</li>
+            <li><strong>Cliff Edge:</strong> Tower sits on the edge of a 300-foot cliff overlooking the Eastern Fjord</li>
+        </ul>
+
+        <h4>Time Pressure</h4>
+        <ul>
+            <li><strong>Immediate Danger:</strong> The Titan Bear waits outside; party cannot leave directly</li>
+            <li><strong>Interior Threat:</strong> Demonic whispers from sealed levels grow louder; abjurative magic is under stress</li>
+            <li><strong>Environmental Decay:</strong> The tower trembles periodically (from bear's attacks and demon pressure); risk of collapse</li>
+            <li><strong>Daylight Window:</strong> If party doesn't escape by dusk, the bear grows more aggressive at nightfall</li>
+        </ul>
+    </div>
+
+    <h3>Ground Floor: Initial Exploration</h3>
+    <div class="info-box">
+        <h4>Layout</h4>
+        <ul>
+            <li><strong>Main Entry Hall:</strong> Warped iron gates, now open after centuries of oxidation; rubble strewn across floor</li>
+            <li><strong>Guard Chambers:</strong> Four rooms arranged in cardinal directions; mostly empty</li>
+            <li><strong>Kitchen & Storage:</strong> Long-abandoned, no supplies; skeletal remains of long-dead servants</li>
+            <li><strong>Central Shaft:</strong> Spiral staircase descends to lower levels (sealed by iron door and abjurative seal); ascends to first floor</li>
+        </ul>
+
+        <h4>Encounter 1: Ash Wraiths</h4>
+        <p>As the party explores the ground floor, they disturb ash accumulation. The dust coalesces into supernatural manifestations—not true undead, but echoes of Clymph's servants, burned and corrupted by demonic influence.</p>
+
+        <h5>Combat Encounter</h5>
+        <ul>
+            <li><strong>Encounter:</strong> 3-4 Ash Wraiths (modified specters, CR 1/4 each)</li>
+            <li><strong>Location:</strong> Kitchen area; triggered when party disturbs the deep ash</li>
+            <li><strong>Trigger:</strong> Any loud noise or magical detection in the kitchen</li>
+        </ul>
+
+        <h5>Ash Wraith Stats (Use as Specter variant)</h5>
+        <ul>
+            <li><strong>AC:</strong> 12</li>
+            <li><strong>HP:</strong> 22 (5d8)</li>
+            <li><strong>Speed:</strong> 0 ft., fly 40 ft. (hover)</li>
+            <li><strong>Abilities:</strong> Strength 6 (-2), Dexterity 16 (+3), Constitution 6 (-2), Intelligence 3 (-4), Wisdom 10 (+0), Charisma 5 (-3)</li>
+            <li><strong>Damage Immunities:</strong> Acid, cold, fire, lightning, thunder, poison</li>
+            <li><strong>Condition Immunities:</strong> Charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained</li>
+            <li><strong>Senses:</strong> Darkvision 60 ft., passive Perception 10</li>
+            <li><strong>Challenge:</strong> 1/4 (50 XP)</li>
+        </ul>
+
+        <h5>Ash Wraith Abilities</h5>
+        <ul>
+            <li><strong>Ethereal Sight:</strong> The wraith can see 60 feet into the Ethereal Plane when it is on the Material Plane</li>
+            <li><strong>Incorporeal Movement:</strong> The wraith can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object</li>
+            <li><strong>Sunlight Sensitivity:</strong> While in sunlight, the wraith has disadvantage on attack rolls, ability checks, and saving throws</li>
+        </ul>
+
+        <h5>Actions</h5>
+        <ul>
+            <li><strong>Withering Touch:</strong> <em>Melee Spell Attack:</em> +3 to hit, reach 5 ft., one target. <em>Hit:</em> 10 (3d6) necrotic damage, or 5 (1d6) necrotic damage if the target is in sunlight</li>
+        </ul>
+
+        <h4>Encounter Complications</h4>
+        <ul>
+            <li><strong>Ash Cloud:</strong> Combat disturbs more ash; visibility drops to 15 feet</li>
+            <li><strong>Structural Hazard:</strong> Heavy combat risks destabilizing floor; Dexterity save DC 12 or take 2d6 damage as section collapses</li>
+            <li><strong>Demonic Resonance:</strong> When wraiths are destroyed, the sealed door below rattles violently; demons press harder against the barrier</li>
+        </ul>
+
+        <h4>Rewards</h4>
+        <ul>
+            <li><strong>Experience:</strong> 200 XP total (50 per wraith)</li>
+            <li><strong>Treasure:</strong> Among the ashes, find 25 gp in ancient Narfelli coins and a burned journal page</li>
+        </ul>
+
+        <h4>Clue Discovery</h4>
+        <p>The burned journal page contains a partial entry from one of Clymph's servants, mentioning "the upper sanctum where the master kept his personal treasures and studies." This hints at Rory's location and other discoveries on the upper floor.</p>
+    </div>
+
+    <h3>First Floor: The Demonbinding Library</h3>
+    <div class="info-box">
+        <h4>Layout</h4>
+        <ul>
+            <li><strong>Main Library Room:</strong> Shelves of burned and destroyed books; some legible texts remain</li>
+            <li><strong>Study Chamber:</strong> Clymph's workspace with ritual circles and demonbinding apparatus</li>
+            <li><strong>Guest Chambers:</strong> Empty sleeping quarters (may contain minor treasure)</li>
+            <li><strong>Ritual Hall:</strong> Large chamber with intricate floor mosaics (the heart of the abjurative circle on this level)</li>
+        </ul>
+
+        <h4>Environmental Hazard: The Abjurative Circle Activation</h4>
+        <p>The ritual hall contains the visible portion of the abjurative circle. It's dormant and visible as intricate geometric patterns carved into the stone floor. The circle is extremely volatile—any damage or crude magical interference causes it to activate defensively.</p>
+
+        <h5>Trap: Circle Ward</h5>
+        <ul>
+            <li><strong>Trigger:</strong> Any spell cast within 30 feet of the center, or magical item activations, or physical damage to the circle itself</li>
+            <li><strong>Effect:</strong> The entire circle glows with blinding red light; all creatures within 60 feet must make a Dexterity save DC 13</li>
+            <li><strong>Damage:</strong> 11 (2d10) force damage on a failed save, or half as much on a successful one</li>
+            <li><strong>Secondary Effect:</strong> The circle pulses with demonic power; all party members must make Wisdom saves DC 12 or be frightened for 1 minute</li>
+            <li><strong>Warning:</strong> Before activation, the circle begins to hum—an audible sign that it's reacting</li>
+            <li><strong>Duration:</strong> After activation, the circle remains "hot" for 10 minutes; it will activate again for any magical interference</li>
+        </ul>
+
+        <h5>Trap Bypass</h5>
+        <ul>
+            <li><strong>Arcana Check DC 14:</strong> Party member can deduce the circle's sensitivity and warn others to avoid magic</li>
+            <li><strong>Careful Movement:</strong> Circling around the edges of the room avoids the center's most active area</li>
+            <li><strong>Mundane Solutions:</strong> Physical damage to the circle (non-magical attacks) doesn't trigger it; they can mark safe paths</li>
+        </ul>
+
+        <h4>Encounter 2: Demonbound Wraiths</h4>
+        <p>In the Study Chamber, the party encounters something worse than the Ash Wraiths—these are spirits still partially bound to demonic entities, trapped between planes.</p>
+
+        <h5>Combat Encounter</h5>
+        <ul>
+            <li><strong>Encounter:</strong> 2 Demonbound Wraiths (CR 1 each)</li>
+            <li><strong>Location:</strong> Study Chamber, among the ritual apparatus</li>
+            <li><strong>Trigger:</strong> Party enters the study chamber or interacts with ritual objects</li>
+        </ul>
+
+        <h5>Demonbound Wraith Stats (Modified Poltergeist)</h5>
+        <ul>
+            <li><strong>AC:</strong> 12</li>
+            <li><strong>HP:</strong> 27 (5d8 + 5)</li>
+            <li><strong>Speed:</strong> 0 ft., fly 50 ft. (hover)</li>
+            <li><strong>Abilities:</strong> Strength 8 (-1), Dexterity 14 (+2), Constitution 12 (+1), Intelligence 10 (+0), Wisdom 11 (+0), Charisma 8 (-1)</li>
+            <li><strong>Damage Immunities:</strong> Poison</li>
+            <li><strong>Condition Immunities:</strong> Charmed, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained</li>
+            <li><strong>Senses:</strong> Darkvision 60 ft., passive Perception 10</li>
+            <li><strong>Challenge:</strong> 1 (200 XP)</li>
+        </ul>
+
+        <h5>Demonbound Wraith Abilities</h5>
+        <ul>
+            <li><strong>Incorporeal Movement:</strong> The wraith can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object</li>
+            <li><strong>Possession (Recharge 6):</strong> One humanoid that the wraith can see within 5 feet of it must succeed on a Charisma save DC 12 or be possessed by the wraith; the wraith disappears, and the target is incapacitated and loses control of its movement</li>
+        </ul>
+
+        <h5>Actions</h5>
+        <ul>
+            <li><strong>Slam:</strong> <em>Melee Spell Attack:</em> +4 to hit, reach 5 ft., one target. <em>Hit:</em> 10 (2d6 + 2) force damage</li>
+            <li><strong>Demonic Influence:</strong> One creature the wraith can see within 30 feet must succeed on a Wisdom save DC 12 or take 7 (2d6) psychic damage</li>
+        </ul>
+
+        <h4>Encounter 3: Chalk Chatterlings</h4>
+        <p>As the party investigates the ritual circles and arcane apparatus, they disturb something that has been slowly coalescing for centuries—arcane anomalies born from Clymph's careless magical practices. Two Chalk Chatterlings emerge from the chalk dust of the ancient ritual markings, their incessant chittering filling the chamber with maddening noise.</p>
+
+        <h5>Combat Encounter</h5>
+        <ul>
+            <li><strong>Encounter:</strong> 2 Chalk Chatterlings (CR 1/2 each)</li>
+            <li><strong>Location:</strong> Ritual Hall or Study Chamber; among the chalk-marked runes and circles</li>
+            <li><strong>Trigger:</strong> Party disturbs chalk markings, scrapes the floor, or casts a spell near the ritual circles</li>
+            <li><strong>Timing:</strong> This can replace or follow the Demonbound Wraith encounter, or occur separately</li>
+        </ul>
+
+        <h5>Chalk Chatterling Stats</h5>
+        <ul>
+            <li><strong>AC:</strong> 12</li>
+            <li><strong>HP:</strong> 22 (5d6 + 5)</li>
+            <li><strong>Speed:</strong> 25 ft., fly 25 ft.</li>
+            <li><strong>Abilities:</strong> Strength 5 (-3), Dexterity 15 (+2), Constitution 12 (+1), Intelligence 4 (-3), Wisdom 10 (+0), Charisma 7 (-2)</li>
+            <li><strong>Damage Immunities:</strong> Poison</li>
+            <li><strong>Condition Immunities:</strong> Charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained</li>
+            <li><strong>Senses:</strong> Darkvision 60 ft., passive Perception 10</li>
+            <li><strong>Languages:</strong> — (seems to speak, but it's gibberish)</li>
+            <li><strong>Challenge:</strong> 1/2 (100 XP each)</li>
+        </ul>
+
+        <h5>Chalk Chatterling Abilities</h5>
+        <ul>
+            <li><strong>Death Burst:</strong> When the chalk chatterling dies, it explodes in a burst of dust. Any creature within 5 feet of the chalk chatterling must succeed on a DC 11 Constitution saving throw or be blinded until the end of its next turn</li>
+            <li><strong>Distracting Chatter:</strong> Any creature that starts its turn within 30 feet of and able to hear the chalk chatterling must succeed on a DC 11 Wisdom saving throw or be unable to cast or maintain concentration on a spell. Constructs and undead are immune. A creature who intended to cast a spell can choose another course of action</li>
+            <li><strong>Water Weakness:</strong> If the chalk chatterling is doused in water or ends its turn submerged in water, the chalk chatterling takes 3 (1d6) acid damage. Maximize this damage if the water is soapy</li>
+        </ul>
+
+        <h5>Actions</h5>
+        <ul>
+            <li><strong>Dust Whip:</strong> <em>Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one target. <em>Hit:</em> 7 (2d4 + 2) slashing damage</li>
+            <li><strong>Maddening Chatter (Recharge 6):</strong> Each creature within 30 feet of and able to hear the chalk chatterling must make a DC 11 Wisdom saving throw, taking 7 (2d6) psychic damage on a failed save, and half as much damage on a successful one. Constructs and undead are immune. A creature that fails the saving throw can't take reactions until the end of the chalk chatterling's next turn</li>
+        </ul>
+
+        <h4>Encounter Tactics</h4>
+        <ul>
+            <li><strong>Concentration Disruption:</strong> The chatterlings' distracting chatter is their primary threat; spellcasters cannot maintain spells or cast complex magic</li>
+            <li><strong>Maddening Chatter Abuse:</strong> If they get a recharge, they'll use maddening chatter to disable reactions and prevent escape</li>
+            <li><strong>Swarm Tactics:</strong> Two chatterlings will circle enemies, attacking with dust whips while maintaining coverage of the area</li>
+            <li><strong>Flight Advantage:</strong> They stay airborne and out of reach of melee fighters when possible</li>
+            <li><strong>Death Burst Threat:</strong> Destroying one in close combat risks blinding nearby party members</li>
+        </ul>
+
+        <h4>Environmental Advantages</h4>
+        <ul>
+            <li><strong>Water Source:</strong> If party discovered water (from collapsed pipes or rain) near the ritual hall, they can use it to damage or destroy chatterlings</li>
+            <li><strong>Magical Wards:</strong> The chalk markings that spawned the chatterlings might still contain magic; disrupting runes could pacify or harm the creatures</li>
+            <li><strong>Chalk Dust:</strong> The dusty environment favors the chatterlings; visibility is low, making them harder to hit (disadvantage on ranged attacks)</li>
+        </ul>
+
+        <h4>Encounter Complications (Choose One or Both)</h4>
+        <ul>
+            <li><strong>Combined Threat:</strong> This encounter can occur alongside the Demonbound Wraiths; party faces both spiritual and arcane threats simultaneously (very challenging)</li>
+            <li><strong>Circle Ward Trigger:</strong> Combat near ritual circles risks accidentally triggering the abjurative ward (see earlier trap description)</li>
+            <li><strong>Structural Risk:</strong> Heavy combat causes dust clouds; visibility drops to 10 feet; Perception checks at disadvantage</li>
+            <li><strong>Demonic Echo:</strong> The chatterlings' maddening chatter amplifies demonic whispers from below; party must make Wisdom saves DC 12 or suffer short-term madness</li>
+        </ul>
+
+        <h4>Rewards</h4>
+        <ul>
+            <li><strong>Experience:</strong> 200 XP total (100 per chatterling)</li>
+            <li><strong>Treasure:</strong> Among the chalk dust, find 15 gp in scattered coins and a small vial of rare pigment (worth 25 gp)</li>
+            <li><strong>Knowledge:</strong> Their origin gives party insight into Clymph's carelessness; an Arcana check DC 14 reveals that arcane anomalies are born from improperly disposed ritual materials</li>
+        </ul>
+
+        <h4>Lore Connection</h4>
+        <p>The chalk chatterlings are a reminder that Clymph's hubris extended beyond demonbinding. His rushed magical practices and failure to properly dispose of ritual materials created these maddening constructs centuries ago. This foreshadows how carelessness with the demonic summoning ritual itself led to catastrophe.</p>
+
+        <h4>Additional Encounter Options</h4>
+        <ul>
+            <li><strong>Replace Demonbound Wraiths:</strong> Use only chatterlings if you want a lighter encounter on the first floor</li>
+            <li><strong>Combine with Wraiths:</strong> Use both for a significantly challenging encounter (suitable for optimized parties or larger groups)</li>
+            <li><strong>Separate Encounters:</strong> Chatterlings appear in Ritual Hall; Demonbound Wraiths appear in Study Chamber (different parts of first floor)</li>
+        </ul>
+
+        <h4>Encounter Complications (Choose One or Both)</h4>
+        <ul>
+            <li><strong>Combined Threat:</strong> Demonbound Wraiths appear alongside chatterlings; party faces both spiritual and arcane threats simultaneously</li>
+            <li><strong>Circle Ward Trigger:</strong> Combat near ritual circles risks accidentally triggering the abjurative ward</li>
+            <li><strong>Structural Risk:</strong> Heavy combat causes dust clouds; visibility drops to 10 feet</li>
+            <li><strong>Demonic Echo:</strong> The chatterlings' maddening chatter amplifies demonic whispers from below; party must make Wisdom saves DC 12 or suffer short-term madness</li>
+        </ul>
+
+        <h4>Rewards</h4>
+        <ul>
+            <li><strong>Experience:</strong> 400 XP total for wraiths (200 per wraith)</li>
+            <li><strong>Treasure:</strong> Ritual dagger (uncommon, worth 75 gp), small pouch of rare spell components (75 gp value)</li>
+        </ul>
+
+        <h4>Library Discoveries</h4>
+        <ul>
+            <li><strong>Legible Book:</strong> "The Binding of the Fell"—a text on abjuration and containment magic (valuable but too heavy to carry easily)</li>
+            <li><strong>Journal Entry:</strong> "Rory was here three days past. Left mark pointing upward. Took stairs to upper sanctuary."</li>
+            <li><strong>Warning Sign:</strong> Multiple entries describing demonic pressure increasing on the barriers</li>
+        </ul>
+    </div>
+
+    <h3>Upper Floor: Clymph's Sanctuary</h3>
+    <div class="info-box">
+        <h4>Layout</h4>
+        <ul>
+            <li><strong>Master's Study:</strong> Clymph's personal quarters; partially collapsed but still navigable</li>
+            <li><strong>Vault Room:</strong> Small treasury where Clymph kept valuable items</li>
+            <li><strong>Personal Library:</strong> Intact shelves with magical texts</li>
+            <li><strong>Tower Top Access:</strong> A narrow staircase leads to the roof (partially destroyed)</li>
+        </ul>
+
+        <h4>Finding Rory Andersson</h4>
+        <p>Rory is hiding in the vault room, barricaded behind a collapsed shelf. He's been trapped here for three days, terrified of the demonic whispers and avoiding the ground floor where he first encountered the Ash Wraiths.</p>
+
+        <h5>Rory's Condition</h5>
+        <ul>
+            <li><strong>Physical State:</strong> Dehydrated but unharmed; has some food and water he rationed</li>
+            <li><strong>Mental State:</strong> Traumatized; suffers from hearing demonic whispers constantly</li>
+            <li><strong>Information:</strong> He can describe the bear he saw outside, the wraiths he encountered, and the direction of the stairs</li>
+            <li><strong>Supplies:</strong> He found a rope (50 feet) and a small lantern oil still in his pack</li>
+            <li><strong>Discovery:</strong> He mentions seeing strange statues on the upper floor—possibly magical constructs</li>
+        </ul>
+
+        <h5>Reunion Complications</h5>
+        <ul>
+            <li><strong>Initial Fear:</strong> Rory is panicked; takes persuasion to trust the party</li>
+            <li><strong>Demonic Influence:</strong> The voices have suggested Rory is already damned; party must reassure him</li>
+            <li><strong>Slow Movement:</strong> Rory is weakened; party's speed is reduced if he can't keep up</li>
+        </ul>
+
+        <h4>Tower Top: Escape Routes</h4>
+        <p>The upper sanctuary's access point leads to the partially destroyed tower roof, which sits at the edge of a 300-foot cliff overlooking the Eastern Fjord.</p>
+
+        <h5>Roof Features</h5>
+        <ul>
+            <li><strong>Exposed Position:</strong> The roof is exposed; strong wind conditions (10-20 mph)</li>
+            <li><strong>Broken Stonework:</strong> Jagged edges and missing sections; Dexterity save DC 11 to move safely</li>
+            <li><strong>Precipice:</strong> The cliff edge is 50 feet from the tower; thin air beyond</li>
+            <li><strong>Flying/Falling Options:</strong> Several possible escape routes present themselves</li>
+        </ul>
+
+        <h5>Escape Option 1: Feather Fall Spell</h5>
+        <ul>
+            <li><strong>Requirement:</strong> Party must have a scroll, spell, or magic item with feather fall</li>
+            <li><strong>Method:</strong> Cast feather fall on the party and jump from the cliff</li>
+            <li><strong>Landing:</strong> Descend 300 feet safely; land on rocky beach at the fjord's edge</li>
+            <li><strong>Challenge:</strong> Getting back to Fjord's End from the beach (half-day journey south along the coast)</li>
+        </ul>
+
+        <h5>Escape Option 2: Flying Mount/Spell</h5>
+        <ul>
+            <li><strong>Requirement:</strong> Scroll of fly, potion of flying, or similar magical item</li>
+            <li><strong>Method:</strong> Use flying magic to escape over the cliff</li>
+            <li><strong>Benefit:</strong> Fastest escape; can reach Fjord's End directly</li>
+        </ul>
+
+        <h5>Escape Option 3: Rope & Climbing</h5>
+        <ul>
+            <li><strong>Rory's Rope:</strong> The 50 feet of rope is insufficient for a 300-foot cliff</li>
+            <li><strong>Problem:</strong> Party would need to find additional rope or magical assistance</li>
+            <li><strong>Hazard:</strong> Climbing is slow; bear might attempt to intercept them somehow (unlikely but dramatic)</li>
+        </ul>
+
+        <h5>Escape Option 4: Distraction & Sprint</h5>
+        <ul>
+            <li><strong>Method:</strong> One party member distracts or attacks the bear while others make a run for it</li>
+            <li><strong>Bear Behavior:</strong> Gets confused; if successfully attacked from distance, it may charge at attackers</li>
+            <li><strong>Window of Opportunity:</strong> 2-3 rounds of chaos; others can attempt to flee</li>
+            <li><strong>Risk:</strong> Distracter becomes trapped; might become pinned against the tower</li>
+        </ul>
+
+        <h4>Guardian: The Sentinel Construct</h4>
+        <p>On the upper floor, the party encounters one final threat—a magical construct left behind by Clymph to guard his personal sanctum. The construct has deactivated for centuries but reactivates when the vault door is disturbed.</p>
+
+        <h5>Combat Encounter Option 1: Stone Guardian (Standard)</h5>
+        <ul>
+            <li><strong>Encounter:</strong> 1 Stone Guardian (CR 2, modified golem)</li>
+            <li><strong>Location:</strong> Upper floor sanctuary; guards entrance to vault</li>
+            <li><strong>Trigger:</strong> Party approaches the vault room or disturbs magical wards</li>
+        </ul>
+
+        <h5>Stone Guardian Stats (Modified Stone Golem, weaker variant)</h5>
+        <ul>
+            <li><strong>AC:</strong> 15 (natural armor)</li>
+            <li><strong>HP:</strong> 52 (8d10 + 16)</li>
+            <li><strong>Speed:</strong> 30 ft.</li>
+            <li><strong>Abilities:</strong> Strength 18 (+4), Dexterity 9 (-1), Constitution 15 (+2), Intelligence 3 (-4), Wisdom 11 (+0), Charisma 1 (-5)</li>
+            <li><strong>Damage Immunities:</strong> Poison, psychic</li>
+            <li><strong>Condition Immunities:</strong> Charmed, exhaustion, frightened, paralyzed, petrified, poisoned</li>
+            <li><strong>Senses:</strong> Darkvision 120 ft., passive Perception 10</li>
+            <li><strong>Challenge:</strong> 2 (450 XP)</li>
+        </ul>
+
+        <h5>Stone Guardian Abilities</h5>
+        <ul>
+            <li><strong>Immutable Form:</strong> The golem is immune to spells and magical effects that would alter its form</li>
+            <li><strong>Magic Resistance:</strong> The golem has advantage on saving throws against spells and magical effects</li>
+            <li><strong>Magic Weapons:</strong> The golem's weapon attacks are magical</li>
+        </ul>
+
+        <h5>Stone Guardian Actions</h5>
+        <ul>
+            <li><strong>Multiattack:</strong> The golem makes two slam attacks</li>
+            <li><strong>Slam:</strong> <em>Melee Weapon Attack:</em> +6 to hit, reach 5 ft., one target. <em>Hit:</em> 13 (2d8 + 4) bludgeoning damage</li>
+        </ul>
+
+        <h5>Combat Encounter Option 2: Clockwork Abomination (Challenging Alternative)</h5>
+        <p>For parties that have handled earlier encounters well, or for DMs wanting a more epic final confrontation, replace or combine with the Stone Guardian. This creature is a hybrid construct—a devil bound into clockwork, a remnant of Clymph's darker experiments that he sealed away even deeper than the demonic prison.</p>
+
+        <ul>
+            <li><strong>Encounter:</strong> 1 Clockwork Abomination (CR 5)</li>
+            <li><strong>Location:</strong> Upper floor vault or hidden chamber beneath the sanctuary</li>
+            <li><strong>Trigger:</strong> Party opens the vault, discovers Clymph's deepest secret, or tries to read ancient binding scrolls</li>
+            <li><strong>Context:</strong> This is an experiment gone horribly wrong; something Clymph bound but could not control, now sealed in stasis within the tower itself</li>
+        </ul>
+
+        <h5>Clockwork Abomination Stats</h5>
+        <ul>
+            <li><strong>AC:</strong> 16 (natural armor)</li>
+            <li><strong>HP:</strong> 76 (8d10 + 32)</li>
+            <li><strong>Speed:</strong> 30 ft., climb 30 ft.</li>
+            <li><strong>Abilities:</strong> Strength 21 (+5), Dexterity 12 (+1), Constitution 18 (+4), Intelligence 10 (+0), Wisdom 10 (+0), Charisma 12 (+1)</li>
+            <li><strong>Saving Throws:</strong> Dex +4, Con +7</li>
+            <li><strong>Skills:</strong> Athletics +8, Perception +3, Stealth +4</li>
+            <li><strong>Damage Resistances:</strong> Acid, cold, fire; bludgeoning, piercing, and slashing from nonmagical attacks</li>
+            <li><strong>Damage Immunities:</strong> Poison</li>
+            <li><strong>Condition Immunities:</strong> Charmed, exhaustion, frightened, paralyzed, petrified, poisoned</li>
+            <li><strong>Senses:</strong> Darkvision 60 ft., passive Perception 13</li>
+            <li><strong>Languages:</strong> Common, Infernal</li>
+            <li><strong>Challenge:</strong> 5 (1,800 XP)</li>
+        </ul>
+
+        <div class="hp-tracker">
+            <h4>Clockwork Abomination - HP Tracker</h4>
+            <div class="hp-display" id="hpDisplay">76 / 76 HP</div>
+            <div class="hp-bar-container">
+                <div class="hp-bar" id="hpBar" style="width: 100%;">100%</div>
+            </div>
+            <div class="hp-controls">
+                <button class="hp-button damage-button" onclick="takeDamage(5)">-5 HP</button>
+                <button class="hp-button damage-button" onclick="takeDamage(10)">-10 HP</button>
+                <button class="hp-button damage-button" onclick="takeDamage(15)">-15 HP</button>
+                <input type="number" class="damage-input" id="damageInput" placeholder="Damage" min="1" value="10">
+                <button class="hp-button damage-button" onclick="takeDamage(parseInt(document.getElementById('damageInput').value) || 0)">Apply Damage</button>
+                <button class="hp-button heal-button" onclick="heal(10)">+10 HP</button>
+                <button class="hp-button reset-button" onclick="resetHP()">Reset to Full</button>
+            </div>
+            <p style="font-size: 0.9em; color: #666; margin: 10px 0 0 0;">Status: <span id="hpStatus" style="font-weight: bold; color: #4caf50;">Healthy</span></p>
+            <script>
+                const maxHP = 76;
+                let currentHP = 76;
+
+                function updateDisplay() {
+                    document.getElementById('hpDisplay').textContent = currentHP + ' / ' + maxHP + ' HP';
+                    const percentage = (currentHP / maxHP) * 100;
+                    const hpBar = document.getElementById('hpBar');
+                    hpBar.style.width = percentage + '%';
+                    hpBar.textContent = Math.round(percentage) + '%';
+
+                    // Update status color
+                    const status = document.getElementById('hpStatus');
+                    if (currentHP <= 0) {
+                        status.textContent = 'Defeated';
+                        status.style.color = '#d32f2f';
+                        hpBar.style.backgroundColor = '#d32f2f';
+                    } else if (currentHP <= maxHP * 0.25) {
+                        status.textContent = 'Critical (25%)';
+                        status.style.color = '#ff6f00';
+                        hpBar.style.backgroundColor = '#ff6f00';
+                    } else if (currentHP <= maxHP * 0.50) {
+                        status.textContent = 'Wounded (50%)';
+                        status.style.color = '#fbc02d';
+                        hpBar.style.backgroundColor = '#fbc02d';
+                    } else {
+                        status.textContent = 'Healthy';
+                        status.style.color = '#4caf50';
+                        hpBar.style.backgroundColor = '#4caf50';
+                    }
+                }
+
+                function takeDamage(amount) {
+                    if (amount <= 0) return;
+                    currentHP = Math.max(0, currentHP - amount);
+                    updateDisplay();
+                }
+
+                function heal(amount) {
+                    if (amount <= 0) return;
+                    currentHP = Math.min(maxHP, currentHP + amount);
+                    updateDisplay();
+                }
+
+                function resetHP() {
+                    currentHP = maxHP;
+                    updateDisplay();
+                }
+
+                updateDisplay();
+            </script>
+        </div>
+
+        <h5>Clockwork Abomination Special Traits</h5>
+        <ul>
+            <li><strong>Construct Nature:</strong> The clockwork abomination doesn't require air, food, drink, or sleep</li>
+            <li><strong>Explosive Infernal Power Source:</strong> When the abomination is destroyed, its infernal battery explodes. Each creature within 10 feet must make a DC 14 Dexterity saving throw, taking 14 (4d6) fire damage on a failed save, or half as much on a successful one. The explosion ignites flammable objects in the area that aren't being worn or carried</li>
+            <li><strong>Immutable Form:</strong> The abomination is immune to any spell or effect that would alter its form</li>
+            <li><strong>Magic Resistance:</strong> The abomination has advantage on saving throws against spells and other magical effects</li>
+            <li><strong>Unstoppable:</strong> Moving through difficult terrain doesn't cost the abomination extra movement, and its speed can't be reduced</li>
+        </ul>
+
+        <h5>Clockwork Abomination Actions</h5>
+        <ul>
+            <li><strong>Multiattack:</strong> The clockwork abomination makes one Bite attack and one Slam attack</li>
+            <li><strong>Bite:</strong> <em>Melee Weapon Attack:</em> +8 to hit, reach 10 ft., one target. <em>Hit:</em> 14 (2d8 + 5) piercing damage plus 7 (2d6) fire damage</li>
+            <li><strong>Slam:</strong> <em>Melee Weapon Attack:</em> +8 to hit, reach 15 ft., one target. <em>Hit:</em> 12 (2d6 + 5) bludgeoning damage</li>
+            <li><strong>Fire Breath (Recharge 5-6):</strong> The clockwork abomination breathes fire in a 30-foot cone. Each creature in the area must make a DC 14 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much on a successful one</li>
+        </ul>
+
+        <h4>Clockwork Abomination Lore</h4>
+        <p>This creature is one of Clymph's greatest failures and best-kept secrets. Unlike the demons he openly tried to summon and control, this represents an attempt to bind a devil into a construct body—combining the disciplines of devil-binding and engineering. The results were catastrophic. The creature is malevolent, frustrated by its limitations, and takes delight in causing suffering. Clymph managed to seal it away, but the seal has weakened over centuries.</p>
+
+        <h4>Clockwork Abomination Appearance</h4>
+        <blockquote>
+            The pile of debris and scrap on the ground suddenly rises, revealing a large insectoid form with smoke rising between the plates of its hide. Its many orange-yellow eyes shine like dim lanterns and reveal no hint of expression or intent. Pistons extend from articulated limbs, and the acrid smell of sulfur and hot metal fills the chamber. This is no simple golem—this is something far more sinister and alive than mere stone.
+        </blockquote>
+
+        <h4>Encounter Tactics: Clockwork Abomination</h4>
+        <ul>
+            <li><strong>Initial Surprise:</strong> The abomination disguises itself among debris; party gains disadvantage on Perception checks to spot it until it moves</li>
+            <li><strong>Aggressive Opening:</strong> The creature attacks immediately with Bite and Slam, prioritizing the nearest creature</li>
+            <li><strong>Fire Breath Usage:</strong> Uses Fire Breath whenever 3+ party members are within the cone area</li>
+            <li><strong>Relentless:</strong> Uses Unstoppable to close gaps; terrain doesn't slow it down</li>
+            <li><strong>Reach Advantage:</strong> Its long reach (10-15 ft) keeps melee fighters at disadvantage; it attacks from distance</li>
+            <li><strong>Magic Resistance:</strong> Spells and magical effects are less effective; party must rely on physical damage and clever tactics</li>
+            <li><strong>Escalating Danger:</strong> If not defeated quickly, it becomes increasingly dangerous as Fire Breath recharges</li>
+        </ul>
+
+        <h4>Environmental Complications: Clockwork Abomination</h4>
+        <ul>
+            <li><strong>Sanctuary Instability:</strong> The chamber shakes as the abomination moves; Dexterity save DC 12 or take 1d6 damage as debris falls</li>
+            <li><strong>Explosive Exit:</strong> When defeated, its power source detonates; 14 (4d6) fire damage in 10-foot radius (devastating in confined space)</li>
+            <li><strong>Secondary Threat:</strong> Fire from explosion ignites wooden structures; tower becomes more unstable</li>
+            <li><strong>Escape Urgency:</strong> After defeating the abomination, the tower's structural integrity is critically compromised; escape becomes urgent</li>
+        </ul>
+
+        <h4>Rewards: Clockwork Abomination</h4>
+        <ul>
+            <li><strong>Experience:</strong> 1,800 XP (very substantial for level 4 party; may result in immediate level up)</li>
+            <li><strong>Treasure:</strong> From Clymph's vault, retrieve 250 gp, a gem worth 200 gp, several valuable spell components (150 gp total value)</li>
+            <li><strong>Magical Item:</strong> <em>Adamantine Breastplate</em> (Uncommon, AC 14). This suit of armor is reinforced with adamantine, one of the hardest substances in existence. While wearing it, any critical hit against you becomes a normal hit. This legendary armor was part of Clymph's personal defenses; it resists the creature's infernal damage</li>
+            <li><strong>Artifact Discovery:</strong> Among the abomination's remains, find pieces of infernal machinery; scholars might pay handsomely for research (25-50 gp for the lot, or 100+ gp to the right collector)</li>
+            <li><strong>Knowledge:</strong> An Arcana check DC 16 reveals this was a deliberate binding attempt; Clymph sought to merge devil and construct</li>
+        </ul>
+
+        <h4>Choosing Your Final Boss</h4>
+
+        <h5>Use Stone Guardian For:</h5>
+        <ul>
+            <li>Standard level 4 party difficulty (challenging but survivable)</li>
+            <li>Shorter, tighter sessions</li>
+            <li>Focusing on rescue mission and escape mechanics</li>
+            <li>Parties that struggled with earlier encounters</li>
+        </ul>
+
+        <h5>Use Clockwork Abomination For:</h5>
+        <ul>
+            <li>Parties that have performed well in earlier encounters</li>
+            <li>Groups wanting a memorable, epic final confrontation</li>
+            <li>Adding depth to Clymph's character (his darkest experiment)</li>
+            <li>Longer sessions with room for a major battle</li>
+            <li>Parties at the higher end of level 4 or early level 5</li>
+        </ul>
+
+        <h5>Use Both For:</h5>
+        <ul>
+            <li>Extended campaign with multiple sessions</li>
+            <li>Stone Guardian as first obstacle, Abomination as hidden final threat</li>
+            <li>Guardian as distraction; abomination emerges mid-combat</li>
+            <li>Larger or very well-equipped parties (4-5 members with optimized builds)</li>
+        </ul>
+
+        <h4>Critical Discovery</h4>
+        <p>In Clymph's personal study, the party finds a journal entry describing hidden treasures meant for escape: "Should damnation find me, the vault holds salvation. The ring grants passage through the void of sky; the scroll ensures safe descent. Let no one say I was unprepared."</p>
+
+        <h5>The Ring of Feather Falling</h5>
+        <p>Hidden in a secret compartment beneath Clymph's desk (DC 15 Perception check to find), the party discovers a <em>Ring of Feather Falling</em> (Rare, requires attunement). When worn, the wearer descends 60 feet per round and takes no damage from falling. This is the ultimate insurance for the 300-foot cliff escape—a wearer can jump and float down safely, or activate it mid-fall if needed. This ring is particularly valuable given the tower's catastrophic height.</p>
+
+        <h5>The Feather Fall Scroll</h5>
+        <p>A scroll of feather fall is locked in the vault (or on Clymph's person). This single-use magical item casts <em>feather fall</em> on one creature within 60 feet when activated, allowing safe descent from any height. Perfect for characters without magical protection or for enabling multiple party members to escape simultaneously.</p>
+
+        <p><strong>Narrative Impact:</strong> These discoveries suggest Clymph was paranoid and prepared—he knew something terrible might escape and had exit strategies ready. The party now has multiple paths for escape, whether through magical items, spells, or their own ingenuity.</p>
+    </div>
+
+    <h3>The Escape Phase</h3>
+    <div class="info-box">
+        <h4>Bear Reactivation</h4>
+        <p>As the party attempts to leave the tower with Rory, the Titan Bear roars and attacks with renewed fury. It circles the tower, attempting to intercept any exit.</p>
+
+        <h4>Chase Mechanics</h4>
+        <ul>
+            <li><strong>Bear Speed:</strong> 50 ft. per turn</li>
+            <li><strong>Party Speed:</strong> 30 ft. (accounting for Rory's exhaustion and difficult terrain)</li>
+            <li><strong>Initial Range:</strong> Party exits tower; bear is 200 feet away (4 rounds at bear speed)</li>
+            <li><strong>Intercept Window:</strong> 3 rounds before bear reaches party's exit point</li>
+            <li><strong>Feather Fall Option:</strong> If party jumps from cliff with feather fall, bear cannot follow; escape is guaranteed</li>
+        </ul>
+
+        <h4>Alternative: Standing Ground</h4>
+        <p>If party chooses to fight the Titan Bear directly:</p>
+        <ul>
+            <li><strong>Difficulty:</strong> CR 8 monster for a level 4 party is extremely dangerous (likely TPK)</li>
+            <li><strong>Intent:</strong> This should be a "flee or die" encounter, not a combat challenge</li>
+            <li><strong>Heroic Option:</strong> One character can sacrifice themselves to give others time to escape (dramatic but tragic)</li>
+        </ul>
+
+        <h4>Tower Collapse Risk</h4>
+        <p>As demons press harder from below against the barrier, and the bear's attacks shake the tower, there's risk of structural failure.</p>
+
+        <ul>
+            <li><strong>Each Round Outside:</strong> Constitution save DC 12 or take 1d6 damage as stone falls</li>
+            <li><strong>Escalation:</strong> For each round of combat, increase DC by 1</li>
+            <li><strong>Critical Failure:</strong> On a failed save by 5+, large section collapses; creature is buried under rubble (2d6 damage and restrained)</li>
+            <li><strong>Tower Final State:</strong> If party takes more than 5 rounds to escape, tower partially collapses behind them; no turning back</li>
+        </ul>
+
+        <h4>Success Conditions</h4>
+        <ul>
+            <li><strong>Feather Fall Escape:</strong> Party safely descends cliff; arrives on beach; journey back to Fjord's End (half day)</li>
+            <li><strong>Flight Escape:</strong> Party flies away; reaches Fjord's End safely</li>
+            <li><strong>Distraction Escape:</strong> Party successfully distracts bear long enough to flee; bear returns to waiting stance outside tower</li>
+            <li><strong>Return Required:</strong> Any option requires party to eventually return to Fjord's End and report findings</li>
+        </ul>
+    </div>
+
+    <h3>DM Notes for Level 4 Party</h3>
+
+    <div class="info-box">
+        <h4>Difficulty Balancing</h4>
+        <ul>
+            <li><strong>Encounter Design:</strong> Encounters are meant to be challenging but survivable for a level 4 party of 3-4 members</li>
+            <li><strong>Ash Wraiths:</strong> Weak enemies; mostly atmospheric; good for warming up</li>
+            <li><strong>Demonbound Wraiths:</strong> Moderate challenge; possession threat makes them interesting</li>
+            <li><strong>Stone Guardian:</strong> Stronger encounter; requires tactical thinking</li>
+            <li><strong>Titan Bear:</strong> Unbeatable in direct combat; exists to force creative solutions</li>
+        </ul>
+
+        <h4>Pacing</h4>
+        <ul>
+            <li><strong>Session 1 (First 3-4 hours):</strong> Chase into tower, ground floor exploration, ash wraith encounter</li>
+            <li><strong>Session 2 (Remaining time or next session):</strong> First floor library, encounter with demonbound wraiths, discovery and rescue of Rory</li>
+            <li><strong>Session 3 (Optional continuation):</strong> Upper floor sanctuary, stone guardian encounter, escape sequence</li>
+            <li><strong>Compressed Option:</strong> Can be run in one long session (5-6 hours) if pacing is tight</li>
+        </ul>
+
+        <h4>Atmosphere</h4>
+        <ul>
+            <li><strong>Claustrophobia:</strong> Emphasize being trapped; both demon pressure below and bear threat above</li>
+            <li><strong>Demonic Voices:</strong> Constant whispers from sealed levels; tempting and horrifying</li>
+            <li><strong>Rising Dread:</strong> Each encounter should raise tension; escape becomes more urgent</li>
+            <li><strong>Outside Threat:</strong> Regular reminders of the bear—its roars, the ground shaking, visible movement outside windows</li>
+        </ul>
+
+        <h4>Player Agency</h4>
+        <ul>
+            <li><strong>Multiple Paths:</strong> Party can explore in different orders; tower layout is flexible</li>
+            <li><strong>Puzzle Solutions:</strong> Circle ward can be bypassed multiple ways (not just arcana checks)</li>
+            <li><strong>Combat Options:</strong> Encounters can be avoided or negotiated (wraiths are partially intelligent)</li>
+            <li><strong>Escape Routes:</strong> Multiple escape options; encourage creative problem-solving</li>
+            <li><strong>Feather Fall Discovery:</strong> Make it findable but rewarding when party discovers it</li>
+        </ul>
+
+        <h4>Magical Item Distribution</h4>
+        <ul>
+            <li><strong>Wand of Magic Missiles:</strong> Found in vault; useful for magical offense</li>
+            <li><strong>Scroll of Feather Fall:</strong> Critical to escape; designed to be discoverable</li>
+            <li><strong>Ritual Dagger:</strong> Uncommon magical item; useful for future adventures</li>
+            <li><strong>Spell Components:</strong> Rare reagents for spellcasters; valuable for crafting</li>
+            <li><strong>Total Treasure Value:</strong> Approximately 500 gp worth (appropriate for level 4 party)</li>
+        </ul>
+
+        <h4>Consequences & Aftermath</h4>
+        <ul>
+            <li><strong>Rory's Survival:</strong> Party becomes heroes for rescuing him; Solveig Andersson is immensely grateful</li>
+            <li><strong>Tower Knowledge:</strong> Party gains reputation as experts on Clymph Tower and its dangers</li>
+            <li><strong>Warnings Heeded:</strong> Regional authorities take tower threat more seriously</li>
+            <li><strong>Future Involvement:</strong> Higher-level parties may be tasked with investigating the tower more thoroughly (hooks for higher-level campaign arc)</li>
+            <li><strong>Demon Awareness:</strong> Demons know the party's faces; may recognize them if they encounter demonic threats later</li>
+        </ul>
+
+        <h4>Adjusting Difficulty</h4>
+
+        <h5>If Party is Struggling</h5>
+        <ul>
+            <li>Reduce HP on wraith encounters by 25%</li>
+            <li>Give party more obvious clues about escape routes</li>
+            <li>Have Rory contribute to combat (he has a short bow; 1d6 + 1 damage)</li>
+            <li>Reduce Stone Guardian HP or give it fewer attacks</li>
+            <li>Make feather fall scroll more obvious and accessible</li>
+        </ul>
+
+        <h5>If Party is Dominating</h5>
+        <ul>
+            <li>Add 1-2 additional Ash Wraiths to initial encounter</li>
+            <li>Increase Stone Guardian's HP or damage output</li>
+            <li>Make circle trap more sensitive; easier to accidentally trigger</li>
+            <li>Add environmental hazards (collapsing floors, toxic gas pockets)</li>
+            <li>Increase bear's presence; have it attack the tower, causing tremors during fights</li>
+        </ul>
+
+        <h4>Session Wrap-Up</h4>
+        <ul>
+            <li><strong>Experience Awards:</strong> Roughly 1,095 XP total for the adventure (appropriate for level 4 party)</li>
+            <li><strong>Treasure:</strong> ~500 gp value in gold, gems, and magical items</li>
+            <li><strong>Leveling:</strong> May not reach level 5 immediately, but gets party closer to advancement</li>
+            <li><strong>Story Advancement:</strong> Rory's rescue resolves his mother's concerns; opens new story threads</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="session-note">
+        <h3>Why the Party Cares About Clymph Tower</h3>
+
+        <h4>Direct Threats</h4>
+        <ul>
+            <li><strong>Increased Tremors:</strong> Earthquakes threaten settlements; party asked to investigate source</li>
+            <li><strong>Demonic Manifestations:</strong> Demons appearing in towns; their source traced to the tower</li>
+            <li><strong>Possession Epidemic:</strong> People becoming possessed; investigation reveals connection to tower weakening</li>
+            <li><strong>Refugee Crisis:</strong> People fleeing the tower's immediate area; they bring dire warnings</li>
+        </ul>
+
+        <h4>Personal Stakes</h4>
+        <ul>
+            <li><strong>Lost Companion:</strong> A trusted NPC or ally was corrupted or captured by demonic influence</li>
+            <li><strong>Ancient Artifact:</strong> Something of great value is known to be in or near the tower</li>
+            <li><strong>Family Connection:</strong> A party member has a personal or ancestral tie to Clymph or his era</li>
+            <li><strong>Prophecy:</strong> A divination or prophecy specifically names Clymph Tower</li>
+        </ul>
+
+        <h4>Political Pressure</h4>
+        <ul>
+            <li><strong>Regional Authority:</strong> Governments demand investigation and containment assurance</li>
+            <li><strong>Harper Mission:</strong> The Harpers task the party with preventing catastrophe</li>
+            <li><strong>Religious Order:</strong> A god's clergy demands the tower be purified or sealed permanently</li>
+            <li><strong>Competing Parties:</strong> Multiple groups (good and evil) seek the tower for different reasons</li>
+        </ul>
+
+        <h4>Ongoing Complications</h4>
+        <ul>
+            <li><strong>Cult Activity:</strong> Followers of Orcus or other demon lords work to weaken containment</li>
+            <li><strong>Academic Competition:</strong> Rival wizards or scholars pursue forbidden knowledge from the tower</li>
+            <li><strong>Moral Dilemmas:</strong> Some demons aren't purely evil; party faces ethical choices about containment</li>
+            <li><strong>Periodic Crises:</strong> Tower requires ongoing maintenance; multiple sessions of dealing with recurrent problems</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>DM Notes</h2>
+
+    <div class="info-box">
+        <h3>Running Clymph Tower</h3>
+
+        <h4>Atmosphere & Tone</h4>
+        <p>Clymph Tower should feel apocalyptic and desperate:</p>
+        <ul>
+            <li>Emphasize the sense of cosmic horror—this is a wound in reality itself</li>
+            <li>Describe the demonic voices as tempting, mocking, and increasingly urgent</li>
+            <li>Use environmental descriptions to build dread (rising temperature, increasing vibration, growing flames)</li>
+            <li>Make players feel the weight of containment—one mistake could doom the region</li>
+            <li>Interplay between the terrible beauty of demonic power and the horror of its imprisonment</li>
+        </ul>
+
+        <h4>Pacing the Campaign Arc</h4>
+        <ul>
+            <li><strong>Session 1:</strong> Mystery and investigation; slowly revealing the scope of the threat</li>
+            <li><strong>Session 2:</strong> Environmental horror; growing sense of wrongness and danger</li>
+            <li><strong>Session 3:</strong> Exploration and puzzle-solving; understanding the mechanisms of containment</li>
+            <li><strong>Session 4:</strong> Epic confrontation; the tower and its secrets tested to the limit</li>
+        </ul>
+
+        <h4>Scaling by Level</h4>
+        <ul>
+            <li><strong>Levels 8-9:</strong> Focus on investigation and minor encounters; avoid major demon battles</li>
+            <li><strong>Levels 10-11:</strong> Include dangerous exploration and significant demonic encounters; reinforce possibilities</li>
+            <li><strong>Levels 12+:</strong> Full-scale confrontation with powerful demons; epic battle mechanics and ritual magic</li>
+        </ul>
+
+        <h4>The Demons</h4>
+        <ul>
+            <li><strong>Not Mindless:</strong> Demons are intelligent and strategic; they've had centuries to plan</li>
+            <li><strong>Divided Purposes:</strong> Some want escape; others are content in the Abyss; some are insane</li>
+            <li><strong>Temptation Focus:</strong> Demons try to corrupt and manipulate before fighting</li>
+            <li><strong>Hierarchy:</strong> One demon (demon prince or powerful lord) likely leads; killing it causes internal chaos</li>
+        </ul>
+
+        <h4>Environmental Challenges</h4>
+        <ul>
+            <li><strong>Heat as Threat:</strong> Temperature should be a constant concern; resource management for cooling</li>
+            <li><strong>Time Pressure:</strong> The longer party stays, the worse it gets; sense of urgency builds</li>
+            <li><strong>Structural Decay:</strong> Tower is ancient and unstable; add random hazards and collapses</li>
+            <li><strong>Magical Interference:</strong> Abjurative magic limits party options; force creative problem-solving</li>
+        </ul>
+
+        <h4>Player Agency</h4>
+        <ul>
+            <li><strong>Multiple Solutions:</strong> Containment can be reinforced through different rituals and approaches</li>
+            <li><strong>Sacrifice Options:</strong> Allow players to make meaningful sacrifices (companions, magical items, resources)</li>
+            <li><strong>Partial Successes:</strong> Don't force a binary win/lose outcome; allow nuanced results</li>
+            <li><strong>Future Hooks:</strong> Leave room for ongoing connection to the tower and its mysteries</li>
+        </ul>
+
+        <h4>Reward Considerations</h4>
+        <ul>
+            <li><strong>Experience:</strong> Substantial rewards for preventing catastrophe</li>
+            <li><strong>Treasure:</strong> Artifacts recovered from tower; demonic items with interesting properties</li>
+            <li><strong>Reputation:</strong> Party becomes known as heroes who held back Hell itself</li>
+            <li><strong>Ongoing Benefits:</strong> Access to restricted knowledge, support from grateful organizations</li>
+            <li><strong>Complications:</strong> Demons don't forget; party may face long-term demonic enmity</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <a href="index.html" class="back-link">← Back to Main Hub</a>
+
+</body>
+</html>
