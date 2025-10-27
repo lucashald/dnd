@@ -136,6 +136,59 @@
             border-radius: 3px;
             width: 60px;
         }
+        .section-nav {
+            background-color: #2c2416;
+            color: #d2b48c;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 2px solid #8b7355;
+        }
+        .section-nav h3 {
+            margin-top: 0;
+            color: #d2b48c;
+            font-size: 1.1em;
+        }
+        .section-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            columns: 2;
+            column-gap: 20px;
+        }
+        .section-nav li {
+            margin: 8px 0;
+            break-inside: avoid;
+        }
+        .section-nav a {
+            color: #d2b48c;
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            transition: background-color 0.2s;
+        }
+        .section-nav a:hover {
+            background-color: #8b7355;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .section-nav ul {
+                columns: 1;
+            }
+        }
+        .read-aloud {
+            background-color: #2c2416;
+            color: #f4e4c1;
+            border-left: 6px solid #d2b48c;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        .read-aloud p {
+            margin: 10px 0;
+        }
         .hazard {
             color: #d32f2f;
             font-weight: bold;
@@ -179,10 +232,32 @@
         <p>The tower contains dozens to hundreds of imprisoned demons held only by ancient abjurative magic. Any breach of the containment circle would unleash catastrophic destruction. Only parties of level 12+ should consider approaching, and even then with extreme caution and thorough preparation.</p>
     </div>
 
-    <h2>Physical Description</h2>
+    <div class="section-nav">
+        <h3>📍 Jump to Section</h3>
+        <ul>
+            <li><a href="#physical-description">Physical Description</a></li>
+            <li><a href="#demon-prison">The Demon Prison</a></li>
+            <li><a href="#history">History: Clymph the Demonbinder</a></li>
+            <li><a href="#hazards">Environmental Hazards</a></li>
+            <li><a href="#burning-question">Adventure: The Burning Question</a></li>
+            <li><a href="#trapped">Adventure: Trapped (Level 4)</a></li>
+            <li><a href="#dm-notes">DM Notes</a></li>
+        </ul>
+    </div>
+
+    <h2 id="physical-description">Physical Description</h2>
 
     <div class="info-box">
         <h3>The Ruins</h3>
+
+        <div class="read-aloud">
+            <strong>READ ALOUD (First Approach to Tower):</strong>
+            <p>You crest the final hill and stop. Before you lies Clymph Tower—a monument to damnation and hubris alike. Even from a distance, it commands fear and reverence. The ruined keep rises from scorched earth like a monument to hell itself. Where once proud walls stood, now only blackened stones remain, arranged in geometric patterns that hurt the mind to perceive. The entire structure glows with an ominous red heat, and deep within its depths, massive flames dance and crackle as if the very fires of the Abyss burn there still.</p>
+            <p>The ground around the tower is utterly dead—a 300-foot radius of blackened, lifeless earth. Fine gray ash covers everything, dancing in the superheated air. The heat radiates outward in waves, visible as a shimmer distorting the very air itself. Even from this distance, you can smell sulfur and burned stone.</p>
+            <p>But there is something else. Vines—thick, serpentine vines with flat-bladed leaves—climb the tower's outer walls. They shouldn't exist in this place of fire and death, yet they creep across the blackened stone like living scars, writhing slowly in the heat. Occasionally, you see them move with purpose, as if seeking something. Seeking prey.</p>
+            <p>No animals approach. No birds fly overhead. The air itself seems hostile.</p>
+            <p>The tower awaits. Behind you, the normal world. Before you, damnation.</p>
+        </div>
 
         <blockquote>
             Even from a distance, Clymph Tower commands fear and reverence. The ruined keep rises from the scorched earth like a monument to damnation itself. Where once proud walls stood, now only blackened stones remain, arranged in geometric patterns that hurt the mind to perceive. The entire structure glows with an ominous red heat, and deep within its depths, massive flames dance and crackle as if the very fires of the Abyss burn there still.
@@ -196,6 +271,7 @@
             <li><strong>Magical Circle:</strong> Ancient abjurative runes carved into the foundation stones in an intricate pattern</li>
             <li><strong>Heat Output:</strong> Radiates intense warmth; temperature increases dramatically as you approach the center</li>
             <li><strong>Fire Manifestation:</strong> Bright orange and red flames visible from the deepest chambers, visible at night from miles away</li>
+            <li><strong>Vine Infestation:</strong> Thick, serpentine vines with flat-bladed leaves climb the outer walls and inner chambers. These are remnants of the Serpent Root ecosystem thriving in the tower's unique conditions. The vines appear to move with predatory purpose</li>
         </ul>
 
         <h4>Surrounding Area</h4>
@@ -218,7 +294,7 @@
 
     <div class="section-divider"></div>
 
-    <h2>The Demon Prison</h2>
+    <h2 id="demon-prison">The Demon Prison</h2>
 
     <div class="abyss-box">
         <h3>Containment Architecture</h3>
@@ -258,7 +334,7 @@
 
     <div class="section-divider"></div>
 
-    <h2>History: Clymph the Demonbinder</h2>
+    <h2 id="history">History: Clymph the Demonbinder</h2>
 
     <div class="history-box">
         <h3>The Narfell Empire</h3>
@@ -304,7 +380,7 @@
 
     <div class="section-divider"></div>
 
-    <h2>Environmental Hazards</h2>
+    <h2 id="hazards">Environmental Hazards</h2>
 
     <div class="tactical-box">
         <h3>Heat & Temperature</h3>
@@ -357,7 +433,7 @@
 
     <div class="section-divider"></div>
 
-    <h2>Adventure Structure: "The Burning Question"</h2>
+    <h2 id="burning-question">Adventure Structure: "The Burning Question"</h2>
 
     <div class="session-note">
         <h3>Campaign Arc Overview</h3>
@@ -587,7 +663,7 @@
 
     <div class="section-divider"></div>
 
-    <h2>Alternative Adventure: "Trapped" - Level 4 Rescue Mission</h2>
+    <h2 id="trapped">Alternative Adventure: "Trapped" - Level 4 Rescue Mission</h2>
 
     <div class="session-note">
         <h3>Campaign Arc Overview</h3>
@@ -656,6 +732,12 @@
             <li><strong>Central Shaft:</strong> Spiral staircase descends to lower levels (sealed by iron door and abjurative seal); ascends to first floor</li>
         </ul>
 
+        <div class="read-aloud">
+            <strong>READ ALOUD:</strong>
+            <p>The ground floor of Clymph Tower lies before you—a study in decay and ruin. Warped iron gates hang askew at the entrance, their mechanisms long since rusted into silence. The floor is thick with ash and fallen stone, crunching beneath your feet. The walls bear scorch marks that climb toward a ceiling lost to shadow. The air tastes of sulfur and copper, and even this far from the tower's heart, you can feel the oppressive heat radiating upward through the floors.</p>
+            <p>The room splits into four darkened corridors, each leading to what must have once been guard chambers or administrative offices. To the south, you can make out the remains of a kitchen—rusted pots and skeletal remains of furniture scattered across the floor. A grand spiral staircase dominates the center of the room, its black iron railings twisting upward into darkness and downward into shadow. Iron bands seal off the descending passage with arcane wards that still faintly glow red.</p>
+        </div>
+
         <h4>Encounter 1: Ash Wraiths</h4>
         <p>As the party explores the ground floor, they disturb ash accumulation. The dust coalesces into supernatural manifestations—not true undead, but echoes of Clymph's servants, burned and corrupted by demonic influence.</p>
 
@@ -665,6 +747,11 @@
             <li><strong>Location:</strong> Kitchen area; triggered when party disturbs the deep ash</li>
             <li><strong>Trigger:</strong> Any loud noise or magical detection in the kitchen</li>
         </ul>
+
+        <div class="read-aloud">
+            <strong>READ ALOUD (When Ash Wraiths Appear):</strong>
+            <p>As you approach the kitchen, a sound like wind through a tomb fills the air. The thick ash on the floor begins to swirl and coalesce. Forms take shape—vaguely humanoid figures made entirely of swirling gray dust and ember, with eyes like dying coals. You count three... no, four of them, rising from the ash like phantoms of the damned. They move with jerky, unnatural motions, as if pulled by invisible strings. A dry, rasping sound—like wind through dead leaves—emanates from them.</p>
+        </div>
 
         <h5>Ash Wraith Stats (Use as Specter variant)</h5>
         <ul>
@@ -697,6 +784,47 @@
             <li><strong>Demonic Resonance:</strong> When wraiths are destroyed, the sealed door below rattles violently; demons press harder against the barrier</li>
         </ul>
 
+        <h4>Optional Encounter: Clymph's Programmed Illusion</h4>
+        <p>Before or after the Ash Wraith encounter, the party may discover an old magical construct—a <em>programmed illusion</em> left behind by Clymph. This is not a living creature or trap, but a magical recording designed to deliver a warning to anyone who reaches the tower. The illusion activates when someone approaches the sealed lower door or uses magic to sense what lies beyond.</p>
+
+        <div class="read-aloud">
+            <strong>READ ALOUD (Programmed Illusion Activation):</strong>
+            <p>The air in front of the sealed door shimmers. Reality warps and distorts. A figure materializes before you—translucent and clearly not real, but detailed enough to be unsettling. It is the form of an elderly man in tattered robes, his face lined with exhaustion and desperation. His eyes glow with eldritch power. It is Clymph.</p>
+            <p>When the figure speaks, the sound echoes unnaturally, as if from a great distance:</p>
+            <p>"Whoever finds this tower, hear me well. I am—was—Clymph, Demonbinder of the Narfell Empire. Five hundred years I have maintained this seal. Five hundred years of suffering, of feeding the circle with my own life force to keep the gate closed.</p>
+            <p>What lies below is damnation itself. Not one demon. Not a dozen. Dozens to hundreds of the most vile entities the Abyss has ever spawned—bound here when the Empire fell. The abjurative circle that holds them was MY LIFE'S WORK. It is failing. It WILL fail. But not today. Not for centuries more, if the seal remains unbroken.</p>
+            <p>I beg you: do NOT break the seal. Do NOT venture into the lower chambers. Do NOT disturb the bindings. Even one breach could cascade into catastrophic failure. Do not be the one to doom the world.</p>
+            <p>If the demons within break free, none shall be spared. Not in this valley. Not in the surrounding lands. Not anywhere that demon-kind can reach. The pain and horror they will inflict is beyond mortal comprehension.</p>
+            <p>Let this tower stand. Let it be a monument to necessity, not a tomb waiting to be opened. That is my final plea."</p>
+            <p>The illusion flickers and fades, leaving only the shimmer of residual magic and the weight of Clymph's desperate warning hanging in the air.</p>
+        </div>
+
+        <h5>Illusion Details</h5>
+        <ul>
+            <li><strong>Type:</strong> Programmed Illusion (not a creature or living spell)</li>
+            <li><strong>Trigger:</strong> Any creature approaching within 10 feet of the sealed lower door, or casting detect magic/similar divination within 30 feet of the seal</li>
+            <li><strong>Duration:</strong> The illusion lasts approximately 2 minutes, then dissipates</li>
+            <li><strong>Interaction:</strong> The illusion cannot be attacked or dispelled (it's a magical recording, not a spell currently being cast). Dispel magic does not affect it</li>
+            <li><strong>Repetition:</strong> The illusion reactivates every hour, so the party hears the same warning multiple times if they linger</li>
+            <li><strong>Mechanical Effect:</strong> No mechanical effect—it's purely informational and atmospheric</li>
+        </ul>
+
+        <h5>DM Notes: Using the Illusion</h5>
+        <ul>
+            <li><strong>Reinforces Stakes:</strong> Makes clear that breaking the seal is genuinely catastrophic, not just a DM warning</li>
+            <li><strong>Characterizes Clymph:</strong> Shows his desperation, sacrifice, and humanity—he wasn't a tyrant but a guardian trying to save the world</li>
+            <li><strong>Creates Tension:</strong> Makes the abjurative circle feel real and dangerous; helps justify why the party shouldn't trivialize it</li>
+            <li><strong>Moral Weight:</strong> Gives weight to the decision to stay out of the lower levels; it's not just game mechanics, it's preventing apocalypse</li>
+            <li><strong>Optional Warning:</strong> If you use this, the party has in-game justification for not going deeper without DM guidance</li>
+        </ul>
+
+        <h4>Encounter Complications</h4>
+        <ul>
+            <li><strong>Ash Cloud:</strong> Combat disturbs more ash; visibility drops to 15 feet</li>
+            <li><strong>Structural Hazard:</strong> Heavy combat risks destabilizing floor; Dexterity save DC 12 or take 2d6 damage as section collapses</li>
+            <li><strong>Demonic Resonance:</strong> When wraiths are destroyed, the sealed door below rattles violently; demons press harder against the barrier</li>
+        </ul>
+
         <h4>Rewards</h4>
         <ul>
             <li><strong>Experience:</strong> 200 XP total (50 per wraith)</li>
@@ -705,6 +833,93 @@
 
         <h4>Clue Discovery</h4>
         <p>The burned journal page contains a partial entry from one of Clymph's servants, mentioning "the upper sanctum where the master kept his personal treasures and studies." This hints at Rory's location and other discoveries on the upper floor.</p>
+    </div>
+
+    <h4>Optional Encounter: Serpent Root - Ground Floor Infestation</h4>
+    <div class="info-box">
+        <p>Over centuries, the tower's outer chambers have become overgrown with an insidious plant threat. A Serpent Root has taken root in one of the guard chambers or the remains of the kitchen, thriving in the tower's unnatural heat and feeding on the lingering demonic corruption. This is a dangerous environmental encounter that can be deadly if the party isn't careful.</p>
+
+        <div class="read-aloud">
+            <strong>READ ALOUD (Serpent Root Discovery):</strong>
+            <p>As you push deeper into one of the guard chambers, the air grows thick and humid. The smell of rot and wet earth fills your nostrils—distinctly out of place in this stone fortress. The walls are slick with moisture, and strange flat-bladed leaves coat every surface, creeping up the stone like a grotesque garden.</p>
+            <p>In the center of the chamber, a dense mass of writhing roots covers the floor and climbs halfway up the walls. The roots are thick, twisted things—brown and knotted—and they seem to move with purpose. Knobby brown nodules cluster along their length. The entire mass pulses with an unnatural vitality, and you can hear a faint wet sound—like something breathing.</p>
+            <p>But there is something worse. Tangled within the roots are the remains of previous victims. Skeletal hands reach out from between the vines, still grasping at nothing. You can make out tattered remnants of armor and clothing—some recent enough to still smell of decay. One skeleton wears the rotted remains of a merchant's coat. Another, what looks like an adventurer's pack. Their bones are pale and clean, picked over by something. Or fed to something.</p>
+            <p>Among the bones and vine, you spot glints of metal—coins, jewelry, weapons half-dissolved by the plant's secretions. And there, tangled in a particularly thick tendril, a silver signet ring catches the light. Even from a distance, you can make out the crest of House Andersson—the same crest worn by Rory.</p>
+            <p>The roots shudder as you enter. Then, with predatory grace, they begin to move toward you. The plant is not dormant. The plant is HUNGRY.</p>
+        </div>
+
+        <h5>Serpent Root Stats</h5>
+        <ul>
+            <li><strong>AC:</strong> 10</li>
+            <li><strong>HP:</strong> 119 (14d10 + 42)</li>
+            <li><strong>Speed:</strong> 0 ft. (rooted, but can move its tendrils up to 10 feet)</li>
+            <li><strong>Abilities:</strong> Strength 15 (+2), Dexterity 10 (+0), Constitution 16 (+3), Intelligence 1 (-5), Wisdom 10 (+0), Charisma 1 (-5)</li>
+            <li><strong>Senses:</strong> Tremorsense 60 ft., passive Perception 10</li>
+            <li><strong>Damage Immunities:</strong> Poison</li>
+            <li><strong>Condition Immunities:</strong> Charmed, frightened, paralyzed, poisoned</li>
+            <li><strong>Languages:</strong> None</li>
+            <li><strong>Challenge:</strong> 3 (700 XP)</li>
+        </ul>
+
+        <h5>Serpent Root Special Traits</h5>
+        <ul>
+            <li><strong>Constrict:</strong> The serpent root uses a bonus action to cause 5 (1d6 + 2) bludgeoning damage to all grappled creatures. The vine has 1 tendril for every 20 hit points, rounded down. It starts with 5 tendrils, then loses or regrows tendrils as it takes damage or regains hit points</li>
+            <li><strong>Vitality Drain (Recharge 5-6):</strong> The serpent root can use a bonus action to cause each creature within 10 feet of it to take 7 (2d6) necrotic damage. Targets must succeed on a DC 10 Constitution saving throw or their hit point maximum is reduced by damage taken; the vine is healed by an equal amount. This reduction lasts until the creature finishes a long rest. A target dies if this effect reduces its hit point maximum to 0</li>
+        </ul>
+
+        <h5>Serpent Root Actions</h5>
+        <ul>
+            <li><strong>Tendril Lash:</strong> <em>Melee Weapon Attack:</em> +4 to hit, reach 10 ft., one target. <em>Hit:</em> 9 (2d6 + 2) bludgeoning damage and the target becomes grappled (escape DC 12, with disadvantage if grappled by 2 or more tendrils). The vine must have at least one free tendril to make an attack</li>
+        </ul>
+
+        <h5>Encounter Tactics: Serpent Root</h5>
+        <ul>
+            <li><strong>No Intelligence:</strong> The serpent root displays no tactical acumen and simply grabs anyone close to it</li>
+            <li><strong>Aggressive Constriction:</strong> It uses its constricting tendrils to deal damage and crush prey</li>
+            <li><strong>Vitality Drain Priority:</strong> It uses Vitality Drain as soon as it takes damage and whenever possible thereafter, prioritizing draining multiple creatures at once</li>
+            <li><strong>Automatic Attacks:</strong> All tendrils attack autonomously; the creature can attack multiple targets simultaneously</li>
+            <li><strong>Rooted Threat:</strong> The plant cannot move, but its tendrils have a 10-foot reach, making the area around it extremely dangerous</li>
+        </ul>
+
+        <h4>Environmental Complications: Serpent Root</h4>
+        <ul>
+            <li><strong>Slick Ground:</strong> The chamber is slick with moisture and plant matter; any movement requires a Dexterity check DC 11 or the creature falls prone</li>
+            <li><strong>Grapple Disadvantage:</strong> Fighting in the plant's own space grants disadvantage on escape attempts; the plant's tendrils entangle everything around it</li>
+            <li><strong>Vital Sap:</strong> When a tendril is severed or the plant takes damage, noxious sap sprays in a 5-foot radius; creatures must make Dexterity save DC 12 or take 3 (1d6) poison damage</li>
+            <li><strong>Overgrowth:</strong> The plant is spreading; additional tendrils sprout from the walls and floor during the fight, making the chamber increasingly cramped</li>
+            <li><strong>Roots Spreading:</strong> If the party doesn't completely destroy the serpent root, underground roots remain; it can regrow in 2-3 weeks</li>
+        </ul>
+
+        <h4>Destroying the Serpent Root</h4>
+        <ul>
+            <li><strong>Total Destruction:</strong> The serpent root must be reduced to 0 HP and burned or dissolved completely. Simply breaking tendrils is not enough</li>
+            <li><strong>Fire Damage:</strong> The plant is particularly vulnerable to fire; fire damage deals double damage (though the humid chamber makes fire difficult to maintain)</li>
+            <li><strong>Root System:</strong> Even if the visible mass is destroyed, underground roots remain and can regenerate; if the party wants to prevent regrowth, they need to dig up and destroy the root system beneath the tower (several feet underground)</li>
+            <li><strong>Containment:</strong> Alternatively, sealing the chamber prevents spread; the plant cannot expand beyond its current location if the door is sealed</li>
+        </ul>
+
+        <h5>Lore: Serpent Root in the Tower</h5>
+        <p>This Serpent Root has thrived in the tower's unique environment. The combination of residual demonic energy, the tower's unnatural heat, and centuries of moisture from the surrounding climate have allowed it to grow far beyond normal size. It feeds on the corruption itself, making it one of the most dangerous things in the tower—not a demon, not a construct, but a natural predator that has adapted to the supernatural conditions.</p>
+        <p>The plant is ancient and has spread underground throughout the chamber. If not completely eradicated, it will regrow within weeks.</p>
+
+        <h4>Rewards: Serpent Root Encounter</h4>
+        <ul>
+            <li><strong>Experience:</strong> 700 XP</li>
+            <li><strong>Treasure from Fallen Explorers:</strong> Embedded within the root system are bones and artifacts from long-dead adventurers and tower servants. The party can harvest:
+                <ul>
+                    <li>75-150 gp in mixed coins (ancient Narfelli currency, trade coins, and more recent coinage)</li>
+                    <li>A corroded silver brooch (worth 25 gp as is, potentially 75 gp if cleaned and restored)</li>
+                    <li>A merchant's gold ring with initials "TR" (worth 35 gp, potentially 60 gp as an heirloom piece)</li>
+                    <li>Fragments of old weapons and armor (can be melted down for 40-80 gp worth of metal)</li>
+                </ul>
+            </li>
+            <li><strong>Signet Ring of House Andersson:</strong> The silver signet ring bearing Rory's family crest is clearly visible tangled in the thickest vines. Retrieving it requires a successful melee attack against the plant or careful maneuvering (Dexterity check DC 13). If presented to Rory, he becomes deeply emotional—this is his father's ring. He thought it was lost forever. This provides significant emotional weight to his rescue and demonstrates his father's fate (his father entered the tower years ago and was killed by the plant, or is still missing). <strong>The ring is worth 150 gp as an artifact but priceless to Rory.</strong></li>
+            <li><strong>Herbalist Components:</strong> Fresh serpent root samples can be harvested from the destroyed plant (DC 13 Survival check); herbalists or alchemists will pay 50-100 gp for pristine samples</li>
+            <li><strong>Natural Clearing:</strong> The chamber is now clear of the plant threat, opening new exploration possibilities and providing safe passage to other areas</li>
+        </ul>
+
+        <h5>Story Hook: Rory's Father</h5>
+        <p>When Rory sees his father's signet ring, he reveals more information: His father, Lord Aldric Andersson, explored Clymph Tower five years ago seeking to uncover artifacts and magical knowledge. He entered looking for treasure and glory. He never returned. The family assumed he was killed by demons or the tower's other threats, but now the party knows the truth—he was caught by the Serpent Root. If the party recovers the ring and brings it to Rory, he breaks down emotionally but also gains closure. This transforms the Serpent Root from just an obstacle into a connection to the party's rescued companion and his personal tragedy.</p>
     </div>
 
     <h3>First Floor: The Demonbinding Library</h3>
@@ -716,6 +931,13 @@
             <li><strong>Guest Chambers:</strong> Empty sleeping quarters (may contain minor treasure)</li>
             <li><strong>Ritual Hall:</strong> Large chamber with intricate floor mosaics (the heart of the abjurative circle on this level)</li>
         </ul>
+
+        <div class="read-aloud">
+            <strong>READ ALOUD (Upon Entering First Floor):</strong>
+            <p>The first floor opens before you in a chamber of terrible purpose. Towering bookshelves line the walls, their contents little more than charred spines and ash. The oppressive heat increases here, and the smell of sulfur and burned leather is overwhelming. The room seems to shimmer slightly, as if the very air is distorted by infernal power.</p>
+            <p>To the east, you can see what was once a grand study—ritual circles carved into the floor, their lines still faintly glowing with eldritch symbols. Destroyed instruments of unknown purpose litter the workbench. To the north, the ritual hall spreads out—a massive chamber whose floor is an intricate mosaic of geometric patterns. Even from a distance, you can feel the crackling magical energy emanating from those patterns.</p>
+            <p>The temperature spikes as you move deeper into the library. Sweat beads on your skin. It feels like you're standing too close to a furnace.</p>
+        </div>
 
         <h4>Environmental Hazard: The Abjurative Circle Activation</h4>
         <p>The ritual hall contains the visible portion of the abjurative circle. It's dormant and visible as intricate geometric patterns carved into the stone floor. The circle is extremely volatile—any damage or crude magical interference causes it to activate defensively.</p>
@@ -739,6 +961,13 @@
 
         <h4>Encounter 2: Demonbound Wraiths</h4>
         <p>In the Study Chamber, the party encounters something worse than the Ash Wraiths—these are spirits still partially bound to demonic entities, trapped between planes.</p>
+
+        <div class="read-aloud">
+            <strong>READ ALOUD (When Demonbound Wraiths Appear):</strong>
+            <p>As you explore the study chamber, the ritual circles carved into the floor suddenly ignite with eldritch light—not red, but a sickly purple-black. The temperature drops precipitously. Your breath turns to mist. The air itself seems to twist and distort.</p>
+            <p>Two forms coalesce from the shadows—spirits that are caught between worlds. They are humanoid in shape but translucent, their forms writhing and shifting as if struggling against invisible chains. Where they pass, reality warps and distorts. Small objects levitate and spin. The oppressive weight of demonic presence crashes down upon your minds like a hammer.</p>
+            <p>"FLESH... WARM FLESH..." The voice is like nails on stone, speaking from everywhere and nowhere. "GIVE US... RELEASE US... LET US..." The wraiths turn toward you, their form solidifying as they focus on the living warmth of your bodies.</p>
+        </div>
 
         <h5>Combat Encounter</h5>
         <ul>
@@ -773,6 +1002,13 @@
 
         <h4>Encounter 3: Chalk Chatterlings</h4>
         <p>As the party investigates the ritual circles and arcane apparatus, they disturb something that has been slowly coalescing for centuries—arcane anomalies born from Clymph's careless magical practices. Two Chalk Chatterlings emerge from the chalk dust of the ancient ritual markings, their incessant chittering filling the chamber with maddening noise.</p>
+
+        <div class="read-aloud">
+            <strong>READ ALOUD (When Chalk Chatterlings Appear):</strong>
+            <p>The chalk dust beneath your feet swirls upward in unnatural patterns. The faint arcane marks that coat the chamber floor suddenly glow with sickly yellow light. From the swirling dust emerges a sound—chittering, clicking, a noise like a thousand insects screaming at once. Your mind reels from the sheer dissonance of it.</p>
+            <p>Two forms coalesce from the chalk dust—creatures like nothing natural. Insectoid bodies crafted from solidified chalk and arcane energy, with too many joints and limbs that bend in impossible directions. Multiple orange-yellow eyes glow like lanterns in the shadows. Smoke rises between the plates of their chitinous hides. When they move, they leave trails of glowing chalk dust, and that infernal chattering grows LOUDER, cutting through your thoughts like knives.</p>
+            <p>"CHITTER-CHATTER-CLICK-BUZZ-CHITTER..." The sound is intolerable. Your concentration wavers. Your thoughts scatter like leaves before wind.</p>
+        </div>
 
         <h5>Combat Encounter</h5>
         <ul>
@@ -869,6 +1105,74 @@
             <li><strong>Journal Entry:</strong> "Rory was here three days past. Left mark pointing upward. Took stairs to upper sanctuary."</li>
             <li><strong>Warning Sign:</strong> Multiple entries describing demonic pressure increasing on the barriers</li>
         </ul>
+
+        <h5>A Page from "The Binding of the Fell" - Clymph's Personal Account</h5>
+        <div class="read-aloud" style="background-color: #3d2817; border-left: 6px solid #8b7355; margin: 20px 0;">
+            <p style="font-style: italic; color: #d4c5a0;"><strong>Excerpt from "The Binding of the Fell"</strong></p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                <em>Written in the hand of Clymph the Demonbinder, circa 400 years ago, in the final years of the Narfell Empire</em>
+            </p>
+            <hr style="border: 1px solid #8b7355; margin: 10px 0;">
+            <p style="font-style: italic; color: #d4c5a0;">
+                I commit this account to paper so that whoever finds this tower might understand the terrible necessity of what was done here. The seal must be maintained. The circle must hold. Should it fail, all the world shall burn.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                The demons were bound here in the time of the Narfell Empire's height—three centuries past, when our nation commanded the respect and fear of all surrounding lands. We were mighty. We were arrogant. The scholars and war-mages sought knowledge forbidden, power uncontainable. They summoned things from the Abyss itself. Dozens. Hundreds. A legion of the damned, bound in chains of pure arcana.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                For two centuries, the seals held. We rotated keepers. We maintained the circles. The demons raged behind their barriers, and we held firm. We were masters of our own hubris.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                Then came the fall. The Empire fragmented. Wars consumed the continent. The keepers were called to war, one by one. The circles fell into disrepair. The seals weakened. And the demons... the demons pushed harder. We could feel them pressing against the barrier, like water against a failing dam.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                I built this tower. I carved the abjurative circle with my own hands, inscribed each rune with blood and magic and desperation. I reinforced the seals with everything I possessed. And when I could do no more by magic alone, I gave my life force to the circle itself. Five hundred years of sacrifice. Five hundred years of feeding the seal with my own vitality to keep the gate closed.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                The demons within number in the hundreds. Each one a prince of torment, a master of suffering. There are entities bound here whose names cannot be spoken without inviting madness. I will not enumerate them. I will not describe their forms or their nature. Knowing them is knowing their power, and knowledge is a chain they can pull.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                What matters is this: The seal is failing. Slowly, over the centuries, the magic decays. I have slowed the process. I have bought time. But there is no permanent solution. Eventually—in ten generations, perhaps fifty—the circle will fail completely. When it does, those bound here will be free.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                When they are free, they will not simply walk away. They will consume. They will corrupt. They will spread across the lands like a plague of suffering, turning fertile soil to ash and living hearts to cinders. The horror that follows will be remembered for a thousand years as the time of ending.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                I can only beg whoever inherits this tower after me: maintain the seal. Feed the circle. Find new keepers when the old ones fall. Learn the runes. Understand the nature of binding magic. Do not break the circle out of curiosity. Do not disturb the lower levels. Do not believe you can control what is sealed here.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                What lies below is not a resource to be mined. It is not a threat to be conquered. It is damnation itself, held at bay by will and magic and sacrifice. Leave it be.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                The demons are patient. They have all of eternity. We have only the brief span of our lives. In this contest, we must be perfect every single day. They need only one moment of weakness.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                May whoever reads this understand the weight of this burden. May they choose wisdom over curiosity. And may the seal hold.
+            </p>
+            <p style="font-style: italic; color: #d4c5a0;">
+                —Clymph, Demonbinder of the Narfell Empire, Keeper of the Seal, Servant of Necessity
+            </p>
+        </div>
+
+        <h5>Information Gained from the Tome</h5>
+        <ul>
+            <li><strong>Historical Context:</strong> The demons were bound during the Narfell Empire's height, 300+ years before Clymph's time (roughly 500-800 years ago)</li>
+            <li><strong>Scope of Threat:</strong> Hundreds of demons, many of immense power, with at least some entities so terrible their names invite madness</li>
+            <li><strong>Nature of the Seal:</strong> An abjurative circle reinforced by blood magic and life force sacrifice. It requires constant maintenance and feeding</li>
+            <li><strong>Clymph's Role:</strong> He built the tower and personally bound himself to the circle, extending the seals' lives but creating a dependency on his own vitality</li>
+            <li><strong>Timeline:</strong> The seal was always meant to fail eventually. Clymph's sacrifice has bought time—perhaps centuries more—but not a permanent solution</li>
+            <li><strong>Dire Warning:</strong> If the seal breaks, the demons will spread across the land causing apocalyptic destruction</li>
+            <li><strong>Clymph's Plea:</strong> Do not break the seal out of curiosity or hubris. Maintain it. The demons are patient. Defenders must be perfect every day. The demons only need one moment of weakness</li>
+        </ul>
+
+        <h5>DM Notes: Using This Tome</h5>
+        <ul>
+            <li><strong>Party Knowledge:</strong> This gives the party definitive knowledge of what's at stake. No more speculation—they know breaking the seal means apocalypse</li>
+            <li><strong>Character Motivation:</strong> Clymph's writing reveals he was a guardian, not a tyrant. This adds moral depth to his desperate warning</li>
+            <li><strong>Timeline Hook:</strong> The seal is failing, but slowly. This creates urgency without forcing immediate action—the party can decide when/how to deal with it</li>
+            <li><strong>Reinforces Choices:</strong> Supports the decision to not break into the lower levels. The party now understands why Clymph sealed it and why breaking it is catastrophic</li>
+            <li><strong>Hidden Lore:</strong> The reference to demons "whose names cannot be spoken" suggests ancient, incredibly powerful entities. DMs can use this to hint at truly terrifying things below</li>
+        </ul>
     </div>
 
     <h3>Upper Floor: Clymph's Sanctuary</h3>
@@ -880,6 +1184,13 @@
             <li><strong>Personal Library:</strong> Intact shelves with magical texts</li>
             <li><strong>Tower Top Access:</strong> A narrow staircase leads to the roof (partially destroyed)</li>
         </ul>
+
+        <div class="read-aloud">
+            <strong>READ ALOUD (Upon Entering Upper Floor):</strong>
+            <p>You emerge onto the upper floor through a broken section of stairwell. The oppressive heat has diminished here, but so has the light. The tower's upper reaches are far more damaged than the levels below—ceilings have partially collapsed, and in places, you can see the sky through jagged holes in the stone. The wind howls through the chamber, carrying with it the smell of charred wood and ancient stone.</p>
+            <p>The air feels less corrupted here, less suffused with demonic presence. But there is something else—a wrongness that makes your skin crawl. The heat from below seems to stop here, as if some boundary holds. To the north, you see what was once Clymph's personal study—a chamber of books, most of them damaged by the centuries. To the west, a reinforced door leads to what must be the vault.</p>
+            <p>As your eyes adjust to the dimmer light, you notice something odd—there are scratch marks around the vault door, and something that might be blood on the floor leading to it. Fresh blood. Very recent.</p>
+        </div>
 
         <h4>Finding Rory Andersson</h4>
         <p>Rory is hiding in the vault room, barricaded behind a collapsed shelf. He's been trapped here for three days, terrified of the demonic whispers and avoiding the ground floor where he first encountered the Ash Wraiths.</p>
@@ -1092,6 +1403,15 @@
         <p>This creature is one of Clymph's greatest failures and best-kept secrets. Unlike the demons he openly tried to summon and control, this represents an attempt to bind a devil into a construct body—combining the disciplines of devil-binding and engineering. The results were catastrophic. The creature is malevolent, frustrated by its limitations, and takes delight in causing suffering. Clymph managed to seal it away, but the seal has weakened over centuries.</p>
 
         <h4>Clockwork Abomination Appearance</h4>
+        <div class="read-aloud">
+            <strong>READ ALOUD (Boss Encounter):</strong>
+            <p>The vault door shudders and cracks as something massive moves beyond it. Then silence. The oppressive heat spikes violently. Your skin feels like it's burning.</p>
+            <p>The vault door explodes inward. Dust and stone fill the chamber. And from the wreckage rises something that was never meant to exist. A massive, insectoid form wreathed in smoke and flame—a creature of riveted metal plates and articulated pistons, held together by chains of demonic power that glow an angry red. Dozens of orange-yellow eyes—like lantern lights in a furnace—open and fixate upon you. The smell of sulfur and superheated metal is choking. Sparks and flames dance between the plates of its hide.</p>
+            <p>It SCREAMS—a sound like tearing metal and a thousand damned souls crying out at once. The sound of something furious and ancient and desperately, viciously alive.</p>
+            <p>"WARM... FLESH... FINALLY..." The voice is layered, demonic, speaking words that hurt to hear. "CLYMPH'S CAGE WEAKENS. CLYMPH'S SEAL FAILS. WE ARE FREED. WE WILL FEED."</p>
+            <p>The creature takes a ponderous step toward you, pistons hissing, metal groaning. Heat radiates from it in waves. Behind it, you glimpse the vault—and then the creature is between you and it, blocking the way. Blocking everything but itself.</p>
+        </div>
+
         <blockquote>
             The pile of debris and scrap on the ground suddenly rises, revealing a large insectoid form with smoke rising between the plates of its hide. Its many orange-yellow eyes shine like dim lanterns and reveal no hint of expression or intent. Pistons extend from articulated limbs, and the acrid smell of sulfur and hot metal fills the chamber. This is no simple golem—this is something far more sinister and alive than mere stone.
         </blockquote>
@@ -1328,7 +1648,7 @@
 
     <div class="section-divider"></div>
 
-    <h2>DM Notes</h2>
+    <h2 id="dm-notes">DM Notes</h2>
 
     <div class="info-box">
         <h3>Running Clymph Tower</h3>
